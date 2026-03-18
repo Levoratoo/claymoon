@@ -271,15 +271,17 @@ section {
 }
 .nav-logo:hover { opacity: 0.75; }
 
-.nav-logo-img {
-    height: 30px;
-    width: auto;
-    display: block;
-    filter: brightness(1);
-    transition: filter var(--ease);
+.nav-logo-text {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: #fff;
+    transition: color var(--ease), text-shadow var(--ease);
 }
-.nav-logo:hover .nav-logo-img {
-    filter: brightness(1) drop-shadow(0 0 6px rgba(255,26,26,0.7));
+.nav-logo:hover .nav-logo-text {
+    color: var(--primary);
+    text-shadow: 0 0 14px rgba(255,26,26,0.6);
 }
 
 /* Keep old logo-dot for footer fallback */
