@@ -42,11 +42,21 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#historia" class="nav-link">História</a></li>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#musicas" class="nav-link">Músicas</a></li>
+                <li><a href="#historia" class="nav-link" data-i18n="nav-historia">História</a></li>
+                <li><a href="#sobre" class="nav-link" data-i18n="nav-sobre">Sobre</a></li>
+                <li><a href="#musicas" class="nav-link" data-i18n="nav-musicas">Músicas</a></li>
                 <li><a href="#booking" class="nav-link nav-cta">Booking</a></li>
             </ul>
+
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="lang-switcher">
+                <button class="lang-btn lang-btn--active" data-lang="pt" aria-label="Português">
+                    <span class="lang-flag">🇧🇷</span><span class="lang-code">PT</span>
+                </button>
+                <button class="lang-btn" data-lang="en" aria-label="English">
+                    <span class="lang-flag">🇺🇸</span><span class="lang-code">EN</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -80,7 +90,7 @@
                 <span class="title-line-red hero-fire-line">MINIMAL BASS</span>
             </h1>
 
-            <p class="hero-desc">
+            <p class="hero-desc" data-i18n="hero-desc">
                 Sets construídos a partir da identidade musical.<br>
                 Cada pista, uma história. Cada drop, uma experiência.
             </p>
@@ -88,7 +98,7 @@
             <div class="hero-buttons">
                 <a href="#musicas" class="btn btn-primary">
                     <i class="fas fa-play"></i>
-                    Ouvir Agora
+                    <span data-i18n="hero-listen">Ouvir Agora</span>
                 </a>
                 <a href="#booking" class="btn btn-ghost">
                     Booking &rarr;
@@ -104,7 +114,7 @@
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <span class="stat-number">15</span>
-                    <span class="stat-label">Anos de Música</span>
+                    <span class="stat-label" data-i18n="stat-years">Anos de Música</span>
                 </div>
             </div>
         </div>
@@ -132,7 +142,7 @@
             </div>
             <div class="hv-badge hv-badge-bottom">
                 <span class="hv-badge-dot"></span>
-                Pressão de Pista
+                <span data-i18n="badge-pressure">Pressão de Pista</span>
             </div>
         </div>
 
@@ -153,8 +163,8 @@
 
         <!-- Section header -->
         <div class="tl-header">
-            <div class="section-tag">A HISTÓRIA</div>
-            <h2 class="section-title">Uma trajetória de <span class="text-glow">20 anos</span></h2>
+            <div class="section-tag" data-i18n="tl-section-tag">A HISTÓRIA</div>
+            <h2 class="section-title" data-i18n="tl-section-title">Uma trajetória de <span class="text-glow">20 anos</span></h2>
         </div>
 
         <!-- Wrapper que contém a spine + os dois nodes (2011 e 2022) -->
@@ -173,12 +183,12 @@
             <!-- Text: left -->
             <div class="tl-node-content tl-node-content--left">
                 <div class="tl-node-text">
-                    <div class="tl-chapter-tag">CAPÍTULO 01</div>
+                    <div class="tl-chapter-tag" data-i18n="ch01-tag">CAPÍTULO 01</div>
                     <div class="tl-node-year">2011</div>
                     <h2 class="tl-chapter-title">
-                        Onde tudo<br><span class="tl-title-accent">começou.</span>
+                        <span data-i18n="ch01-title">Onde tudo<br><span class="tl-title-accent">começou.</span></span>
                     </h2>
-                    <p class="tl-chapter-desc">
+                    <p class="tl-chapter-desc" data-i18n="ch01-desc">
                         Antes do palco, antes da mixagem, antes do nome, havia uma vontade que ninguém conseguia apagar. Em 2011, Pedro pisou num palco pela primeira vez. A história começou aqui.
                     </p>
                 </div>
@@ -237,15 +247,15 @@
             <!-- Text: right -->
             <div class="tl-node-content tl-node-content--right">
                 <div class="tl-node-text">
-                    <div class="tl-chapter-tag">CAPÍTULO 02</div>
+                    <div class="tl-chapter-tag" data-i18n="ch02-tag">CAPÍTULO 02</div>
                     <div class="tl-node-year">2022</div>
                     <h2 class="tl-chapter-title">
-                        Onde eu<br><span class="tl-title-accent">cheguei.</span>
+                        <span data-i18n="ch02-title">Onde eu<br><span class="tl-title-accent">cheguei.</span></span>
                     </h2>
                     <div class="tl-crowd-badge">
-                        <span class="tl-crowd-text">+50 mil pessoas no público</span>
+                        <span class="tl-crowd-text" data-i18n="ch02-crowd">+50 mil pessoas no público</span>
                     </div>
-                    <p class="tl-chapter-desc">
+                    <p class="tl-chapter-desc" data-i18n="ch02-desc">
                         O pagode me colocou na estrada e mostrou o que é construir uma conexão real com uma plateia. Em 2022, toquei para mais de <strong>+50 mil pessoas</strong>, e entendi que era apenas o começo.
                     </p>
                 </div>
@@ -259,16 +269,16 @@
             <div class="tl-tension-bg"></div>
             <div class="tl-scanlines"></div>
             <div class="tl-tension-content">
-                <div class="tl-chapter-tag tl-chapter-tag--white">CAPÍTULO 03</div>
+                <div class="tl-chapter-tag tl-chapter-tag--white" data-i18n="ch03-tag">CAPÍTULO 03</div>
                 <div class="tl-tension-phrase">
-                    <span class="tl-tension-e">E</span>
-                    <span class="tl-tension-rest"> onde estou</span>
+                    <span class="tl-tension-e" data-i18n="tension-e">E</span>
+                    <span class="tl-tension-rest" data-i18n="tension-phrase"> onde estou</span>
                 </div>
                 <div class="tl-tension-now">
-                    <span class="tl-tension-now-text" id="tl-glitch" data-text="AGORA??">AGORA??</span>
+                    <span class="tl-tension-now-text" id="tl-glitch" data-text="AGORA??" data-i18n="tension-now">AGORA??</span>
                 </div>
                 <div class="tl-tension-line"></div>
-                <p class="tl-tension-sub">A resposta está abaixo.</p>
+                <p class="tl-tension-sub" data-i18n="tension-sub">A resposta está abaixo.</p>
                 <div class="tl-tension-arrow"><i class="fas fa-chevron-down"></i></div>
             </div>
         </div>
@@ -281,14 +291,14 @@
             <!-- Text: left -->
             <div class="tl-node-content tl-node-content--left">
                 <div class="tl-node-text">
-                    <div class="tl-chapter-tag">CAPÍTULO 03</div>
-                    <div class="tl-node-year tl-node-year--red">2025 — HOJE</div>
+                    <div class="tl-chapter-tag" data-i18n="ch04-tag">CAPÍTULO 03</div>
+                    <div class="tl-node-year tl-node-year--red" data-i18n="ch04-year">2025 — HOJE</div>
                     <h2 class="tl-chapter-title">
-                        Novo<br><span class="tl-title-accent">Ciclo.</span>
+                        <span data-i18n="ch04-title">Novo<br><span class="tl-title-accent">Ciclo.</span></span>
                     </h2>
                     <blockquote class="tl-quote">
                         <span class="tl-quote-mark">"</span>
-                        Pela primeira vez em 15 anos de carreira musical nos palcos, primeiro no pagode e agora na música eletrônica, tô lançando minha marca oficialmente pela primeira vez dentro do Minimal Bass, assumindo o protagonismo da minha própria história.
+                        <span data-i18n="ch04-quote">Pela primeira vez em 15 anos de carreira musical nos palcos, primeiro no pagode e agora na música eletrônica, tô lançando minha marca oficialmente pela primeira vez dentro do Minimal Bass, assumindo o protagonismo da minha própria história.</span>
                         <span class="tl-quote-mark">"</span>
                     </blockquote>
                     <div class="tl-quote-author">
@@ -335,21 +345,20 @@
 
                 <!-- Text -->
                 <div class="about-content reveal-right">
-                    <div class="section-tag">SOBRE</div>
+                    <div class="section-tag" data-i18n="sobre-tag">SOBRE</div>
                     <h2 class="section-title">
-                        A força que<br>
-                        <span class="text-glow">move a pista</span>
+                        <span data-i18n="sobre-title">A força que<br><span class="text-glow">move a pista</span></span>
                     </h2>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="sobre-p1">
                         Fala galera beleza? Sou Pedro (Levorato), DJ de Minimal Bass, trazendo sets totalmente construídos a partir da minha identidade musical. Cada lugar que eu toco é uma experiência diferente, gosto de sentir a pista e construir o set de acordo com a energia do momento. Pra mim, tocar é como contar uma história, criando conexão real com quem tá ali do começo ao fim.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="sobre-p2">
                         Estou ligado à música indiretamente há 20 anos e atuo de forma profissional há 15 anos, passando por banda, docência, regência e diferentes projetos musicais.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="sobre-p3">
                         Estudei música na <strong>UEM (Universidade Estadual do Paraná)</strong>, e isso influencia direto na forma como eu penso meus sets e produções. No meu som, além da eletrônica, trago referências de pop e rap, mas tudo passado pela minha pegada de <em>minimal bass extremamente grotesca</em> com muita pressão de pista, sem perder a essência.
                     </p>
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="sobre-p4">
                         Meu maior sonho é não entregar apenas o que o público quer, mas levar todo mundo para um lugar onde ninguém esteve antes.
                     </p>
                     <div class="about-tags">
@@ -368,8 +377,8 @@
     ======================================= -->
     <section class="lugares-section" id="lugares">
         <div class="lugares-header reveal-up">
-            <div class="section-tag">PRESENÇA DE PALCO</div>
-            <h2 class="section-title">Lugares onde<br><span class="text-glow">já toquei</span></h2>
+            <div class="section-tag" data-i18n="lugares-tag">PRESENÇA DE PALCO</div>
+            <h2 class="section-title" data-i18n="lugares-title">Lugares onde<br><span class="text-glow">já toquei</span></h2>
         </div>
 
         <div class="lugares-track-wrapper">
@@ -439,58 +448,58 @@
     <section class="downloads-section" id="fotos-download">
         <div class="container">
             <div class="section-header reveal-up">
-                <div class="section-tag">MATERIAL DE IMPRENSA</div>
-                <h2 class="section-title">Fotos em <span class="text-glow">alta qualidade</span></h2>
-                <p class="section-desc">Baixe individualmente ou o pacote completo sem perda de qualidade.</p>
+                <div class="section-tag" data-i18n="dl-tag">MATERIAL DE IMPRENSA</div>
+                <h2 class="section-title" data-i18n="dl-title">Fotos em <span class="text-glow">alta qualidade</span></h2>
+                <p class="section-desc" data-i18n="dl-desc">Baixe individualmente ou o pacote completo sem perda de qualidade.</p>
             </div>
 
             <div class="downloads-cta reveal-up">
                 <a href="downloads/levorato-fotos-alta.zip" class="btn btn-primary" download>
                     <i class="fas fa-download"></i>
-                    Baixar todas as fotos (.zip)
+                    <span data-i18n="dl-cta">Baixar todas as fotos (.zip)</span>
                 </a>
             </div>
 
             <div class="downloads-grid">
                 <article class="download-card reveal-up" style="--delay: 0.05s" data-num="01">
                     <img src="Fotos para baixar/KAD00098-1.JPG" alt="Foto de imprensa 01" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00098-1.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00098-1.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.1s" data-num="02">
                     <img src="Fotos para baixar/KAD00102-2.JPG" alt="Foto de imprensa 02" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00102-2.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00102-2.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.15s" data-num="03">
                     <img src="Fotos para baixar/KAD00105-3.JPG" alt="Foto de imprensa 03" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00105-3.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00105-3.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.2s" data-num="04">
                     <img src="Fotos para baixar/KAD00134-4.JPG" alt="Foto de imprensa 04" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00134-4.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00134-4.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.25s" data-num="05">
                     <img src="Fotos para baixar/KAD00135-5.JPG" alt="Foto de imprensa 05" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00135-5.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00135-5.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.3s" data-num="06">
                     <img src="Fotos para baixar/KAD00142-6.JPG" alt="Foto de imprensa 06" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00142-6.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00142-6.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.35s" data-num="07">
                     <img src="Fotos para baixar/KAD00143-7.JPG" alt="Foto de imprensa 07" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00143-7.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00143-7.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.4s" data-num="08">
                     <img src="Fotos para baixar/KAD00144-8.JPG" alt="Foto de imprensa 08" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00144-8.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00144-8.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.45s" data-num="09">
                     <img src="Fotos para baixar/KAD00153-9.JPG" alt="Foto de imprensa 09" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00153-9.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00153-9.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.5s" data-num="10">
                     <img src="Fotos para baixar/KAD00156-10.JPG" alt="Foto de imprensa 10" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00156-10.JPG" download class="download-btn"><i class="fas fa-download"></i> Baixar</a>
+                    <a href="Fotos para baixar/KAD00156-10.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
             </div>
         </div>
@@ -503,9 +512,9 @@
         <div class="container">
 
             <div class="section-header reveal-up">
-                <div class="section-tag">OUÇA</div>
-                <h2 class="section-title">Músicas &amp; <span class="text-glow">Releases</span></h2>
-                <p class="section-desc">Explore os sets e lançamentos nas plataformas</p>
+                <div class="section-tag" data-i18n="music-tag">OUÇA</div>
+                <h2 class="section-title" data-i18n="music-title">Músicas &amp; <span class="text-glow">Releases</span></h2>
+                <p class="section-desc" data-i18n="music-desc">Explore os sets e lançamentos nas plataformas</p>
             </div>
 
             <!-- ---- Tab bar ---- -->
@@ -517,7 +526,7 @@
                 </button>
                 <button class="stream-tab" data-tab="spotify">
                     <i class="fab fa-spotify"></i>
-                    <span>Autorais</span>
+                    <span data-i18n="tab-autorais">Autorais</span>
                     <span class="tab-count">6</span>
                 </button>
             </div>
@@ -563,7 +572,7 @@
                     </div>
                 </div>
                 <a href="https://soundcloud.com/levorato-324582234" class="stream-cta" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-soundcloud"></i> Ver todos no SoundCloud
+                    <i class="fab fa-soundcloud"></i> <span data-i18n="sc-cta">Ver todos no SoundCloud</span>
                 </a>
             </div>
 
@@ -626,13 +635,13 @@
                     </div>
                 </div>
                 <a href="https://open.spotify.com/intl-pt/artist/20TjayRGM3B3BAj0uoc2Ix" class="stream-cta stream-cta--spotify" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-spotify"></i> Ver discografia completa no Spotify
+                    <i class="fab fa-spotify"></i> <span data-i18n="spotify-cta">Ver discografia completa no Spotify</span>
                 </a>
             </div>
 
             <!-- Platform Links -->
             <div class="music-platforms reveal-up">
-                <p class="platforms-label">Também disponível em</p>
+                <p class="platforms-label" data-i18n="platforms-label">Também disponível em</p>
                 <div class="platforms-row">
                     <a href="https://open.spotify.com/intl-pt/artist/20TjayRGM3B3BAj0uoc2Ix" class="platform-link" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-spotify"></i> Spotify
@@ -667,12 +676,11 @@
         </div>
         <div class="container">
             <div class="booking-content reveal-up">
-                <div class="section-tag">CONTATO</div>
+                <div class="section-tag" data-i18n="booking-tag">CONTATO</div>
                 <h2 class="booking-title">
-                    Pronto para<br>
-                    <span class="text-glow">levar ao limite?</span>
+                    <span data-i18n="booking-title">Pronto para<br><span class="text-glow">levar ao limite?</span></span>
                 </h2>
-                <p class="booking-desc">
+                <p class="booking-desc" data-i18n="booking-desc">
                     Disponível para clubs, eventos e festivais.<br>
                     Entre em contato e vamos criar algo memorável.
                 </p>
@@ -699,7 +707,7 @@
                     </div>
                     <div class="available-item">
                         <i class="fas fa-check-circle"></i>
-                        <span>Eventos Privados</span>
+                        <span data-i18n="available-private">Eventos Privados</span>
                     </div>
                     <div class="available-item">
                         <i class="fas fa-check-circle"></i>
@@ -721,20 +729,20 @@
                     <a href="#hero" class="footer-logo">
                         <img src="Fotos minha/logo dj.png" alt="LEVORATO" class="footer-logo-img">
                     </a>
-                    <p class="footer-tagline">Energia crua. Pressão de pista.<br>Som sem concessões.</p>
+                    <p class="footer-tagline" data-i18n="footer-tagline">Energia crua. Pressão de pista.<br>Som sem concessões.</p>
                 </div>
 
                 <div class="footer-nav">
-                    <h4 class="footer-heading">Navegação</h4>
+                    <h4 class="footer-heading" data-i18n="footer-nav-heading">Navegação</h4>
                     <ul>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#musicas">Músicas</a></li>
+                        <li><a href="#sobre" data-i18n="footer-sobre">Sobre</a></li>
+                        <li><a href="#musicas" data-i18n="footer-musicas">Músicas</a></li>
                         <li><a href="#booking">Booking</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-social-col">
-                    <h4 class="footer-heading">Redes Sociais</h4>
+                    <h4 class="footer-heading" data-i18n="footer-social-heading">Redes Sociais</h4>
                     <div class="social-links">
                         <a href="https://www.instagram.com/levoratodj/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -757,9 +765,9 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 LEVORATO. Todos os direitos reservados.</p>
+                <p data-i18n="footer-copy">&copy; 2026 LEVORATO. Todos os direitos reservados.</p>
                 <p class="footer-credit">
-                    Site desenvolvido por
+                    <span data-i18n="footer-credit-text">Site desenvolvido por</span>
                     <a href="https://www.instagram.com/levoratodj/" class="footer-credit-link" target="_blank" rel="noopener noreferrer">Pedro Levorato</a>
                 </p>
             </div>

@@ -262,6 +262,72 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1rem;
+}
+
+/* ---- Language Switcher ---- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    padding: 3px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: var(--font);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.lang-btn--active {
+    background: rgba(255, 26, 26, 0.18);
+    color: #fff;
+    box-shadow: 0 0 8px rgba(255, 26, 26, 0.2);
+}
+
+.lang-btn--active:hover {
+    background: rgba(255, 26, 26, 0.25);
+    color: #fff;
+}
+
+.lang-flag {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.lang-code {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+@media (max-width: 520px) {
+    .lang-switcher { margin-left: 0.5rem; }
+    .lang-code { display: none; }
+    .lang-btn { padding: 4px 7px; }
 }
 
 .nav-logo {
