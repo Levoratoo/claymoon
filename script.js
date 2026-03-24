@@ -648,6 +648,64 @@ const i18n = {
         'footer-copy'        : '© 2026 LEVORATO. All rights reserved.',
         'footer-credit-text' : 'Website developed by',
     },
+    es: {
+        'nav-historia'       : 'Historia',
+        'nav-sobre'          : 'Sobre',
+        'nav-musicas'        : 'Música',
+        'hero-desc'          : 'Sets construidos desde la identidad musical.<br>Cada pista, una historia. Cada drop, una experiencia.',
+        'hero-listen'        : 'Escuchar Ahora',
+        'stat-years'         : 'Años de Música',
+        'badge-pressure'     : 'Presión de Pista',
+        'tl-section-tag'     : 'LA HISTORIA',
+        'tl-section-title'   : 'Un viaje de <span class="text-glow">20 años</span>',
+        'ch01-tag'           : 'CAPÍTULO 01',
+        'ch01-title'         : 'Donde todo<br><span class="tl-title-accent">comenzó.</span>',
+        'ch01-desc'          : 'Antes del escenario, antes de la mezcla, antes del nombre, había una voluntad que nadie podía apagar. En 2011, Pedro pisó un escenario por primera vez. La historia comenzó aquí.',
+        'ch02-tag'           : 'CAPÍTULO 02',
+        'ch02-title'         : 'Hasta donde<br><span class="tl-title-accent">llegué.</span>',
+        'ch02-crowd'         : '+50 mil personas en el público',
+        'ch02-desc'          : 'El pagode me puso en camino y me mostró lo que es construir una conexión real con el público. En 2022, toqué para más de <strong>+50 mil personas</strong>, y entendí que era solo el comienzo.',
+        'ch03-tag'           : 'CAPÍTULO 03',
+        'tension-e'          : 'Y',
+        'tension-phrase'     : ' dónde estoy',
+        'tension-now'        : '¿AHORA??',
+        'tension-sub'        : 'La respuesta está abajo.',
+        'ch04-tag'           : 'CAPÍTULO 03',
+        'ch04-year'          : '2025 — HOY',
+        'ch04-title'         : 'Nuevo<br><span class="tl-title-accent">Ciclo.</span>',
+        'ch04-quote'         : 'Por primera vez en 15 años de carrera musical en los escenarios — primero en el pagode y ahora en la música electrónica — estoy lanzando oficialmente mi marca dentro del Minimal Bass, asumiendo el protagonismo de mi propia historia.',
+        'sobre-tag'          : 'SOBRE',
+        'sobre-title'        : 'La fuerza que<br><span class="text-glow">mueve la pista</span>',
+        'sobre-p1'           : '¡Hola! Soy Pedro (Levorato), DJ de Minimal Bass, trayendo sets completamente construidos desde mi identidad musical. Cada lugar donde toco es una experiencia diferente — me encanta sentir la pista y construir el set según la energía del momento. Para mí, tocar es como contar una historia, creando una conexión real con todos desde el principio hasta el final.',
+        'sobre-p2'           : 'Estoy conectado a la música indirectamente desde hace 20 años y trabajo profesionalmente desde hace 15 años, pasando por banda, docencia, dirección y diferentes proyectos musicales.',
+        'sobre-p3'           : 'Estudié música en la <strong>UEM (Universidad Estatal de Paraná)</strong>, y eso influye directamente en cómo pienso mis sets y producciones. En mi sonido, más allá de la electrónica, traigo referencias del pop y el rap, todo filtrado por mi estilo de <em>minimal bass extremadamente pesado</em> con mucha presión de pista, sin perder la esencia.',
+        'sobre-p4'           : 'Mi mayor sueño no es solo entregar lo que el público quiere, sino llevar a todos a un lugar donde nadie ha estado antes.',
+        'lugares-tag'        : 'PRESENCIA EN ESCENARIO',
+        'lugares-title'      : 'Lugares donde<br><span class="text-glow">he tocado</span>',
+        'dl-tag'             : 'MATERIAL DE PRENSA',
+        'dl-title'           : 'Fotos en <span class="text-glow">alta calidad</span>',
+        'dl-desc'            : 'Descarga individualmente o el paquete completo sin pérdida de calidad.',
+        'dl-cta'             : 'Descargar todas las fotos (.zip)',
+        'dl-btn'             : 'Descargar',
+        'music-tag'          : 'ESCUCHA',
+        'music-title'        : 'Música &amp; <span class="text-glow">Releases</span>',
+        'music-desc'         : 'Explora los sets y lanzamientos en las plataformas',
+        'tab-autorais'       : 'Originales',
+        'sc-cta'             : 'Ver todos en SoundCloud',
+        'spotify-cta'        : 'Ver discografía completa en Spotify',
+        'platforms-label'    : 'También disponible en',
+        'booking-tag'        : 'CONTACTO',
+        'booking-title'      : 'Listo para<br><span class="text-glow">llevar al límite?</span>',
+        'booking-desc'       : 'Disponible para clubs, eventos y festivales.<br>Contáctame y creemos algo memorable.',
+        'available-private'  : 'Eventos Privados',
+        'footer-tagline'     : 'Energía cruda. Presión de pista.<br>Sonido sin concesiones.',
+        'footer-nav-heading' : 'Navegación',
+        'footer-sobre'       : 'Sobre',
+        'footer-musicas'     : 'Música',
+        'footer-social-heading': 'Redes Sociales',
+        'footer-copy'        : '© 2026 LEVORATO. Todos los derechos reservados.',
+        'footer-credit-text' : 'Sitio desarrollado por',
+    },
 };
 
 function applyLang(lang) {
@@ -674,7 +732,8 @@ function applyLang(lang) {
         btn.classList.toggle('lang-btn--active', btn.dataset.lang === lang);
     });
 
-    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    const langMap = { pt: 'pt-BR', en: 'en', es: 'es' };
+    document.documentElement.lang = langMap[lang] || lang;
     localStorage.setItem('levorato-lang', lang);
 }
 
