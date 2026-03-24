@@ -706,6 +706,64 @@ const i18n = {
         'footer-copy'        : '© 2026 LEVORATO. Todos los derechos reservados.',
         'footer-credit-text' : 'Sitio desarrollado por',
     },
+    zh: {
+        'nav-historia'       : '历程',
+        'nav-sobre'          : '关于',
+        'nav-musicas'        : '音乐',
+        'hero-desc'          : '从音乐身份构建的曲目集。<br>每首曲目，一个故事。每次降拍，一次体验。',
+        'hero-listen'        : '立即收听',
+        'stat-years'         : '音乐生涯年数',
+        'badge-pressure'     : '舞台张力',
+        'tl-section-tag'     : '历程',
+        'tl-section-title'   : '20年的<span class="text-glow">旅程</span>',
+        'ch01-tag'           : '第一章',
+        'ch01-title'         : '一切<br><span class="tl-title-accent">开始的地方。</span>',
+        'ch01-desc'          : '在舞台之前，在混音之前，在名字之前，有一种任何人都无法熄灭的意志。2011年，Pedro第一次踏上舞台。故事从这里开始。',
+        'ch02-tag'           : '第二章',
+        'ch02-title'         : '我<br><span class="tl-title-accent">到达的地方。</span>',
+        'ch02-crowd'         : '超过5万名现场观众',
+        'ch02-desc'          : 'Pagode让我踏上旅程，让我明白与观众建立真实连结意味着什么。2022年，我为超过<strong>5万人</strong>演出，并明白这只是开始。',
+        'ch03-tag'           : '第三章',
+        'tension-e'          : '而',
+        'tension-phrase'     : ' 我现在在哪里',
+        'tension-now'        : '现在？？',
+        'tension-sub'        : '答案就在下面。',
+        'ch04-tag'           : '第三章',
+        'ch04-year'          : '2025 — 至今',
+        'ch04-title'         : '新<br><span class="tl-title-accent">篇章。</span>',
+        'ch04-quote'         : '在舞台上15年的音乐生涯中——先是pagode，现在是电子音乐——我第一次在Minimal Bass领域正式发布自己的品牌，掌控自己故事的主导权。',
+        'sobre-tag'          : '关于',
+        'sobre-title'        : '驱动<br><span class="text-glow">舞台的力量</span>',
+        'sobre-p1'           : '大家好！我是Pedro（Levorato），Minimal Bass DJ，带来完全从我的音乐身份构建的曲目集。我演出的每个地方都是不同的体验——我喜欢感受舞台，根据当下的能量来构建曲目集。对我来说，演出就像讲述一个故事，从开始到结束与在场的每个人建立真实的连结。',
+        'sobre-p2'           : '我与音乐间接相关已20年，专业从事音乐工作已15年，历经乐队、教学、指挥和各种音乐项目。',
+        'sobre-p3'           : '我在<strong>UEM（巴拉那州立大学）</strong>学习音乐，这直接影响了我对曲目集和制作的思考方式。在我的音乐中，除了电子音乐，我还融入流行和说唱的元素，但都经过我<em>极具重量感的minimal bass</em>风格过滤，充满舞台张力，不失本质。',
+        'sobre-p4'           : '我最大的梦想不只是提供观众想要的，而是带所有人去一个从未有人到过的地方。',
+        'lugares-tag'        : '舞台足迹',
+        'lugares-title'      : '我曾<br><span class="text-glow">演出的地方</span>',
+        'dl-tag'             : '媒体素材',
+        'dl-title'           : '高清<span class="text-glow">照片素材</span>',
+        'dl-desc'            : '单独下载或下载完整套装，无损画质。',
+        'dl-cta'             : '下载所有照片（.zip）',
+        'dl-btn'             : '下载',
+        'music-tag'          : '收听',
+        'music-title'        : '音乐 &amp; <span class="text-glow">发行</span>',
+        'music-desc'         : '在各平台探索曲目集和发行作品',
+        'tab-autorais'       : '原创作品',
+        'sc-cta'             : '在SoundCloud查看全部',
+        'spotify-cta'        : '在Spotify查看完整唱片目录',
+        'platforms-label'    : '还可在以下平台收听',
+        'booking-tag'        : '联系',
+        'booking-title'      : '准备好<br><span class="text-glow">突破极限了吗？</span>',
+        'booking-desc'       : '可接受俱乐部、活动和音乐节演出邀约。<br>联系我，一起创造难忘的体验。',
+        'available-private'  : '私人活动',
+        'footer-tagline'     : '原始能量。舞台张力。<br>纯粹的声音。',
+        'footer-nav-heading' : '导航',
+        'footer-sobre'       : '关于',
+        'footer-musicas'     : '音乐',
+        'footer-social-heading': '社交媒体',
+        'footer-copy'        : '© 2026 LEVORATO. 保留所有权利。',
+        'footer-credit-text' : '网站开发者',
+    },
 };
 
 function applyLang(lang) {
@@ -732,7 +790,7 @@ function applyLang(lang) {
         btn.classList.toggle('lang-btn--active', btn.dataset.lang === lang);
     });
 
-    const langMap = { pt: 'pt-BR', en: 'en', es: 'es' };
+    const langMap = { pt: 'pt-BR', en: 'en', es: 'es', zh: 'zh-CN' };
     document.documentElement.lang = langMap[lang] || lang;
     localStorage.setItem('levorato-lang', lang);
 }
