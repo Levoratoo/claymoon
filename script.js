@@ -6,13 +6,14 @@
 'use strict';
 
 // ============================================================
-// PARTICLE SYSTEM
+// PARTICLE SYSTEM — canvas (hero only, pauses when off-screen)
 // ============================================================
 
 const canvas = document.getElementById('particle-canvas');
 const ctx    = canvas.getContext('2d');
 let particles = [];
 let rafId;
+let canvasVisible = true;
 
 function resizeCanvas() {
     canvas.width  = window.innerWidth;
@@ -25,25 +26,22 @@ class Particle {
     }
 
     init() {
-        this.x       = Math.random() * canvas.width;
-        this.y       = Math.random() * canvas.height;
-        this.size    = Math.random() * 1.4 + 0.4;
-        this.vx      = (Math.random() - 0.5) * 0.28;
-        this.vy      = (Math.random() - 0.5) * 0.28;
-        this.alpha   = Math.random() * 0.45 + 0.08;
-
-        // ~30% of particles are red-tinted, rest are dim white
-        this.isRed   = Math.random() > 0.7;
+        this.x     = Math.random() * canvas.width;
+        this.y     = Math.random() * canvas.height;
+        this.size  = Math.random() * 1.2 + 0.3;
+        this.vx    = (Math.random() - 0.5) * 0.22;
+        this.vy    = (Math.random() - 0.5) * 0.22;
+        this.alpha = Math.random() * 0.4 + 0.06;
+        this.isRed = Math.random() > 0.7;
     }
 
     update() {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Wrap around edges
-        if (this.x < -2)              this.x = canvas.width  + 2;
+        if (this.x < -2)               this.x = canvas.width  + 2;
         if (this.x > canvas.width + 2) this.x = -2;
-        if (this.y < -2)              this.y = canvas.height + 2;
+        if (this.y < -2)               this.y = canvas.height + 2;
         if (this.y > canvas.height + 2) this.y = -2;
     }
 
@@ -52,53 +50,45 @@ class Particle {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.isRed
             ? `rgba(255, 26, 26, ${this.alpha})`
-            : `rgba(220, 220, 220, ${this.alpha * 0.4})`;
+            : `rgba(200, 200, 200, ${this.alpha * 0.35})`;
         ctx.fill();
     }
 }
 
 function buildParticles() {
     particles = [];
-    // Density: 1 particle per ~18 000 px² of viewport
-    const count = Math.min(120, Math.floor((canvas.width * canvas.height) / 18000));
+    // Cap at 60 — enough for effect, light on GPU
+    const count = Math.min(60, Math.floor((canvas.width * canvas.height) / 22000));
     for (let i = 0; i < count; i++) {
         particles.push(new Particle());
     }
 }
 
-function drawConnections() {
-    const DIST = 110;
-
-    for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-            const dx   = particles[i].x - particles[j].x;
-            const dy   = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            if (dist < DIST) {
-                const alpha = (1 - dist / DIST) * 0.12;
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(255, 26, 26, ${alpha})`;
-                ctx.lineWidth   = 0.5;
-                ctx.moveTo(particles[i].x, particles[i].y);
-                ctx.lineTo(particles[j].x, particles[j].y);
-                ctx.stroke();
-            }
-        }
-    }
-}
-
 function tickParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (!canvasVisible) {
+        rafId = requestAnimationFrame(tickParticles);
+        return;
+    }
 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const p of particles) {
         p.update();
         p.draw();
     }
-
-    drawConnections();
     rafId = requestAnimationFrame(tickParticles);
 }
+
+// Pause canvas loop when hero is off-screen
+(function watchCanvasVisibility() {
+    const heroSection = document.querySelector('.hero');
+    if (!heroSection) return;
+
+    const obs = new IntersectionObserver(entries => {
+        canvasVisible = entries[0].isIntersecting;
+    }, { threshold: 0 });
+
+    obs.observe(heroSection);
+})();
 
 // ============================================================
 // NAVBAR
@@ -123,7 +113,6 @@ navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when a link is clicked
 navMenu.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navToggle.classList.remove('active');
@@ -209,17 +198,12 @@ function animateCounter(el, target) {
     function tick(now) {
         const elapsed  = now - start;
         const progress = Math.min(elapsed / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        const value    = Math.round(eased * target);
 
-        // Ease-out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const value = Math.round(eased * target);
-
-        // Format with locale separators (50000 → "50.000" in pt-BR)
         el.textContent = value.toLocaleString('pt-BR');
 
-        if (progress < 1) {
-            requestAnimationFrame(tick);
-        }
+        if (progress < 1) requestAnimationFrame(tick);
     }
 
     requestAnimationFrame(tick);
@@ -231,9 +215,7 @@ const counterObserver = new IntersectionObserver(
             if (entry.isIntersecting) {
                 const el     = entry.target;
                 const target = parseInt(el.dataset.target, 10);
-                if (!isNaN(target)) {
-                    animateCounter(el, target);
-                }
+                if (!isNaN(target)) animateCounter(el, target);
                 counterObserver.unobserve(el);
             }
         });
@@ -246,42 +228,35 @@ document.querySelectorAll('.number-value[data-target]').forEach(el => {
 });
 
 // ============================================================
-// CURSOR GLOW (subtle red spotlight following mouse)
+// CURSOR GLOW (subtle red spotlight, desktop only)
 // ============================================================
 
-(function setupCursorGlow() {
-    const glow = document.createElement('div');
-    glow.style.cssText = `
-        position: fixed;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(255,26,26,0.04) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: 0;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.4s ease;
-        opacity: 0;
-    `;
-    document.body.appendChild(glow);
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    (function setupCursorGlow() {
+        const glow = document.createElement('div');
+        glow.style.cssText = `
+            position:fixed;width:300px;height:300px;border-radius:50%;
+            background:radial-gradient(circle,rgba(255,26,26,0.04) 0%,transparent 70%);
+            pointer-events:none;z-index:0;transform:translate(-50%,-50%);
+            transition:opacity 0.4s ease;opacity:0;
+        `;
+        document.body.appendChild(glow);
 
-    let ticking = false;
-
-    document.addEventListener('mousemove', e => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-            glow.style.left    = e.clientX + 'px';
-            glow.style.top     = e.clientY + 'px';
-            glow.style.opacity = '1';
-            ticking = false;
+        let ticking = false;
+        document.addEventListener('mousemove', e => {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                glow.style.left    = e.clientX + 'px';
+                glow.style.top     = e.clientY + 'px';
+                glow.style.opacity = '1';
+                ticking = false;
+            });
         });
-    });
 
-    document.addEventListener('mouseleave', () => {
-        glow.style.opacity = '0';
-    });
-})();
+        document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+    })();
+}
 
 // ============================================================
 // WINDOW EVENTS
@@ -293,14 +268,10 @@ window.addEventListener('resize', () => {
     resizeTimer = setTimeout(() => {
         resizeCanvas();
         buildParticles();
-    }, 200);
+    }, 250);
 }, { passive: true });
 
 window.addEventListener('scroll', onScroll, { passive: true });
-
-// ============================================================
-// INIT
-// ============================================================
 
 // ============================================================
 // TIMELINE — DRAG-TO-SCROLL DJ GALLERY
@@ -310,9 +281,7 @@ function initDjGallery() {
     const gallery = document.getElementById('tl-dj-gallery');
     if (!gallery) return;
 
-    let isDown   = false;
-    let startX   = 0;
-    let scrollLeft = 0;
+    let isDown = false, startX = 0, scrollLeft = 0;
 
     gallery.addEventListener('mousedown', e => {
         isDown = true;
@@ -321,39 +290,28 @@ function initDjGallery() {
         scrollLeft = gallery.scrollLeft;
     });
 
-    const endDrag = () => {
-        isDown = false;
-        gallery.classList.remove('grabbing');
-    };
-
+    const endDrag = () => { isDown = false; gallery.classList.remove('grabbing'); };
     gallery.addEventListener('mouseleave', endDrag);
     gallery.addEventListener('mouseup',    endDrag);
 
     gallery.addEventListener('mousemove', e => {
         if (!isDown) return;
         e.preventDefault();
-        const x    = e.pageX - gallery.offsetLeft;
-        const walk = (x - startX) * 1.6;
-        gallery.scrollLeft = scrollLeft - walk;
+        gallery.scrollLeft = scrollLeft - (e.pageX - gallery.offsetLeft - startX) * 1.6;
     });
 
-    // Touch support
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
-
+    let touchStartX = 0, touchScrollLeft = 0;
     gallery.addEventListener('touchstart', e => {
         touchStartX     = e.touches[0].pageX;
         touchScrollLeft = gallery.scrollLeft;
     }, { passive: true });
-
     gallery.addEventListener('touchmove', e => {
-        const dx = touchStartX - e.touches[0].pageX;
-        gallery.scrollLeft = touchScrollLeft + dx;
+        gallery.scrollLeft = touchScrollLeft + (touchStartX - e.touches[0].pageX);
     }, { passive: true });
 }
 
 // ============================================================
-// TIMELINE — TENSION BLOCK: random glitch trigger
+// TIMELINE — MOBILE CAROUSEL DRAG
 // ============================================================
 
 function initTimelineMobileCarousels() {
@@ -361,56 +319,50 @@ function initTimelineMobileCarousels() {
     if (!carousels.length) return;
 
     carousels.forEach(carousel => {
-        let isPointerDown = false;
-        let startX = 0;
-        let startY = 0;
-        let startScrollLeft = 0;
-        let isHorizontalDrag = false;
+        let isPointerDown = false, startX = 0, startY = 0;
+        let startScrollLeft = 0, isHorizontalDrag = false;
 
         carousel.addEventListener('pointerdown', e => {
             if (window.innerWidth > 900) return;
-
-            isPointerDown = true;
-            isHorizontalDrag = false;
-            startX = e.clientX;
-            startY = e.clientY;
+            isPointerDown = true; isHorizontalDrag = false;
+            startX = e.clientX; startY = e.clientY;
             startScrollLeft = carousel.scrollLeft;
         });
 
         carousel.addEventListener('pointermove', e => {
             if (!isPointerDown || window.innerWidth > 900) return;
-
-            const dx = e.clientX - startX;
-            const dy = e.clientY - startY;
-
+            const dx = e.clientX - startX, dy = e.clientY - startY;
             if (!isHorizontalDrag) {
-                if (Math.abs(dx) < 8) return;
-                if (Math.abs(dx) <= Math.abs(dy)) return;
+                if (Math.abs(dx) < 8 || Math.abs(dx) <= Math.abs(dy)) return;
                 isHorizontalDrag = true;
             }
-
             e.preventDefault();
             carousel.scrollLeft = startScrollLeft - dx;
         });
 
-        const endPointerDrag = () => {
-            isPointerDown = false;
-            isHorizontalDrag = false;
-        };
-
-        carousel.addEventListener('pointerup', endPointerDrag);
-        carousel.addEventListener('pointercancel', endPointerDrag);
-        carousel.addEventListener('lostpointercapture', endPointerDrag);
+        const end = () => { isPointerDown = false; isHorizontalDrag = false; };
+        carousel.addEventListener('pointerup',          end);
+        carousel.addEventListener('pointercancel',      end);
+        carousel.addEventListener('lostpointercapture', end);
     });
 }
+
+// ============================================================
+// TIMELINE — TENSION BLOCK GLITCH
+// ============================================================
 
 function initTensionGlitch() {
     const el = document.getElementById('tl-glitch');
     if (!el) return;
 
-    // Random extra glitch bursts
+    let glitchVisible = false;
+    const obs = new IntersectionObserver(entries => {
+        glitchVisible = entries[0].isIntersecting;
+    }, { threshold: 0 });
+    obs.observe(el);
+
     setInterval(() => {
-        if (Math.random() > 0.55) return;
+        if (!glitchVisible || Math.random() > 0.55) return;
         el.style.transform = `translateX(${(Math.random() - 0.5) * 8}px)`;
         setTimeout(() => { el.style.transform = ''; }, 80);
     }, 600);
@@ -427,10 +379,7 @@ function initSpineLine() {
     if (!wrapper || !spineLine) return;
 
     function updateSpine() {
-        const wrapperRect = wrapper.getBoundingClientRect();
-        const wrapperTop  = wrapperRect.top + window.scrollY;
-
-        // End point: center of the 2022 dot, or wrapper bottom if dot not found
+        const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
         let endY;
         if (endDot) {
             const dotRect = endDot.getBoundingClientRect();
@@ -442,10 +391,7 @@ function initSpineLine() {
         const totalSpan = endY - wrapperTop;
         const scrolled  = Math.max(0, window.scrollY + window.innerHeight * 0.55 - wrapperTop);
         const pct       = Math.min(100, (scrolled / totalSpan) * 100);
-
-        // Convert pct of totalSpan back to pct of wrapper height
-        const heightPx = (pct / 100) * totalSpan;
-        spineLine.style.height = heightPx + 'px';
+        spineLine.style.height = ((pct / 100) * totalSpan) + 'px';
     }
 
     window.addEventListener('scroll', updateSpine, { passive: true });
@@ -472,13 +418,12 @@ function initTimelineReveal() {
     }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
     items.forEach(el => {
-        el.style.opacity  = '0';
+        el.style.opacity   = '0';
         el.style.transform = 'translateY(28px)';
         el.style.transition = 'opacity 0.75s ease, transform 0.75s ease';
         obs.observe(el);
     });
 
-    // Node dots pop in
     document.querySelectorAll('.tl-node-dot-inner').forEach(dot => {
         dot.style.opacity   = '0';
         dot.style.transform = 'scale(0)';
@@ -511,17 +456,13 @@ function initTensionEntry() {
     const tensionObs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Trigger short flicker sequence
                 const bg = tension.querySelector('.tl-tension-bg');
                 if (!bg) return;
                 let count = 0;
                 const flicker = setInterval(() => {
                     bg.style.opacity = count % 2 === 0 ? '1.6' : '0.4';
                     count++;
-                    if (count >= 6) {
-                        clearInterval(flicker);
-                        bg.style.opacity = '';
-                    }
+                    if (count >= 6) { clearInterval(flicker); bg.style.opacity = ''; }
                 }, 80);
                 tensionObs.unobserve(entry.target);
             }
@@ -532,47 +473,43 @@ function initTensionEntry() {
 }
 
 // ============================================================
-// INIT
+// HERO — CSS PARTICLES (generated at runtime, reduced count)
 // ============================================================
 
 function initHeroParticles() {
     const container = document.getElementById('hero-particles');
     if (!container) return;
 
-    const COUNT  = 180;
-    const COLORS = ['#ff1a1a', '#ff3b3b', '#cc0000', '#ff5555', '#800000', '#ff2222', '#ff4444'];
-    const frag   = document.createDocumentFragment();
+    // Fewer particles on mobile/low-end
+    const isMobile = window.innerWidth < 768;
+    const COUNT    = isMobile ? 40 : 70;
+    const COLORS   = ['#ff1a1a', '#ff3b3b', '#cc0000', '#ff5555', '#800000'];
+    const frag     = document.createDocumentFragment();
 
     for (let i = 0; i < COUNT; i++) {
         const el    = document.createElement('span');
-        const size  = (Math.random() * 7 + 2).toFixed(1);   // 2–9 px
+        const size  = (Math.random() * 7 + 2).toFixed(1);
         const top   = (Math.random() * 100).toFixed(1);
         const left  = (Math.random() * 100).toFixed(1);
-        const dur   = (Math.random() * 3.5 + 2.5).toFixed(2);  // 2.5–6s
+        const dur   = (Math.random() * 3.5 + 2.5).toFixed(2);
         const delay = (Math.random() * 5).toFixed(2);
-        const op    = (Math.random() * 0.55 + 0.25).toFixed(2); // 0.25–0.8
+        const op    = (Math.random() * 0.5 + 0.2).toFixed(2);
         const rise  = `-${(Math.random() * 30 + 10).toFixed(0)}px`;
         const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-        const glow  = size > 5
-            ? `0 0 ${Math.round(size * 1.4)}px ${color}88`
-            : 'none';
+        // Only add glow to larger particles to save GPU
+        const glow  = size > 6 ? `0 0 ${Math.round(size * 1.3)}px ${color}88` : 'none';
 
         el.className = 'hp';
-        el.style.cssText = `
-            width:${size}px; height:${size}px;
-            top:${top}%; left:${left}%;
-            background:${color};
-            box-shadow:${glow};
-            animation-duration:${dur}s;
-            animation-delay:-${delay}s;
-            --hp-op:${op};
-            --hp-rise:${rise};
-        `;
+        el.style.cssText = `width:${size}px;height:${size}px;top:${top}%;left:${left}%;background:${color};box-shadow:${glow};animation-duration:${dur}s;animation-delay:-${delay}s;--hp-op:${op};--hp-rise:${rise};`;
         frag.appendChild(el);
     }
 
     container.appendChild(frag);
 }
+
+// ============================================================
+// MUSIC — STREAM TABS
+// ============================================================
 
 function initStreamTabs() {
     const tabs   = document.querySelectorAll('.stream-tab');
@@ -581,16 +518,18 @@ function initStreamTabs() {
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const target = tab.dataset.tab;
-
             tabs.forEach(t   => t.classList.remove('active'));
             panels.forEach(p => p.classList.remove('active'));
-
             tab.classList.add('active');
             const panel = document.getElementById('panel-' + target);
             if (panel) panel.classList.add('active');
         });
     });
 }
+
+// ============================================================
+// INIT
+// ============================================================
 
 function init() {
     resizeCanvas();

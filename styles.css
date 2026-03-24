@@ -894,6 +894,8 @@ section {
    DOWNLOADS (FOTOS ALTA QUALIDADE)
 ------------------------------------------------------- */
 .downloads-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 800px;
     padding: 7rem 0 8rem;
     background:
         radial-gradient(ellipse 80% 50% at 50% 0%,   rgba(255,26,26,0.06) 0%, transparent 60%),
@@ -1085,6 +1087,8 @@ section {
    LUGARES
 ------------------------------------------------------- */
 .lugares-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
     padding: 6rem 0 7rem;
     background: #050505;
     overflow: hidden;
@@ -1114,6 +1118,8 @@ section {
     display: flex;
     gap: 1rem;
     width: max-content;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .lugares-track--left  .lugares-strip { animation: lugares-left  40s linear infinite; }
@@ -1179,6 +1185,8 @@ section {
    MUSIC
 ------------------------------------------------------- */
 .music {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 700px;
     padding: 7rem 0;
 }
 
@@ -1612,6 +1620,8 @@ section {
    BOOKING
 ------------------------------------------------------- */
 .booking {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
     padding: clamp(4rem, 10vw, 9rem) 0;
     position: relative;
     overflow: hidden;
