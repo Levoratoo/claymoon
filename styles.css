@@ -1341,6 +1341,215 @@ section {
 }
 
 /* -------------------------------------------------------
+   FEATURED SET — Sixx House DJ Contest
+------------------------------------------------------- */
+.featured-set {
+    position: relative;
+    padding: 7rem 0 6rem;
+    background:
+        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,26,26,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 50%, rgba(180,0,0,0.05) 0%, transparent 60%),
+        #040404;
+    border-bottom: 1px solid rgba(255,26,26,0.12);
+    overflow: hidden;
+}
+
+.fs-bg-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 60% 80% at 15% 50%, rgba(255,26,26,0.07) 0%, transparent 55%);
+    z-index: 0;
+}
+
+/* Split layout */
+.fs-inner {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---- Poster ---- */
+.fs-poster-wrap {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.fs-poster-glow {
+    position: absolute;
+    inset: -18px;
+    border-radius: 20px;
+    background: radial-gradient(ellipse at center, rgba(255,26,26,0.28) 0%, transparent 70%);
+    filter: blur(28px);
+    z-index: 0;
+    animation: fsPosterPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes fsPosterPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50%       { opacity: 1;   transform: scale(1.04); }
+}
+
+.fs-poster {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 0 0 1px rgba(255,26,26,0.2),
+        0 20px 60px rgba(0,0,0,0.7);
+    object-fit: cover;
+}
+
+/* "NOVO SET" badge */
+.fs-poster-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,26,26,0.92);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-family: var(--font);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgba(255,26,26,0.55);
+}
+
+.fs-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulseDot 1.4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+/* ---- Right content ---- */
+.fs-eyebrow {
+    margin-bottom: 0.8rem;
+}
+
+.fs-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 0.06em;
+    margin-bottom: 0.5rem;
+}
+
+.fs-title-line1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.fs-title-line2 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    line-height: 0.9;
+    text-shadow: 0 0 40px rgba(255,26,26,0.25);
+}
+
+.fs-subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 1.4rem;
+}
+
+.fs-desc {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+
+/* SoundCloud embed */
+.fs-player {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.6rem;
+    box-shadow:
+        0 0 0 1px rgba(255,26,26,0.1),
+        0 8px 28px rgba(0,0,0,0.5);
+}
+
+.fs-player iframe {
+    width: 100%;
+    height: 166px;
+    display: block;
+    border-radius: 12px;
+}
+
+.fs-cta {
+    display: inline-flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+    .fs-inner {
+        grid-template-columns: 260px 1fr;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .featured-set {
+        padding: 5rem 0 4rem;
+    }
+    .fs-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .fs-poster-wrap {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    .fs-title-line2 {
+        font-size: clamp(2.6rem, 12vw, 4rem);
+    }
+    .fs-desc {
+        font-size: 0.88rem;
+    }
+    .fs-player iframe {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fs-poster-wrap {
+        max-width: 220px;
+    }
+    .fs-player iframe {
+        height: 140px;
+    }
+}
+
+/* -------------------------------------------------------
    MUSIC
 ------------------------------------------------------- */
 .music {
