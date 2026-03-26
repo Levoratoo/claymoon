@@ -533,6 +533,7 @@ function initDownloadsTabs() {
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
+            if (tab.classList.contains('active')) return;
             const target = tab.dataset.dlPanel;
             tabs.forEach(t => t.classList.remove('active'));
             panels.forEach(p => p.classList.remove('active'));

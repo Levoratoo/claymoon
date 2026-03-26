@@ -1129,6 +1129,15 @@ section {
     display: block;
 }
 
+/* Troca de abas instantanea nesta secao (evita atraso visual) */
+.downloads-panel .reveal-up,
+.downloads-panel .reveal-left,
+.downloads-panel .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
 .logo-download-feature {
     display: grid;
     grid-template-columns: 260px 1fr;
