@@ -2751,7 +2751,114 @@ section {
 /* ---- Section header ---- */
 .tl-header {
     text-align: center;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 2rem 3rem;
+}
+
+/* ---- Story tabs (Performance / Educação) ---- */
+.timeline-story-tabs {
+    margin: 0 auto 2.75rem;
+    padding: 0 1.25rem;
+    max-width: var(--max-w);
+}
+
+/* ---- Educação musical — timeline em cartões ---- */
+.tl-edu-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2.5rem) 5.5rem;
+}
+
+.tl-edu-lead {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin: 0 auto 2.75rem;
+    max-width: 52ch;
+}
+
+.tl-edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.tl-edu-card {
+    position: relative;
+    padding: 1.35rem 1.35rem 1.35rem 1.5rem;
+    border-radius: 12px;
+    background: rgba(12, 12, 12, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 3px solid var(--primary);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.35);
+}
+
+.tl-edu-period {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 0.45rem;
+}
+
+.tl-edu-title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin: 0 0 0.35rem;
+    line-height: 1.3;
+}
+
+.tl-edu-role {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 0.85rem;
+    line-height: 1.45;
+}
+
+.tl-edu-desc {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.65;
+    margin: 0;
+}
+
+a.tl-edu-card--link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+a.tl-edu-card--link:hover {
+    border-color: rgba(255, 26, 26, 0.28);
+    box-shadow: 0 0 28px rgba(255, 26, 26, 0.12);
+    transform: translateY(-2px);
+}
+
+a.tl-edu-card--link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+a.tl-edu-card--link .tl-edu-title {
+    text-decoration: none;
+}
+
+/* Cartão “músico em grupo” (pagode) — destaque sutil em relação à docência */
+.tl-edu-card--musician {
+    border-left-color: rgba(255, 190, 120, 0.75);
+    box-shadow: 0 0 20px rgba(255, 160, 80, 0.06);
+}
+
+a.tl-edu-card--musician:hover {
+    border-left-color: rgba(255, 200, 130, 0.95);
+    box-shadow: 0 0 28px rgba(255, 160, 80, 0.14);
 }
 
 /* ---- SPINE WRAPPER (só envolve 2011 → 2022) ---- */
@@ -3470,4 +3577,106 @@ section {
 
     .tl-spine { left: clamp(1.5rem, 4vw, 3rem); }
     .tl-node-year { font-size: 3rem; }
+
+    /* História — abas e educação (mobile) */
+    .timeline-section {
+        padding-bottom: 4.5rem;
+    }
+    .tl-header {
+        padding: 4rem clamp(1rem, 4vw, 2rem) 2rem;
+    }
+    .timeline-story-tabs {
+        margin-bottom: 2.25rem;
+        padding: 0 clamp(0.75rem, 3vw, 1.25rem);
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 0.5rem;
+    }
+    .tl-edu-wrap {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-bottom: max(4rem, calc(1.5rem + env(safe-area-inset-bottom)));
+    }
+    .tl-edu-lead {
+        font-size: 0.92rem;
+        margin-bottom: 2rem;
+        max-width: none;
+        padding: 0 0.35rem;
+    }
+    .tl-edu-list {
+        gap: 1.05rem;
+    }
+    .tl-edu-card,
+    a.tl-edu-card--link {
+        padding: 1.2rem 1rem 1.25rem 1.25rem;
+        min-height: 44px;
+        border-radius: 11px;
+    }
+    .tl-edu-period {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+    }
+    .tl-edu-title {
+        font-size: clamp(0.94rem, 3.6vw, 1.05rem);
+        line-height: 1.38;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .tl-edu-role {
+        font-size: 0.78rem;
+        line-height: 1.5;
+        margin-bottom: 0.72rem;
+    }
+    .tl-edu-desc {
+        font-size: 0.88rem;
+        line-height: 1.62;
+    }
+}
+
+@media (max-width: 560px) {
+    .timeline-story-tabs .downloads-tab {
+        font-size: 0.82rem;
+        padding: 0.48rem 0.65rem;
+        letter-spacing: 0.06em;
+        flex: 1 1 auto;
+        min-width: 0;
+        text-align: center;
+    }
+    .tl-header .section-title {
+        font-size: clamp(1.35rem, 7vw, 1.75rem);
+    }
+}
+
+@media (max-width: 400px) {
+    .timeline-story-tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.45rem;
+        padding: 0 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+    .timeline-story-tabs .downloads-tab {
+        font-size: 0.76rem;
+        padding: 0.5rem 0.45rem;
+    }
+}
+
+/* Toque: sem “lift” no hover; feedback no active */
+@media (hover: none) {
+    a.tl-edu-card--link:hover {
+        transform: none;
+        box-shadow: 0 0 24px rgba(0, 0, 0, 0.35);
+    }
+    a.tl-edu-card--link:active {
+        transform: scale(0.99);
+        opacity: 0.96;
+    }
+    a.tl-edu-card--musician:hover {
+        box-shadow: 0 0 20px rgba(255, 160, 80, 0.06);
+    }
+    a.tl-edu-card--musician:active {
+        opacity: 0.95;
+    }
 }
