@@ -5,30 +5,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <!-- Descrição: entidades HTML evitam mojibake em WhatsApp / crawlers -->
-    <meta name="description" content="LEVORATO - DJ &amp; Producer. Booking para clubs, eventos e festivais. Techno underground.">
+    <meta name="description" content="Claymoon.music — DJ &amp; producer. Tech House, Minimal Deep Tech. Booking para clubs, eventos e festivais. Porto, Portugal.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="shortcut icon" href="favicon.svg">
-    <meta name="keywords" content="LEVORATO, DJ, Producer, Techno, Underground, Booking, Press Kit">
-    <link rel="canonical" href="https://levoratoo.github.io/presskitlevoratodj/">
-    <meta property="og:site_name" content="LEVORATO">
-    <meta property="og:title" content="LEVORATO - DJ &amp; Producer | Press Kit">
-    <meta property="og:description" content="Energia crua. Press&#227;o de pista. Som sem concess&#245;es.">
+    <meta name="keywords" content="Claymoon.music, DJ, Tech House, Minimal Deep Tech, Booking, Press Kit, Porto">
+    <link rel="canonical" href="https://levoratoo.github.io/claymoon/">
+    <meta property="og:site_name" content="Claymoon.music">
+    <meta property="og:title" content="Claymoon.music | Press Kit">
+    <meta property="og:description" content="Groove moderno com alma retr&#244;. Sets, booking e material de imprensa.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://levoratoo.github.io/presskitlevoratodj/">
+    <meta property="og:url" content="https://levoratoo.github.io/claymoon/">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:image" content="https://levoratoo.github.io/presskitlevoratodj/og-preview.jpg">
-    <meta property="og:image:secure_url" content="https://levoratoo.github.io/presskitlevoratodj/og-preview.jpg">
+    <meta property="og:image" content="https://levoratoo.github.io/claymoon/og-preview.jpg">
+    <meta property="og:image:secure_url" content="https://levoratoo.github.io/claymoon/og-preview.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LEVORATO - DJ &amp; Producer | Press Kit">
-    <meta name="twitter:description" content="Energia crua. Press&#227;o de pista. Som sem concess&#245;es.">
-    <meta name="twitter:image" content="https://levoratoo.github.io/presskitlevoratodj/og-preview.jpg">
-    <title>LEVORATO - DJ &amp; Producer | Press Kit</title>
+    <meta name="twitter:title" content="Claymoon.music | Press Kit">
+    <meta name="twitter:description" content="Groove moderno com alma retr&#244;. Sets, booking e material de imprensa.">
+    <meta name="twitter:image" content="https://levoratoo.github.io/claymoon/og-preview.jpg">
+    <title>Claymoon.music | Press Kit</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Flag Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
@@ -50,6 +50,12 @@
     ======================================= -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+            <!-- Brand logo -->
+            <a href="#hero" class="nav-brand" aria-label="ClayMoon.Music — início">
+                <img src="Logo/branca.png" alt="ClayMoon.Music" class="nav-brand-img">
+                <span class="nav-brand-label">Clay<span class="nav-brand-accent">Moon</span><span class="nav-brand-dot">.music</span></span>
+            </a>
+
             <!-- Language Switcher — dropdown -->
             <div class="lang-switcher" id="lang-switcher">
                 <button class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false">
@@ -116,20 +122,22 @@
 
             <!-- Pill tag -->
             <div class="hero-pill">
+                <span class="pill-coin" aria-hidden="true">INSERT COIN</span>
                 <span class="pill-dot"></span>
-                DJ &amp; PRODUCER · PRESS KIT 2025
+                <span data-i18n="hero-pill">DJ &amp; Producer &bull; Porto, Portugal</span>
             </div>
 
             <!-- Main title -->
-            <!-- 3. Shimmer em LEVORATO / 4. Underline de fogo em MINIMAL BASS. -->
             <h1 class="hero-title">
-                <span class="title-line-white hero-shimmer">LEVORATO</span>
-                <span class="title-line-red hero-fire-line">MINIMAL BASS</span>
+                <span class="hero-title-wordmark">
+                    <span class="hero-title-wordmark__scan" aria-hidden="true"></span>
+                    <span class="title-line-white hero-glitch" data-text="Claymoon.music">Claymoon.<wbr>music</span>
+                </span>
+                <span class="title-line-red hero-fire-line" data-i18n="hero-highlight">Groove moderno com alma retr&ocirc;</span>
             </h1>
 
             <p class="hero-desc" data-i18n="hero-desc">
-                Sets construídos a partir da identidade musical.<br>
-                Cada pista, uma história. Cada drop, uma experiência.
+                Tech House com groove de House e Minimal Deep Tech: sets que ligam o moderno ao retr&ocirc;.
             </p>
 
             <div class="hero-buttons">
@@ -141,47 +149,9 @@
                     Booking &rarr;
                 </a>
             </div>
-
-            <!-- Stats row -->
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">+1200</span>
-                    <span class="stat-label">Shows</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">15</span>
-                    <span class="stat-label" data-i18n="stat-years">Anos de Música</span>
-                </div>
-            </div>
         </div>
 
-        <!-- ===== RIGHT: Circular visual ===== -->
-        <div class="hero-visual">
-            <!-- Outer spinning rings -->
-            <div class="hv-ring hv-ring-1"></div>
-            <div class="hv-ring hv-ring-2"></div>
-            <div class="hv-ring hv-ring-3"></div>
-
-            <!-- Glow blob behind circle -->
-            <div class="hv-glow"></div>
-
-            <!-- Photo circle -->
-            <div class="hv-circle">
-                <img src="Fotos minha/KAD00098-1.JPG" alt="LEVORATO" fetchpriority="high">
-                <div class="hv-circle-inner-glow"></div>
-            </div>
-
-            <!-- Floating badges -->
-            <div class="hv-badge hv-badge-top">
-                <span class="hv-badge-dot"></span>
-                Underground
-            </div>
-            <div class="hv-badge hv-badge-bottom">
-                <span class="hv-badge-dot"></span>
-                <span data-i18n="badge-pressure">Pressão de Pista</span>
-            </div>
-        </div>
+        <!-- hero-visual removed — background image carries the visual weight -->
 
         <!-- Scroll indicator -->
         <div class="scroll-indicator">
@@ -189,6 +159,51 @@
         </div>
 
     </section>
+
+    <!-- ======================================
+         ARCADE TICKER
+    ======================================= -->
+    <div class="arcade-ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <span class="ticker-item">▶ INSERT COIN</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item ticker-brand">CLAYMOON.MUSIC</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">TECH HOUSE</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">HOUSE</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">MINIMAL DEEP TECH</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item ticker-hi">REBOBINA</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">PORTO &bull; PT</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">NOW PLAYING</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">PLAYER 1 READY</span>
+            <span class="ticker-sep">◆</span>
+            <!-- duplicate for seamless infinite loop -->
+            <span class="ticker-item">▶ INSERT COIN</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item ticker-brand">CLAYMOON.MUSIC</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">TECH HOUSE</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">HOUSE</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">MINIMAL DEEP TECH</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item ticker-hi">REBOBINA</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">PORTO &bull; PT</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">NOW PLAYING</span>
+            <span class="ticker-sep">◆</span>
+            <span class="ticker-item">PLAYER 1 READY</span>
+            <span class="ticker-sep">◆</span>
+        </div>
+    </div>
 
     <!-- ======================================
          SOBRE
@@ -728,7 +743,7 @@
                     </blockquote>
                     <div class="tl-quote-author">
                         <span class="tl-quote-line"></span>
-                        LEVORATO
+                        Claymoon.music
                     </div>
                 </div>
             </div>
@@ -759,13 +774,11 @@
         <div class="container">
             <div class="about-grid">
 
-                <!-- Photo -->
                 <div class="about-image-wrapper reveal-left">
-                    <div class="about-image">
-                        <img src="Fotos minha/KAD00105-3.JPG" alt="LEVORATO — DJ & Producer" class="about-photo">
+                    <div class="about-image about-image--artwork">
+                        <img src="Fotos%20minha/ChatGPT%20Image%202%20de%20abr.%20de%202026%2C%2016_22_03.png" alt="ClayMoon.Music — press kit" class="about-photo">
                         <div class="about-image-border"></div>
                         <div class="about-image-glow"></div>
-                        <!-- Red line accent -->
                         <div class="about-accent-line"></div>
                     </div>
                 </div>
@@ -774,27 +787,21 @@
                 <div class="about-content reveal-right">
                     <div class="section-tag" data-i18n="sobre-tag">SOBRE</div>
                     <h2 class="section-title">
-                        <span data-i18n="sobre-title">A força que<br><span class="text-glow">move a pista</span></span>
+                        <span data-i18n="sobre-title">Da pista local para a<br><span class="text-glow">cena europeia</span></span>
                     </h2>
                     <p class="about-text" data-i18n="sobre-p1">
-                        Fala galera, beleza?<br><br>Sou o Pedro (Levorato), DJ de Minimal Bass.
+                        Claymoon.music &eacute; DJ h&aacute; 2 anos e produtor musical, com in&iacute;cio de trajet&oacute;ria em Dublin, Irlanda &mdash; onde teve contato direto com a cena eletr&ocirc;nica europeia e desenvolveu sua identidade sonora.
                     </p>
                     <p class="about-text" data-i18n="sobre-p2">
-                        Minha relação com a música vai muito além da pista. São mais de 15 anos respirando música, não só tocando, mas ensinando, estudando e ajudando outras pessoas a se conectarem com ela. Já atuei como professor, músico e em diferentes projetos, e tudo isso molda diretamente a forma como eu me expresso hoje.
+                        Hoje, baseado em Porto, Portugal, busca expandir sua presen&ccedil;a nas pistas locais levando uma proposta &uacute;nica: um tech house groovado, com influ&ecirc;ncias de house e minimal deep tech, construindo sets din&acirc;micos que surpreendem e mant&ecirc;m a pista em movimento constante.
                     </p>
                     <p class="about-text" data-i18n="sobre-p3">
-                        Acredito que música é, antes de tudo, sentimento e troca. Por isso, cada vez que eu subo pra tocar, não é só sobre som, é sobre criar uma conexão real com quem tá ali, entender o momento e transformar aquilo em experiência.
-                    </p>
-                    <p class="about-text" data-i18n="sobre-p4">
-                        Minha formação em música pela <strong>Universidade Estadual de Maringá</strong> trouxe uma base forte, mas é na vivência que meu som ganha verdade.
-                    </p>
-                    <p class="about-text" data-i18n="sobre-p5">
-                        Meu maior sonho é não entregar apenas o que o público quer, mas levar todo mundo para um lugar onde ninguém esteve antes.
+                        Sua est&eacute;tica mistura o moderno com o nost&aacute;lgico, criando uma experi&ecirc;ncia sonora e visual que conecta passado e futuro na pista.
                     </p>
                     <div class="about-tags">
-                        <span class="tag">Minimal Bass</span>
-                        <span class="tag">Bass House</span>
-                        <span class="tag">Indie Dance</span>
+                        <span class="tag">Tech House</span>
+                        <span class="tag">House</span>
+                        <span class="tag">Minimal Deep Tech</span>
                     </div>
                 </div>
 
@@ -894,7 +901,7 @@
 
             <div class="downloads-panel active" id="dl-panel-photos">
                 <div class="downloads-cta reveal-up">
-                    <a href="downloads/levorato-fotos-alta.zip" class="btn btn-primary" download>
+                    <a href="downloads/claymoon-presskit-fotos.zip" class="btn btn-primary" download>
                         <i class="fas fa-download"></i>
                         <span data-i18n="dl-cta">Baixar todas as fotos (.zip)</span>
                     </a>
@@ -902,44 +909,16 @@
 
                 <div class="downloads-grid">
                 <article class="download-card reveal-up" style="--delay: 0.05s" data-num="01">
-                    <img src="Fotos para baixar/KAD00098-1.JPG" alt="Foto de imprensa 01" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00098-1.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
+                    <img src="Fotos%20minha/2b35a97a-9814-48d0-a37d-6109fc0047a9.png" alt="Foto de imprensa 01" loading="lazy" class="download-photo">
+                    <a href="Fotos%20minha/2b35a97a-9814-48d0-a37d-6109fc0047a9.png" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.1s" data-num="02">
-                    <img src="Fotos para baixar/KAD00102-2.JPG" alt="Foto de imprensa 02" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00102-2.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
+                    <img src="Fotos%20minha/ChatGPT%20Image%202%20de%20abr.%20de%202026%2C%2016_22_03.png" alt="Foto de imprensa 02" loading="lazy" class="download-photo">
+                    <a href="Fotos%20minha/ChatGPT%20Image%202%20de%20abr.%20de%202026%2C%2016_22_03.png" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 <article class="download-card reveal-up" style="--delay: 0.15s" data-num="03">
-                    <img src="Fotos para baixar/KAD00105-3.JPG" alt="Foto de imprensa 03" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00105-3.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.2s" data-num="04">
-                    <img src="Fotos para baixar/KAD00134-4.JPG" alt="Foto de imprensa 04" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00134-4.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.25s" data-num="05">
-                    <img src="Fotos para baixar/KAD00135-5.JPG" alt="Foto de imprensa 05" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00135-5.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.3s" data-num="06">
-                    <img src="Fotos para baixar/KAD00142-6.JPG" alt="Foto de imprensa 06" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00142-6.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.35s" data-num="07">
-                    <img src="Fotos para baixar/KAD00143-7.JPG" alt="Foto de imprensa 07" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00143-7.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.4s" data-num="08">
-                    <img src="Fotos para baixar/KAD00144-8.JPG" alt="Foto de imprensa 08" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00144-8.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.45s" data-num="09">
-                    <img src="Fotos para baixar/KAD00153-9.JPG" alt="Foto de imprensa 09" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00153-9.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
-                </article>
-                <article class="download-card reveal-up" style="--delay: 0.5s" data-num="10">
-                    <img src="Fotos para baixar/KAD00156-10.JPG" alt="Foto de imprensa 10" loading="lazy" class="download-photo">
-                    <a href="Fotos para baixar/KAD00156-10.JPG" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
+                    <img src="Fotos%20minha/ChatGPT%20Image%202%20de%20abr.%20de%202026%2C%2016_23_03.png" alt="Foto de imprensa 03" loading="lazy" class="download-photo">
+                    <a href="Fotos%20minha/ChatGPT%20Image%202%20de%20abr.%20de%202026%2C%2016_23_03.png" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-btn">Baixar</span></a>
                 </article>
                 </div>
             </div>
@@ -947,11 +926,11 @@
             <div class="downloads-panel" id="dl-panel-logo">
                 <div class="downloads-grid downloads-grid--single">
                     <article class="download-card reveal-up" data-num="PRETA">
-                        <img src="Logo/preta-web.webp" alt="Logo oficial Levorato" loading="lazy" decoding="async" class="download-photo download-photo--logo">
+                        <img src="Logo/preta.png" alt="Logo ClayMoon.Music — versão escura" loading="lazy" decoding="async" class="download-photo download-photo--logo">
                         <a href="Logo/preta.png" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-logo-btn">Baixar logo (.png)</span></a>
                     </article>
                     <article class="download-card reveal-up" data-num="BRANCA">
-                        <img src="Logo/branca-web.webp" alt="Logo oficial Levorato branca" loading="lazy" decoding="async" class="download-photo download-photo--logo download-photo--logo-white">
+                        <img src="Logo/branca.png" alt="Logo ClayMoon.Music — versão clara" loading="lazy" decoding="async" class="download-photo download-photo--logo download-photo--logo-white">
                         <a href="Logo/branca.png" download class="download-btn"><i class="fas fa-download"></i> <span data-i18n="dl-logo-btn">Baixar logo (.png)</span></a>
                     </article>
                 </div>
@@ -960,10 +939,7 @@
     </section>
 
     <!-- ======================================
-         MÚSICAS
-    ======================================= -->
-    <!-- ======================================
-         DESTAQUE — DJ CONTEST SIXX HOUSE
+         DESTAQUE — SETS SOUNDCLOUD (ClayMoon.music)
     ======================================= -->
     <section class="featured-set" id="sixx-house">
         <div class="fs-bg-glow"></div>
@@ -973,7 +949,7 @@
                 <!-- LEFT: poster -->
                 <div class="fs-poster-wrap">
                     <div class="fs-poster-glow"></div>
-                    <img src="sixx-house/poster.png" alt="DJ Contest Sixx House — Levorato" class="fs-poster" loading="lazy">
+                    <img src="sixx-house/poster.png" alt="ClayMoon.music — sets no SoundCloud" class="fs-poster" loading="lazy">
                     <div class="fs-poster-badge">
                         <span class="fs-badge-dot"></span>
                         <span data-i18n="fs-new">NOVO SET</span>
@@ -987,22 +963,22 @@
                     </div>
 
                     <h2 class="fs-title">
-                        <span class="fs-title-line1" data-i18n="fs-title1">DJ CONTEST</span>
-                        <span class="fs-title-line2">SIXX HOUSE</span>
+                        <span class="fs-title-line1" data-i18n="fs-title1">GROOVE</span>
+                        <span class="fs-title-line2">INJECTION VOL.1</span>
                     </h2>
-                    <p class="fs-subtitle" data-i18n="fs-subtitle">Minimal Bass &middot; 2026</p>
+                    <p class="fs-subtitle" data-i18n="fs-subtitle">Tech House &middot; Mar 2026</p>
 
                     <p class="fs-desc" data-i18n="fs-desc">
-                        Set submetido ao contest da Sixx House, uma das principais referências do Minimal Bass no Brasil. Pressão de pista do começo ao fim.
+                        Pure groove no dancefloor. Set de Tech House e Groove cheio de energia e textura — do início ao fim, pista em movimento.
                     </p>
 
                     <div class="fs-player">
                         <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/sixxhouse&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/luan-terroso-896014483/grooveinjection&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
                         </iframe>
                     </div>
 
-                    <a href="https://soundcloud.com/levorato-324582234/sixxhouse" target="_blank" rel="noopener noreferrer" class="btn btn-primary fs-cta">
+                    <a href="https://soundcloud.com/luan-terroso-896014483/grooveinjection" target="_blank" rel="noopener noreferrer" class="btn btn-primary fs-cta">
                         <i class="fab fa-soundcloud"></i>
                         <span data-i18n="fs-listen">Ouvir no SoundCloud</span>
                     </a>
@@ -1020,158 +996,35 @@
 
             <div class="section-header reveal-up">
                 <div class="section-tag" data-i18n="music-tag">OUÇA</div>
-                <h2 class="section-title" data-i18n="music-title">Músicas &amp; <span class="text-glow">Releases</span></h2>
-                <p class="section-desc" data-i18n="music-desc">Explore os sets e lançamentos nas plataformas</p>
+                <h2 class="section-title" data-i18n="music-title">Sets no <span class="text-glow">SoundCloud</span></h2>
+                <p class="section-desc" data-i18n="music-desc">Sets e playlists do perfil — ouça no player abaixo ou abra o perfil completo.</p>
             </div>
 
-            <!-- ---- Tab bar ---- -->
-            <div class="stream-tabs reveal-up">
-                <button class="stream-tab active" data-tab="soundcloud">
-                    <i class="fab fa-soundcloud"></i>
-                    <span>SoundCloud</span>
-                    <span class="tab-count">7</span>
-                </button>
-                <button class="stream-tab" data-tab="spotify">
-                    <i class="fab fa-spotify"></i>
-                    <span data-i18n="tab-autorais">Autorais</span>
-                    <span class="tab-count">6</span>
-                </button>
-            </div>
-
-            <!-- ---- SoundCloud panel ---- -->
+            <!-- ---- SoundCloud — sets individuais ---- -->
             <div class="stream-panel active" id="panel-soundcloud">
-                <div class="sc-grid">
+                <div class="sc-grid sc-grid--3">
                     <div class="sc-card">
-                        <div class="sc-card-label">DJ CONTEST SIXX HOUSE <span>Novo Set</span></div>
+                        <div class="sc-card-label">GROOVE INJECTION VOL.1 <span>Novo Set · 21/03/26</span></div>
                         <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/sixxhouse&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/luan-terroso-896014483/grooveinjection&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
                         </iframe>
                     </div>
                     <div class="sc-card">
-                        <div class="sc-card-label">SET MINIMAL BASS <span>AIME Contest</span></div>
+                        <div class="sc-card-label">X STUDIO PRODJ SESSIONS <span>Minimal Deep Tech</span></div>
                         <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/aimeccontest&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/luan-terroso-896014483/x-studio-prodj-sessions&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
                         </iframe>
                     </div>
                     <div class="sc-card">
-                        <div class="sc-card-label">SET MINIMAL BASS · THE GRAND <span>23/01/2026</span></div>
+                        <div class="sc-card-label">NY EVE 25:26 <span>House &amp; Tech House</span></div>
                         <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/3f095650-1444-4453-99be-df2f9ca58773&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">SET FOGO NO PARKINHO <span>04/01</span></div>
-                        <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/set-fogo-no-parkinho-0401&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">SET MINIMAL BASS · RÁDIO RITMOS DA NOITE <span>Natal</span></div>
-                        <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/set-minimal-bass-radio-ritmos-da-noite-especial-de-natal&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">SET MINIMAL BASS · RÁDIO RITMOS DA NOITE <span>Fim de Ano</span></div>
-                        <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/set-09-01-radio&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">SET AFTER DA FIRMA B2B CALGAROBR <span>07/12</span></div>
-                        <iframe scrolling="no" frameborder="no" allow="autoplay" loading="lazy"
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/levorato-324582234/6eb9387c-7e48-467c-b981-e331e6bf7674&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/luan-terroso-896014483/ny-eve-25-26-house-tech-house&color=%23ff1a1a&auto_play=false&visual=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
                         </iframe>
                     </div>
                 </div>
-                <a href="https://soundcloud.com/levorato-324582234" class="stream-cta" target="_blank" rel="noopener noreferrer">
+                <a href="https://soundcloud.com/luan-terroso-896014483" class="stream-cta" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-soundcloud"></i> <span data-i18n="sc-cta">Ver todos no SoundCloud</span>
                 </a>
-            </div>
-
-            <!-- ---- Autorais (Spotify tracks) panel ---- -->
-            <div class="stream-panel" id="panel-spotify">
-                <div class="sc-grid">
-                    <div class="sc-card">
-                        <div class="sc-card-label">Aether <span>feat. Zalløn · 2025</span></div>
-                        <iframe
-                            src="https://open.spotify.com/embed/track/2Q3l3aODkoTuAohZ4hcFAJ?utm_source=generator&theme=0"
-                            width="100%" height="152" frameBorder="0" loading="lazy"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            title="Aether">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">Don't Blame Me <span>feat. Zalløn · 2025</span></div>
-                        <iframe
-                            src="https://open.spotify.com/embed/track/2HovVGJY5YMWlhjr7rqq1W?utm_source=generator&theme=0"
-                            width="100%" height="152" frameBorder="0" loading="lazy"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            title="Don't Blame Me">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">Nyx <span>feat. Zalløn · 2025</span></div>
-                        <iframe
-                            src="https://open.spotify.com/embed/track/33JdvYu4A1RvBCY7he2XWJ?utm_source=generator&theme=0"
-                            width="100%" height="152" frameBorder="0" loading="lazy"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            title="Nyx">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">Wild Genesis <span>2025</span></div>
-                        <iframe
-                            src="https://open.spotify.com/embed/track/4NOHLNbQwzMButqod7sNFR?utm_source=generator&theme=0"
-                            width="100%" height="152" frameBorder="0" loading="lazy"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            title="Wild Genesis">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">Rise of Fire <span>2025</span></div>
-                        <iframe
-                            src="https://open.spotify.com/embed/track/5mrrT9pnyN20WZ45hzQe5W?utm_source=generator&theme=0"
-                            width="100%" height="152" frameBorder="0" loading="lazy"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            title="Rise of Fire">
-                        </iframe>
-                    </div>
-                    <div class="sc-card">
-                        <div class="sc-card-label">Echo of the Void <span>2025</span></div>
-                        <iframe
-                            src="https://open.spotify.com/embed/track/3128mTfhx4eIaVYFWDlyHS?utm_source=generator&theme=0"
-                            width="100%" height="152" frameBorder="0" loading="lazy"
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            title="Echo of the Void">
-                        </iframe>
-                    </div>
-                </div>
-                <a href="https://open.spotify.com/intl-pt/artist/20TjayRGM3B3BAj0uoc2Ix" class="stream-cta stream-cta--spotify" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-spotify"></i> <span data-i18n="spotify-cta">Ver discografia completa no Spotify</span>
-                </a>
-            </div>
-
-            <!-- Platform Links -->
-            <div class="music-platforms reveal-up">
-                <p class="platforms-label" data-i18n="platforms-label">Também disponível em</p>
-                <div class="platforms-row">
-                    <a href="https://open.spotify.com/intl-pt/artist/20TjayRGM3B3BAj0uoc2Ix" class="platform-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://soundcloud.com/levorato-324582234" class="platform-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-soundcloud"></i> SoundCloud
-                    </a>
-                    <a href="https://www.youtube.com/@levoratomusic" class="platform-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-youtube"></i> YouTube
-                    </a>
-                    <a href="https://music.youtube.com/channel/UCkJQWxE1ayRSHpM1tP9om7w" class="platform-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-youtube"></i> YouTube Music
-                    </a>
-                    <a href="https://www.beatport.com/pt/artist/levorato/1423031" class="platform-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fas fa-music"></i> Beatport
-                    </a>
-                </div>
             </div>
 
         </div>
@@ -1239,10 +1092,11 @@
             <div class="footer-grid">
 
                 <div class="footer-brand">
-                    <a href="#hero" class="footer-logo">
-                        <img src="Fotos minha/logo dj.png" alt="LEVORATO" class="footer-logo-img">
+                    <a href="#hero" class="footer-logo footer-logo--img">
+                        <img src="Logo/branca.png" alt="ClayMoon.Music logo" class="footer-logo-img" loading="lazy">
+                        <span class="footer-logo-wordmark">Claymoon.music</span>
                     </a>
-                    <p class="footer-tagline" data-i18n="footer-tagline">Energia crua. Pressão de pista.<br>Som sem concessões.</p>
+                    <p class="footer-tagline" data-i18n="footer-tagline">Groove moderno com alma retr&ocirc;</p>
                 </div>
 
                 <div class="footer-nav">
@@ -1260,17 +1114,11 @@
                         <a href="https://www.instagram.com/levoratodj/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://soundcloud.com/levorato-324582234" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
+                        <a href="https://soundcloud.com/luan-terroso-896014483" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud">
                             <i class="fab fa-soundcloud"></i>
-                        </a>
-                        <a href="https://open.spotify.com/intl-pt/artist/20TjayRGM3B3BAj0uoc2Ix" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
-                            <i class="fab fa-spotify"></i>
                         </a>
                         <a href="https://www.youtube.com/@levoratomusic" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.beatport.com/pt/artist/levorato/1423031" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Beatport">
-                            <i class="fas fa-music"></i>
                         </a>
                     </div>
                 </div>
@@ -1278,7 +1126,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p data-i18n="footer-copy">&copy; 2026 LEVORATO. Todos os direitos reservados.</p>
+                <p data-i18n="footer-copy">&copy; 2026 Claymoon.music. Todos os direitos reservados.</p>
                 <p class="footer-credit">
                     <span data-i18n="footer-credit-text">Site desenvolvido por</span>
                     <a href="https://www.instagram.com/levoratodj/" class="footer-credit-link" target="_blank" rel="noopener noreferrer">Pedro Levorato</a>
@@ -1290,3 +1138,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
