@@ -66,6 +66,13 @@ html {
     scroll-padding-top: calc(var(--nav-total) + 0.75rem);
 }
 
+/* Reforço para âncoras (mobile / scroll programático) */
+#musicas,
+#panel-soundcloud,
+#booking {
+    scroll-margin-top: calc(var(--nav-total) + 0.75rem);
+}
+
 body {
     font-family: var(--font);
     position: relative;

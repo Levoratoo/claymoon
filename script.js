@@ -123,38 +123,67 @@ function onScroll() {
     updateActiveNav();
 }
 
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-navMenu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
-});
+
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
 
 // ============================================================
-// SMOOTH SCROLL (navbar + scroll-padding-top em html)
+// SMOOTH SCROLL (offset da navbar, compatível com mobile)
+// scrollIntoView falha em alguns WebViews; window.scrollTo é mais fiável
 // ============================================================
+
+function getNavScrollOffset() {
+    const nav = document.getElementById('navbar');
+    return (nav ? nav.offsetHeight : 68) + 10;
+}
+
+function scrollToAnchor(hash) {
+    const id = hash.replace(/^#/, '');
+    const el = document.getElementById(id);
+    if (!el) return false;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - getNavScrollOffset();
+
+    window.scrollTo({
+        top: Math.max(0, y),
+        behavior: prefersReduced ? 'auto' : 'smooth',
+    });
+
+    if (history.replaceState) {
+        history.replaceState(null, '', '#' + id);
+    }
+    return true;
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        const id     = this.getAttribute('href');
-        if (!id || id === '#' || id.length < 2) return;
+        const href = this.getAttribute('href');
+        if (!href || href === '#' || href.length < 2) return;
 
-        const target = document.querySelector(id);
-        if (!target) return;
+        if (!document.getElementById(href.slice(1))) return;
 
         e.preventDefault();
-
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        target.scrollIntoView({
-            behavior: prefersReduced ? 'auto' : 'smooth',
-            block: 'start',
-        });
+        scrollToAnchor(href);
     });
+});
+
+// Hash na URL ao abrir a página (ex.: partilha de link)
+window.addEventListener('load', () => {
+    const h = window.location.hash;
+    if (h && h.length > 1 && document.getElementById(h.slice(1))) {
+        requestAnimationFrame(() => scrollToAnchor(h));
+    }
 });
 
 // ============================================================
