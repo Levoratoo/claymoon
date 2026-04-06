@@ -3373,8 +3373,15 @@ section {
 }
 
 @media (max-width: 768px) {
-    /* Nav mobile */
-    .nav-toggle { display: flex; }
+    /* Nav mobile: esconde logo e hamburger, mantém só o seletor de idioma */
+    .nav-brand  { display: none; }
+    .nav-toggle { display: none; }
+    .nav-menu   { display: none !important; }
+
+    /* Centraliza o lang-switcher na barra */
+    .nav-container {
+        justify-content: center;
+    }
 
     .nav-menu {
         position: fixed;
