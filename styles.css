@@ -3304,64 +3304,8 @@ section {
     padding: 6rem 2rem 3rem;
 }
 
-/* ---- Story tabs (Performance / Educação) ---- */
-.timeline-story-tabs {
-    margin: 0 auto 2.75rem;
-    padding: 0 1.25rem;
-    max-width: var(--max-w);
-}
-
-/* ---- Educação musical — mesmo layout da timeline (spine + nós + carrossel) ---- */
-.tl-spine-wrapper--edu {
-    padding-bottom: 2rem;
-}
-
-.tl-node--edu .tl-chapter-title {
-    font-size: clamp(1.05rem, 2.2vw, 1.35rem);
-    line-height: 1.25;
-    margin-top: 0.35rem;
-}
-
-.tl-chapter-tag--edu {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    line-height: 1.35;
-    white-space: normal;
-}
-
-.tl-node--edu .tl-node-year {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-}
-
-.tl-edu-role-line {
-    font-size: 0.84rem;
-    color: rgba(255, 255, 255, 0.48);
-    line-height: 1.45;
-    margin: 0 0 0.85rem;
-}
-
-a.tl-edu-text-wrap {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
-    border-radius: 4px;
-    transition: opacity 0.2s ease;
-}
-
-a.tl-edu-text-wrap:hover .tl-chapter-title {
-    color: #fff;
-}
-
-a.tl-edu-text-wrap:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 4px;
-}
-
-@media (hover: none) {
-    a.tl-edu-text-wrap:active {
-        opacity: 0.88;
-    }
+.timeline-section #tl-panel-performance {
+    margin-top: 2.75rem;
 }
 
 /* ---- SPINE WRAPPER (só envolve 2011 → 2022) ---- */
@@ -4081,62 +4025,18 @@ a.tl-edu-text-wrap:focus-visible {
     .tl-spine { left: clamp(1.5rem, 4vw, 3rem); }
     .tl-node-year { font-size: 3rem; }
 
-    /* História — abas e educação (mobile) */
+    /* História (mobile) */
     .timeline-section {
         padding-bottom: 4.5rem;
     }
     .tl-header {
         padding: 4rem clamp(1rem, 4vw, 2rem) 2rem;
     }
-    .timeline-story-tabs {
-        margin-bottom: 2.25rem;
-        padding: 0 clamp(0.75rem, 3vw, 1.25rem);
-        flex-wrap: wrap;
-        justify-content: center;
-        row-gap: 0.5rem;
-    }
-    #tl-panel-education {
-        padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
-    }
-    .tl-node--edu .tl-chapter-tag--edu {
-        font-size: 0.58rem;
-        letter-spacing: 0.08em;
-    }
-    .tl-node--edu .tl-edu-role-line {
-        font-size: 0.76rem;
-    }
-    .tl-node--edu .tl-chapter-desc {
-        font-size: 0.9rem;
-    }
 }
 
 @media (max-width: 560px) {
-    .timeline-story-tabs .downloads-tab {
-        font-size: 0.82rem;
-        padding: 0.48rem 0.65rem;
-        letter-spacing: 0.06em;
-        flex: 1 1 auto;
-        min-width: 0;
-        text-align: center;
-    }
     .tl-header .section-title {
         font-size: clamp(1.35rem, 7vw, 1.75rem);
-    }
-}
-
-@media (max-width: 400px) {
-    .timeline-story-tabs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.45rem;
-        padding: 0 0.5rem;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-    }
-    .timeline-story-tabs .downloads-tab {
-        font-size: 0.76rem;
-        padding: 0.5rem 0.45rem;
     }
 }
 
