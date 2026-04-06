@@ -2,3 +2,6 @@
 !downloads/claymoon-presskit-fotos.zip
 localhost-server*.log
 downloads/claymoon-fotos-alta.zip
+# Large raw MOV recordings are kept local only (>100MB)
+videos/*.MOV
+videos/*.mov
