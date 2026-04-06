@@ -634,9 +634,12 @@ const i18n = {
         'ch04-year'          : '2025, HOJE',
         'ch04-title'         : 'Novo<br><span class="tl-title-accent">Ciclo.</span>',
         'ch04-quote'         : 'Dois anos construindo o ClayMoon.music: identidade sólida, referências europeias e uma sonoridade que conecta Tech House e Minimal Deep Tech.<br><br>Agora começa um novo ciclo: mais maduro, mais estratégico e pronto para ocupar novos espaços na cena.',
-        'video-tag'          : 'VÍDEOS',
-        'video-title'        : 'Na <span class="text-glow">pista</span>',
-        'video-desc'         : 'Momentos reais, ao vivo.',
+        'video-title'        : '<span class="text-glow">Mídia</span>',
+        'video-carousel-prev-aria'  : 'Vídeo anterior',
+        'video-carousel-next-aria'  : 'Próximo vídeo',
+        'video-carousel-region-aria': 'Carrossel de vídeos',
+        'video-carousel-dot-label'  : 'Ir para o vídeo {n} de {total}',
+        'video-carousel-dots-aria'  : 'Navegação entre vídeos',
         'sobre-tag'          : 'SOBRE',
         'sobre-title'        : 'Da pista local para a<br><span class="text-glow">cena europeia</span>',
         'sobre-p1'           : 'ClayMoon.music é DJ e produtor musical com base na cena europeia, onde iniciou sua trajetória em Dublin, Irlanda, desenvolvendo uma identidade sonora conectada à pista.',
@@ -715,9 +718,12 @@ const i18n = {
         'ch04-year'          : '2025, TODAY',
         'ch04-title'         : 'New<br><span class="tl-title-accent">Cycle.</span>',
         'ch04-quote'         : 'Two years building ClayMoon.music: solid identity, European references, and a sound that bridges Tech House and Minimal Deep Tech.<br><br>A new cycle is beginning now: more mature, more strategic, and ready to claim new space in the scene.',
-        'video-tag'          : 'VIDEOS',
-        'video-title'        : 'On the <span class="text-glow">floor</span>',
-        'video-desc'         : 'Real moments, live.',
+        'video-title'        : '<span class="text-glow">Media</span>',
+        'video-carousel-prev-aria'  : 'Previous video',
+        'video-carousel-next-aria'  : 'Next video',
+        'video-carousel-region-aria': 'Video carousel',
+        'video-carousel-dot-label'  : 'Go to video {n} of {total}',
+        'video-carousel-dots-aria'  : 'Video navigation',
         'sobre-tag'          : 'ABOUT',
         'sobre-title'        : 'From the local dance floor to the<br><span class="text-glow">European scene</span>',
         'sobre-p1'           : 'ClayMoon.music is a DJ and music producer rooted in the European scene, where his journey began in Dublin, Ireland, developing a sonic identity shaped by the dance floor.',
@@ -796,9 +802,12 @@ const i18n = {
         'ch04-year'          : '2025, HOY',
         'ch04-title'         : 'Nuevo<br><span class="tl-title-accent">Ciclo.</span>',
         'ch04-quote'         : 'Dos años construyendo ClayMoon.music: identidad sólida, referencias europeas y una sonoridad que conecta Tech House y Minimal Deep Tech.<br><br>Ahora empieza un nuevo ciclo: más maduro, más estratégico y listo para ocupar nuevos espacios en la escena.',
-        'video-tag'          : 'VIDEOS',
-        'video-title'        : 'En la <span class="text-glow">pista</span>',
-        'video-desc'         : 'Momentos reales, en vivo.',
+        'video-title'        : '<span class="text-glow">Medios</span>',
+        'video-carousel-prev-aria'  : 'Vídeo anterior',
+        'video-carousel-next-aria'  : 'Siguiente vídeo',
+        'video-carousel-region-aria': 'Carrusel de vídeos',
+        'video-carousel-dot-label'  : 'Ir al vídeo {n} de {total}',
+        'video-carousel-dots-aria'  : 'Navegación entre vídeos',
         'sobre-tag'          : 'SOBRE',
         'sobre-title'        : 'De la pista local a la<br><span class="text-glow">escena europea</span>',
         'sobre-p1'           : 'ClayMoon.music es DJ y productor musical con base en la escena europea, donde inició su trayectoria en Dublín, Irlanda, desarrollando una identidad sonora conectada a la pista.',
@@ -877,9 +886,12 @@ const i18n = {
         'ch04-year'          : '2025, 至今',
         'ch04-title'         : '新<br><span class="tl-title-accent">篇章。</span>',
         'ch04-quote'         : '打造 ClayMoon.music 的两年：扎实的视觉识别、欧洲参照，以及连接 Tech House 与 Minimal Deep Tech 的声线。<br><br>新的周期正在开启：更成熟、更有策略，并准备在场景中占据更多位置。',
-        'video-tag'          : '视频',
-        'video-title'        : '在<span class="text-glow">舞台</span>',
-        'video-desc'         : '现场真实瞬间。',
+        'video-title'        : '<span class="text-glow">媒体</span>',
+        'video-carousel-prev-aria'  : '上一个视频',
+        'video-carousel-next-aria'  : '下一个视频',
+        'video-carousel-region-aria': '视频轮播',
+        'video-carousel-dot-label'  : '转到第 {n} 个视频，共 {total} 个',
+        'video-carousel-dots-aria'  : '视频导航',
         'sobre-tag'          : '关于',
         'sobre-title'        : '从本地舞池到<br><span class="text-glow">欧洲场景</span>',
         'sobre-p1'           : 'ClayMoon.music 既是 DJ 也是音乐制作人，扎根欧洲场景：旅程始于爱尔兰都柏林，在与舞池的联结中塑造声音身份。',
@@ -958,9 +970,12 @@ const i18n = {
         'ch04-year'          : '2025, HEUTE',
         'ch04-title'         : 'Neuer<br><span class="tl-title-accent">Zyklus.</span>',
         'ch04-quote'         : 'Zwei Jahre ClayMoon.music: solide Identität, europäische Referenzen und ein Sound zwischen Tech House und Minimal Deep Tech.<br><br>Jetzt beginnt ein neuer Zyklus: reifer, strategischer und bereit, neue Räume in der Szene zu besetzen.',
-        'video-tag'          : 'VIDEOS',
-        'video-title'        : 'Auf der <span class="text-glow">Tanzfl\u00e4che</span>',
-        'video-desc'         : 'Echte Momente, live.',
+        'video-title'        : '<span class="text-glow">Medien</span>',
+        'video-carousel-prev-aria'  : 'Vorheriges Video',
+        'video-carousel-next-aria'  : 'Nächstes Video',
+        'video-carousel-region-aria': 'Video-Karussell',
+        'video-carousel-dot-label'  : 'Zu Video {n} von {total}',
+        'video-carousel-dots-aria'  : 'Video-Navigation',
         'sobre-tag'          : 'ÜBER',
         'sobre-title'        : 'Vom lokalen Dancefloor zur<br><span class="text-glow">europäischen Szene</span>',
         'sobre-p1'           : 'ClayMoon.music ist DJ und Musikproduzent mit Verwurzelung in der europäischen Szene. Seine Reise begann in Dublin, Irland, wo er eine klangliche Identität entwickelte, die mit der Tanzfläche verbunden ist.',
@@ -1039,9 +1054,12 @@ const i18n = {
         'ch04-year'          : '2025, 現在',
         'ch04-title'         : '新しい<br><span class="tl-title-accent">サイクル。</span>',
         'ch04-quote'         : 'ClayMoon.music を築いてきた2年：揃ったアイデンティティ、ヨーロッパの参照、Tech House と Minimal Deep Tech をつなぐサウンド。<br><br>いま新しいサイクルが始まる：より成熟し、戦略的に、シーンで新たな場を取りにいく準備ができている。',
-        'video-tag'          : '動画',
-        'video-title'        : '<span class="text-glow">フロア</span>の百面',
-        'video-desc'         : 'ライブのリアルな瞬間。',
+        'video-title'        : '<span class="text-glow">メディア</span>',
+        'video-carousel-prev-aria'  : '前の動画',
+        'video-carousel-next-aria'  : '次の動画',
+        'video-carousel-region-aria': '動画カルーセル',
+        'video-carousel-dot-label'  : '動画 {total} 件中 {n} 件目へ',
+        'video-carousel-dots-aria'  : '動画の切り替え',
         'sobre-tag'          : 'プロフィール',
         'sobre-title'        : 'ローカルフロアから<br><span class="text-glow">ヨーロッパのシーンへ</span>',
         'sobre-p1'           : 'ClayMoon.music は DJ 兼音楽プロデューサー。ヨーロッパのシーンを土台に、アイルランドのダブリンで旅を始め、フロアとつながるサウンドアイデンティティを育てました。',
@@ -1101,6 +1119,18 @@ const langMeta = {
     ja: ['fi-jp', 'JP'],
 };
 
+function refreshVideoCarouselDots(lang) {
+    const t = i18n[lang];
+    if (!t) return;
+    const tpl = t['video-carousel-dot-label'];
+    if (!tpl) return;
+    const dots = document.querySelectorAll('.vd-carousel__dot');
+    const total = dots.length;
+    dots.forEach((d, i) => {
+        d.setAttribute('aria-label', tpl.replace('{n}', String(i + 1)).replace('{total}', String(total)));
+    });
+}
+
 function applyLang(lang) {
     const t = i18n[lang];
     if (!t) return;
@@ -1146,6 +1176,12 @@ function applyLang(lang) {
     try {
         localStorage.removeItem('levorato-lang');
     } catch (e) { /* ignore */ }
+
+    refreshVideoCarouselDots(lang);
+
+    document.querySelectorAll('.title-glitch').forEach(el => {
+        el.setAttribute('data-text', el.textContent.trim());
+    });
 }
 
 function initI18n() {
@@ -1195,6 +1231,105 @@ function initI18n() {
 }
 
 // ============================================================
+// VIDEO CAROUSEL, horizontal scroll + arrows + dots
+// ============================================================
+
+function initVideoCarousel() {
+    const viewport = document.getElementById('vd-carousel');
+    const root = document.getElementById('vd-carousel-root');
+    if (!viewport || !root) return;
+
+    const prev = root.querySelector('.vd-carousel__arrow--prev');
+    const next = root.querySelector('.vd-carousel__arrow--next');
+    const dots = root.querySelectorAll('.vd-carousel__dot');
+    const slides = viewport.querySelectorAll('.vd-slide');
+    const n = slides.length;
+    if (n === 0 || !prev || !next) return;
+
+    function slideWidth() {
+        return viewport.clientWidth || 1;
+    }
+
+    function currentIndex() {
+        const w = slideWidth();
+        return Math.min(n - 1, Math.max(0, Math.round(viewport.scrollLeft / w)));
+    }
+
+    function pauseAll() {
+        viewport.querySelectorAll('video').forEach(v => v.pause());
+    }
+
+    function goTo(i) {
+        const w = slideWidth();
+        i = Math.max(0, Math.min(n - 1, i));
+        viewport.scrollTo({ left: i * w, behavior: 'smooth' });
+    }
+
+    function updateArrowsAndDots() {
+        const idx = currentIndex();
+        prev.disabled = idx === 0;
+        next.disabled = idx === n - 1;
+        dots.forEach((d, i) => {
+            d.classList.toggle('is-active', i === idx);
+            d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+        });
+    }
+
+    prev.addEventListener('click', () => {
+        pauseAll();
+        goTo(currentIndex() - 1);
+    });
+    next.addEventListener('click', () => {
+        pauseAll();
+        goTo(currentIndex() + 1);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            pauseAll();
+            goTo(i);
+        });
+    });
+
+    let scrollTimer;
+    viewport.addEventListener('scroll', () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(updateArrowsAndDots, 80);
+    }, { passive: true });
+
+    viewport.addEventListener('scrollend', updateArrowsAndDots, { passive: true });
+
+    viewport.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            pauseAll();
+            goTo(currentIndex() - 1);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            pauseAll();
+            goTo(currentIndex() + 1);
+        }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const idx = currentIndex();
+            viewport.scrollLeft = idx * slideWidth();
+            updateArrowsAndDots();
+        }, 120);
+    });
+
+    const saved =
+        localStorage.getItem('claymoon-lang') ||
+        localStorage.getItem('levorato-lang') ||
+        'pt';
+    refreshVideoCarouselDots(saved);
+    updateArrowsAndDots();
+}
+
+// ============================================================
 // TITLE GLITCH, chromatic aberration on all section headings
 // ============================================================
 
@@ -1233,6 +1368,7 @@ function init() {
     initStreamTabs();
     initDownloadsTabs();
     initI18n();
+    initVideoCarousel();
     initTitleGlitch();
 }
 

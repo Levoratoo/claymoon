@@ -38,7 +38,7 @@
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css?v=20260406c">
+    <link rel="stylesheet" href="styles.css?v=20260406g">
 </head>
 <body>
 
@@ -402,29 +402,55 @@
     <section class="videos-section" id="videos">
         <div class="container">
 
-            <div class="section-header reveal-up">
-                <div class="section-tag" data-i18n="video-tag">VÍDEOS</div>
-                <h2 class="section-title" data-i18n="video-title">Na <span class="text-glow">pista</span></h2>
-                <p class="section-desc" data-i18n="video-desc">Momentos reais, ao vivo.</p>
+            <div class="vd-header reveal-up">
+                <h2 class="section-title vd-media-title" data-i18n="video-title"><span class="text-glow">Mídia</span></h2>
             </div>
 
-            <div class="vd-grid reveal-up">
+            <div class="vd-carousel-outer reveal-up" id="vd-carousel-root">
+                <div class="vd-carousel-shell">
+                    <button type="button" class="vd-carousel__arrow vd-carousel__arrow--prev" data-i18n-aria="video-carousel-prev-aria" aria-label="Vídeo anterior">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
 
-                <div class="vd-card">
-                    <div class="vd-card-label">SET AO VIVO <span>ClayMoon.music</span></div>
-                    <video src="videos/WhatsApp Video 2026-04-06 at 14.41.05.mp4" controls playsinline preload="metadata" class="vd-video"></video>
+                    <div class="vd-carousel-viewport" id="vd-carousel" tabindex="0" role="region" data-i18n-aria="video-carousel-region-aria" aria-label="Carrossel de vídeos">
+                        <div class="vd-carousel__track">
+                            <article class="vd-slide" id="vd-slide-0" role="tabpanel">
+                                <div class="vd-card">
+                                    <div class="vd-card-label">SET AO VIVO <span>ClayMoon.music</span></div>
+                                    <div class="vd-video-wrap">
+                                        <video src="videos/WhatsApp Video 2026-04-06 at 14.41.05.mp4" controls playsinline preload="metadata" class="vd-video"></video>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="vd-slide" id="vd-slide-1" role="tabpanel">
+                                <div class="vd-card">
+                                    <div class="vd-card-label">SET AO VIVO <span>ClayMoon.music</span></div>
+                                    <div class="vd-video-wrap">
+                                        <video src="videos/WhatsApp Video 2026-04-06 at 14.41.59.mp4" controls playsinline preload="metadata" class="vd-video"></video>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="vd-slide" id="vd-slide-2" role="tabpanel">
+                                <div class="vd-card">
+                                    <div class="vd-card-label">SET AO VIVO <span>ClayMoon.music</span></div>
+                                    <div class="vd-video-wrap">
+                                        <video src="videos/WhatsApp Video 2026-04-06 at 14.42.19.mp4" controls playsinline preload="metadata" class="vd-video"></video>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <button type="button" class="vd-carousel__arrow vd-carousel__arrow--next" data-i18n-aria="video-carousel-next-aria" aria-label="Próximo vídeo">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                 </div>
 
-                <div class="vd-card">
-                    <div class="vd-card-label">SET AO VIVO <span>ClayMoon.music</span></div>
-                    <video src="videos/WhatsApp Video 2026-04-06 at 14.41.59.mp4" controls playsinline preload="metadata" class="vd-video"></video>
+                <div class="vd-carousel-dots" role="tablist" data-i18n-aria="video-carousel-dots-aria" aria-label="Navegação entre vídeos">
+                    <button type="button" class="vd-carousel__dot is-active" role="tab" aria-selected="true" aria-controls="vd-slide-0" id="vd-dot-0"></button>
+                    <button type="button" class="vd-carousel__dot" role="tab" aria-selected="false" aria-controls="vd-slide-1" id="vd-dot-1"></button>
+                    <button type="button" class="vd-carousel__dot" role="tab" aria-selected="false" aria-controls="vd-slide-2" id="vd-dot-2"></button>
                 </div>
-
-                <div class="vd-card">
-                    <div class="vd-card-label">SET AO VIVO <span>ClayMoon.music</span></div>
-                    <video src="videos/WhatsApp Video 2026-04-06 at 14.42.19.mp4" controls playsinline preload="metadata" class="vd-video"></video>
-                </div>
-
             </div>
         </div>
     </section>
@@ -753,7 +779,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=20260406f"></script>
+    <script src="script.js?v=20260406g"></script>
 </body>
 </html>
 
