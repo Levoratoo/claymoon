@@ -3196,6 +3196,20 @@ section {
 }
 
 /* Hero mobile / telemóvel: tudo centrado e hierarquia clara */
+/* ── Círculo de perfil mobile (hero) ── */
+.hero-mobile-circle {
+    display: none; /* oculto no desktop */
+}
+
+@keyframes heroCirclePulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%       { opacity: 0.85; transform: scale(1.04); }
+}
+@keyframes heroRingRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
 @media (max-width: 900px) {
     .hero {
         text-align: center;
@@ -3206,6 +3220,71 @@ section {
         margin-left: auto;
         margin-right: auto;
     }
+
+    /* Círculo de perfil aparece apenas no mobile */
+    .hero-mobile-circle {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 170px;
+        height: 170px;
+        margin: 0 auto 1.6rem;
+        flex-shrink: 0;
+    }
+
+    /* Halo pulsante laranja/ciano ao redor */
+    .hero-mobile-circle__halo {
+        position: absolute;
+        inset: -18px;
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(255, 123, 0, 0.30) 0%,
+            rgba(0, 229, 255, 0.12) 50%,
+            transparent 72%
+        );
+        animation: heroCirclePulse 3.2s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    /* Anel giratório fino (inspirado no outro projeto) */
+    .hero-mobile-circle__ring {
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        border: 1.5px solid transparent;
+        background:
+            linear-gradient(#030a16, #030a16) padding-box,
+            conic-gradient(
+                rgba(255, 123, 0, 0.9) 0deg,
+                rgba(0, 229, 255, 0.7) 120deg,
+                rgba(255, 123, 0, 0.15) 240deg,
+                rgba(255, 123, 0, 0.9) 360deg
+            ) border-box;
+        animation: heroRingRotate 5s linear infinite;
+        pointer-events: none;
+    }
+
+    /* Imagem circular */
+    .hero-mobile-circle__img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        border: 2.5px solid rgba(255, 123, 0, 0.45);
+        box-shadow:
+            0 0 28px rgba(255, 123, 0, 0.35),
+            0 0 56px rgba(255, 123, 0, 0.15),
+            0 0 18px rgba(0, 229, 255, 0.18),
+            inset 0 0 30px rgba(0, 0, 0, 0.5);
+        filter: saturate(0.92) brightness(0.82) contrast(1.08);
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+}
     .hero-title {
         align-items: center;
         width: 100%;
