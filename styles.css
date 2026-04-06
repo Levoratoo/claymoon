@@ -3875,10 +3875,10 @@ section {
     grid-column: 1;
 }
 
-/* Uma foto estática por nó (capítulos performance — sem carrossel) */
+/* Uma foto estática por nó — proporção natural do arquivo (sem crop forçado) */
 .tl-node-photo {
     width: 100%;
-    max-width: 420px;
+    max-width: min(520px, 100%);
     margin-left: auto;
     border-radius: 6px;
     overflow: hidden;
@@ -3891,18 +3891,15 @@ section {
 }
 .tl-node-photo img {
     width: 100%;
+    height: auto;
     display: block;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    /* Retrato em caixa larga: sem isso o cover centralizado corta a testa */
-    object-position: center top;
     filter: grayscale(45%) brightness(0.72) contrast(1.1);
     transition: filter 0.5s ease, transform 0.5s ease;
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 .tl-node-photo:hover img {
     filter: grayscale(0%) brightness(0.9) contrast(1.05);
-    transform: scale(1.04);
+    transform: scale(1.02);
 }
 .tl-node-photo::after {
     content: '';
@@ -4048,6 +4045,13 @@ section {
         margin-right: auto;
     }
     .tl-node--flip .tl-node-carousel--left .tl-node-photo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tl-node-photo img {
+        max-height: min(78vh, 960px);
+        width: auto;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
