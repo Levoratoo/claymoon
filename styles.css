@@ -4902,7 +4902,16 @@ section {
     transform: translate3d(0, 0, 0);
 }
 
-/* Carrossel (mobile): reforço centro do play (Safari / WebKit) */
+/* Esconder o play grande do overlay (Safari / Chrome WebKit); barra inferior mantém-se */
+.vd-video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+}
+
+.vd-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+/* Carrossel (mobile): layout vídeo */
 @media (max-width: 900px) {
     .vd-video-wrap {
         align-items: center;
