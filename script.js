@@ -1285,11 +1285,19 @@ function initVideoCarousel() {
         viewport.scrollTo({ left: i * w, behavior: 'smooth' });
     }
 
+    function goNext() {
+        const i = currentIndex();
+        goTo(i >= n - 1 ? 0 : i + 1);
+    }
+
+    function goPrev() {
+        const i = currentIndex();
+        goTo(i <= 0 ? n - 1 : i - 1);
+    }
+
     function updateArrowsAndDots() {
         if (!isCarouselMode()) return;
         const idx = currentIndex();
-        prev.disabled = idx === 0;
-        next.disabled = idx === n - 1;
         dots.forEach((d, i) => {
             d.classList.toggle('is-active', i === idx);
             d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
@@ -1299,12 +1307,12 @@ function initVideoCarousel() {
     prev.addEventListener('click', () => {
         if (!isCarouselMode()) return;
         pauseAll();
-        goTo(currentIndex() - 1);
+        goPrev();
     });
     next.addEventListener('click', () => {
         if (!isCarouselMode()) return;
         pauseAll();
-        goTo(currentIndex() + 1);
+        goNext();
     });
 
     dots.forEach((dot, i) => {
@@ -1331,11 +1339,11 @@ function initVideoCarousel() {
         if (e.key === 'ArrowLeft') {
             e.preventDefault();
             pauseAll();
-            goTo(currentIndex() - 1);
+            goPrev();
         } else if (e.key === 'ArrowRight') {
             e.preventDefault();
             pauseAll();
-            goTo(currentIndex() + 1);
+            goNext();
         }
     });
 

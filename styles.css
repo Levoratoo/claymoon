@@ -4662,8 +4662,7 @@ section {
 ------------------------------------------------------- */
 .videos-section {
     padding: 7rem 0;
-    background:
-        linear-gradient(180deg, #010101 0%, #050608 45%, #020202 100%);
+    background: #000;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
@@ -4671,24 +4670,15 @@ section {
     isolation: isolate;
 }
 
-/* Malha suave + glow (sem blur) */
+/* Glow suave (sem grelha), mesmo preto que o resto da página */
 .videos-section::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
         radial-gradient(ellipse 55% 45% at 50% 0%, rgba(0, 229, 255, 0.09) 0%, transparent 55%),
         radial-gradient(ellipse 50% 40% at 15% 90%, rgba(255, 123, 0, 0.07) 0%, transparent 50%),
         radial-gradient(ellipse 40% 35% at 85% 75%, rgba(139, 92, 246, 0.06) 0%, transparent 45%);
-    background-size:
-        48px 48px,
-        48px 48px,
-        auto,
-        auto,
-        auto;
-    opacity: 0.85;
     pointer-events: none;
     z-index: 0;
 }
@@ -4874,7 +4864,19 @@ section {
     border-radius: 0;
 }
 
-/* width: auto + flex parent: caixa do <video> = frame real, WebKit centra o play corretamente */
+/* Wrapper extra: line-height 0 + flex evita baseline WebKit a deslocar o overlay do play */
+.vd-video-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 0;
+    line-height: 0;
+    font-size: 0;
+}
+
 .vd-video {
     position: relative;
     z-index: 1;
@@ -4884,19 +4886,30 @@ section {
     height: auto;
     max-height: min(58vh, 520px);
     object-fit: contain;
+    object-position: center center;
+    margin: 0 auto;
+    flex-shrink: 0;
+    align-self: center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
-/* Carrossel (mobile): reforço, evita play deslocado para a esquerda */
+/* Carrossel (mobile): reforço centro do play (Safari / WebKit) */
 @media (max-width: 900px) {
     .vd-video-wrap {
         align-items: center;
         justify-content: center;
     }
 
+    .vd-video-inner {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 1px;
+    }
+
     .vd-video {
         width: auto;
         max-width: 100%;
-        margin: 0 auto;
         min-height: 0;
     }
 }
@@ -4925,18 +4938,12 @@ section {
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.12);
 }
 
-.vd-carousel__arrow:hover:not(:disabled) {
+.vd-carousel__arrow:hover {
     background: rgba(0, 229, 255, 0.12);
     border-color: rgba(0, 229, 255, 0.65);
     color: #fff;
     box-shadow: 0 0 28px rgba(0, 229, 255, 0.35);
     transform: scale(1.05);
-}
-
-.vd-carousel__arrow:disabled {
-    opacity: 0.28;
-    cursor: not-allowed;
-    box-shadow: none;
 }
 
 /* Dots */
@@ -5063,6 +5070,11 @@ section {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .vd-video-inner {
+        width: 100%;
+        min-height: 0;
     }
 
     .vd-video {
