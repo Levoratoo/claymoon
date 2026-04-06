@@ -3227,9 +3227,9 @@ section {
         position: relative;
         align-items: center;
         justify-content: center;
-        width: 170px;
-        height: 170px;
-        margin: 0 auto 1.6rem;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 1.0rem;
         flex-shrink: 0;
     }
 
@@ -3266,25 +3266,36 @@ section {
         pointer-events: none;
     }
 
-    /* Imagem circular */
+    /* Imagem circular, brilho vivo */
     .hero-mobile-circle__img {
-        width: 170px;
-        height: 170px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center top;
-        border: 2.5px solid rgba(255, 123, 0, 0.45);
+        border: 2.5px solid rgba(255, 123, 0, 0.65);
         box-shadow:
-            0 0 28px rgba(255, 123, 0, 0.35),
-            0 0 56px rgba(255, 123, 0, 0.15),
-            0 0 18px rgba(0, 229, 255, 0.18),
-            inset 0 0 30px rgba(0, 0, 0, 0.5);
-        filter: saturate(0.92) brightness(0.82) contrast(1.08);
+            0 0 22px rgba(255, 123, 0, 0.70),
+            0 0 50px rgba(255, 123, 0, 0.35),
+            0 0 80px rgba(255, 123, 0, 0.18),
+            0 0 16px rgba(0, 229, 255, 0.35),
+            inset 0 0 20px rgba(0, 0, 0, 0.35);
+        filter: saturate(1.05) brightness(1.0) contrast(1.06);
         display: block;
         position: relative;
         z-index: 1;
     }
-}
+
+    /* Halo mais intenso para combinar com o brilho da foto */
+    .hero-mobile-circle__halo {
+        background: radial-gradient(
+            circle,
+            rgba(255, 123, 0, 0.50) 0%,
+            rgba(0, 229, 255, 0.20) 52%,
+            transparent 72%
+        );
+    }
+
     .hero-title {
         align-items: center;
         width: 100%;
@@ -3305,18 +3316,20 @@ section {
         justify-content: center;
         width: 100%;
     }
+    /* Pill mais fino e compacto no mobile */
     .hero-pill {
         justify-content: center;
         flex-wrap: wrap;
-        row-gap: 0.45rem;
-        column-gap: 0.5rem;
+        row-gap: 0.3rem;
+        column-gap: 0.4rem;
         max-width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding: 0.32rem 0.85rem;
+        font-size: 0.68rem;
         text-align: center;
     }
     .pill-coin {
-        letter-spacing: 0.14em;
+        letter-spacing: 0.10em;
+        font-size: 0.55rem;
     }
 }
 
