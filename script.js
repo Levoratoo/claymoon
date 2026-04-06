@@ -1246,6 +1246,25 @@ function initVideoCarousel() {
     const n = slides.length;
     if (n === 0 || !prev || !next) return;
 
+    const mqCarousel = window.matchMedia('(max-width: 900px)');
+
+    function isCarouselMode() {
+        return mqCarousel.matches;
+    }
+
+    function syncCarouselModeUi() {
+        const on = isCarouselMode();
+        viewport.setAttribute('tabindex', on ? '0' : '-1');
+        [prev, next, ...dots].forEach(el => {
+            if (!el) return;
+            el.setAttribute('aria-hidden', on ? 'false' : 'true');
+            el.tabIndex = on ? 0 : -1;
+        });
+        if (!on) {
+            viewport.scrollLeft = 0;
+        }
+    }
+
     function slideWidth() {
         return viewport.clientWidth || 1;
     }
@@ -1260,12 +1279,14 @@ function initVideoCarousel() {
     }
 
     function goTo(i) {
+        if (!isCarouselMode()) return;
         const w = slideWidth();
         i = Math.max(0, Math.min(n - 1, i));
         viewport.scrollTo({ left: i * w, behavior: 'smooth' });
     }
 
     function updateArrowsAndDots() {
+        if (!isCarouselMode()) return;
         const idx = currentIndex();
         prev.disabled = idx === 0;
         next.disabled = idx === n - 1;
@@ -1276,16 +1297,19 @@ function initVideoCarousel() {
     }
 
     prev.addEventListener('click', () => {
+        if (!isCarouselMode()) return;
         pauseAll();
         goTo(currentIndex() - 1);
     });
     next.addEventListener('click', () => {
+        if (!isCarouselMode()) return;
         pauseAll();
         goTo(currentIndex() + 1);
     });
 
     dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
+            if (!isCarouselMode()) return;
             pauseAll();
             goTo(i);
         });
@@ -1293,13 +1317,17 @@ function initVideoCarousel() {
 
     let scrollTimer;
     viewport.addEventListener('scroll', () => {
+        if (!isCarouselMode()) return;
         clearTimeout(scrollTimer);
         scrollTimer = setTimeout(updateArrowsAndDots, 80);
     }, { passive: true });
 
-    viewport.addEventListener('scrollend', updateArrowsAndDots, { passive: true });
+    viewport.addEventListener('scrollend', () => {
+        if (isCarouselMode()) updateArrowsAndDots();
+    }, { passive: true });
 
     viewport.addEventListener('keydown', e => {
+        if (!isCarouselMode()) return;
         if (e.key === 'ArrowLeft') {
             e.preventDefault();
             pauseAll();
@@ -1315,10 +1343,18 @@ function initVideoCarousel() {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            const idx = currentIndex();
-            viewport.scrollLeft = idx * slideWidth();
-            updateArrowsAndDots();
+            syncCarouselModeUi();
+            if (isCarouselMode()) {
+                const idx = currentIndex();
+                viewport.scrollLeft = idx * slideWidth();
+                updateArrowsAndDots();
+            }
         }, 120);
+    });
+
+    mqCarousel.addEventListener('change', () => {
+        syncCarouselModeUi();
+        if (isCarouselMode()) updateArrowsAndDots();
     });
 
     const saved =
@@ -1326,6 +1362,7 @@ function initVideoCarousel() {
         localStorage.getItem('levorato-lang') ||
         'pt';
     refreshVideoCarouselDots(saved);
+    syncCarouselModeUi();
     updateArrowsAndDots();
 }
 
