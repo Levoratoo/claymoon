@@ -4293,3 +4293,94 @@ section {
         0 0 40px rgba(255, 123, 0, 0.14);
 }
 
+/* ============================================================
+   UNIVERSAL TITLE GLITCH, applied by initTitleGlitch()
+   Chromatic aberration split: cyan slice up, orange slice down.
+   Duration + delay are randomised per element via JS CSS vars.
+   ============================================================ */
+.title-glitch {
+    position: relative;
+    animation: tgShift var(--tg-dur, 9s) infinite step-start;
+    animation-delay: var(--tg-delay, 0s);
+}
+
+.title-glitch::before,
+.title-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    overflow: hidden;
+    pointer-events: none;
+    white-space: inherit;
+    opacity: 0;
+}
+
+.title-glitch::before {
+    color: var(--accent-blue);
+    -webkit-text-fill-color: var(--accent-blue);
+    clip-path: polygon(0 18%, 100% 18%, 100% 42%, 0 42%);
+    animation: tgBefore var(--tg-dur, 9s) infinite step-start;
+    animation-delay: var(--tg-delay, 0s);
+}
+
+.title-glitch::after {
+    color: var(--primary);
+    -webkit-text-fill-color: var(--primary);
+    clip-path: polygon(0 57%, 100% 57%, 100% 82%, 0 82%);
+    animation: tgAfter var(--tg-dur, 9s) infinite step-start;
+    animation-delay: var(--tg-delay, 0s);
+}
+
+@keyframes tgShift {
+    0%, 86%, 100% { transform: none; filter: none; }
+    87%  { transform: translateX(-4px) skewX(-0.4deg); filter: brightness(1.15); }
+    88%  { transform: translateX(5px); filter: none; }
+    89%  { transform: translateX(-2px) skewX(0.3deg); }
+    90%  { transform: none; }
+    91%  { transform: translateX(3px); filter: brightness(1.1); }
+    92%  { transform: translateX(-1px); filter: none; }
+    93%  { transform: none; }
+}
+
+@keyframes tgBefore {
+    0%, 86%, 100% { opacity: 0; transform: none; }
+    87%  { opacity: 0.85; transform: translate(-5px, -2px); }
+    88%  { opacity: 0; }
+    89%  {
+        opacity: 0.70;
+        transform: translate(4px, 1px);
+        clip-path: polygon(0 30%, 100% 30%, 100% 50%, 0 50%);
+    }
+    90%  { opacity: 0; clip-path: polygon(0 18%, 100% 18%, 100% 42%, 0 42%); }
+    91%  { opacity: 0.55; transform: translate(-3px, 0); }
+    92%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes tgAfter {
+    0%, 86%, 100% { opacity: 0; transform: none; }
+    88%  { opacity: 0.75; transform: translate(5px, 2px); }
+    89%  { opacity: 0; }
+    90%  {
+        opacity: 0.60;
+        transform: translate(-4px, -1px);
+        clip-path: polygon(0 44%, 100% 44%, 100% 68%, 0 68%);
+    }
+    91%  { opacity: 0; clip-path: polygon(0 57%, 100% 57%, 100% 82%, 0 82%); }
+    92%  { opacity: 0.45; transform: translate(3px, 0); }
+    93%, 100% { opacity: 0; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title-glitch { animation: none; }
+    .title-glitch::before,
+    .title-glitch::after { display: none; }
+}
+

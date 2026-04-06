@@ -1118,6 +1118,26 @@ function initI18n() {
 }
 
 // ============================================================
+// TITLE GLITCH, chromatic aberration on all section headings
+// ============================================================
+
+function initTitleGlitch() {
+    const DURATIONS = [7, 8, 9, 10, 11, 12, 13, 14, 15];
+    const els = document.querySelectorAll(
+        '.section-title, .booking-title, .fs-title-line1, .fs-title-line2, .tl-chapter-title'
+    );
+    els.forEach((el, i) => {
+        el.setAttribute('data-text', el.textContent.trim());
+        el.classList.add('title-glitch');
+        const dur = DURATIONS[i % DURATIONS.length];
+        // Negative delay starts the animation mid-cycle so they're all offset
+        const delay = -((Math.random() * dur * 0.9 + dur * 0.05).toFixed(2));
+        el.style.setProperty('--tg-dur', dur + 's');
+        el.style.setProperty('--tg-delay', delay + 's');
+    });
+}
+
+// ============================================================
 // INIT
 // ============================================================
 
@@ -1136,6 +1156,7 @@ function init() {
     initStreamTabs();
     initDownloadsTabs();
     initI18n();
+    initTitleGlitch();
 }
 
 if (document.readyState === 'loading') {
