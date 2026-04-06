@@ -3875,6 +3875,50 @@ section {
     grid-column: 1;
 }
 
+/* Uma foto estática por nó (capítulos performance — sem carrossel) */
+.tl-node-photo {
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+}
+.tl-node--flip .tl-node-carousel--left .tl-node-photo {
+    margin-left: 0;
+    margin-right: auto;
+}
+.tl-node-photo img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    filter: grayscale(45%) brightness(0.72) contrast(1.1);
+    transition: filter 0.5s ease, transform 0.5s ease;
+    transform: scale(1.02);
+}
+.tl-node-photo:hover img {
+    filter: grayscale(0%) brightness(0.9) contrast(1.05);
+    transform: scale(1.04);
+}
+.tl-node-photo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+.tl-node-photo:hover::after {
+    transform: scaleX(1);
+}
+
 /* Clipping window — fixed height, hides overflow */
 .tl-vc-mask {
     width: 100%;
@@ -3994,6 +4038,16 @@ section {
     .tl-node--flip .tl-node-carousel--left {
         grid-column: 1 / 3;
         grid-row: 2;
+    }
+    .tl-node-photo {
+        max-width: none;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tl-node--flip .tl-node-carousel--left .tl-node-photo {
+        margin-left: auto;
+        margin-right: auto;
     }
     .tl-vc-mask {
         height: 280px;
