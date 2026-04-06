@@ -3179,13 +3179,12 @@ section {
 }
 
 @media (max-width: 960px) {
-    /* Hero: centered on tablet/mobile (single column, no visual to stack) */
+    /* Hero: tablet, coluna única */
     .hero {
         justify-content: center;
         align-items: flex-start;
         padding-top: calc(var(--nav-total) + 3rem);
         padding-bottom: 5rem;
-        text-align: left;
     }
     .hero::before {
         background-position: center, center, center, center, 68% center;
@@ -3194,6 +3193,52 @@ section {
         max-width: calc(100vw - var(--page-gutter) * 2 - 1.5rem);
     }
     .hero-pill { margin: 0 0 1.5rem; }
+}
+
+/* Hero mobile / telemóvel: tudo centrado e hierarquia clara */
+@media (max-width: 900px) {
+    .hero {
+        text-align: center;
+    }
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-title {
+        align-items: center;
+        width: 100%;
+    }
+    /* Sobrescreve align-self do subtítulo (antes ficava colado à esquerda) */
+    .title-line-red {
+        align-self: center;
+        text-align: center;
+        white-space: normal;
+    }
+    .hero-desc {
+        text-align: center;
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+    .hero-pill {
+        justify-content: center;
+        flex-wrap: wrap;
+        row-gap: 0.45rem;
+        column-gap: 0.5rem;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+    }
+    .pill-coin {
+        letter-spacing: 0.14em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -3338,14 +3383,7 @@ section {
         padding-right: 1rem;
     }
 
-    /* Hero: coluna alinhada (descrição já era centrada) */
-    .hero-content {
-        align-items: center;
-        text-align: center;
-    }
-    .hero-title {
-        width: 100%;
-    }
+    /* Hero: tipografia mais compacta (layout centrado em max-width: 900px) */
 
     /* Hero titles, mobile */
     .title-line-white {
@@ -3361,15 +3399,19 @@ section {
     .hero-fire-line::after { display: none; }
     .hero-desc {
         font-size: 0.94rem;
-        max-width: 100%;
+        max-width: min(100%, 20rem);
         white-space: normal;
-        text-align: center;
     }
 
     .hero-buttons,
     .booking-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
+    }
+    .hero-buttons .btn {
+        width: min(100%, 300px);
+        justify-content: center;
     }
 
     /* Tension block, "AGORA??" não overflow */
