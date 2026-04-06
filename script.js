@@ -675,8 +675,9 @@ const i18n = {
         'footer-musicas'     : 'Músicas',
         'footer-social-heading': 'Redes Sociais',
         'footer-copy'        : '© 2026 Claymoon.music. Todos os direitos reservados.',
-        'footer-credit-text' : 'Site desenvolvido por',
-        'footer-credit-name' : 'ClayMoon.music',
+        'footer-credit-text' : 'Site desenvolvido por mim',
+        'footer-credit-name' : 'Pedro Levorato',
+        'footer-credit-link-aria' : 'Instagram de Pedro Levorato',
     },
     en: {
         'nav-historia'       : 'History',
@@ -751,7 +752,8 @@ const i18n = {
         'footer-social-heading': 'Social Media',
         'footer-copy'        : '© 2026 Claymoon.music. All rights reserved.',
         'footer-credit-text' : 'Website developed by',
-        'footer-credit-name' : 'ClayMoon.music',
+        'footer-credit-name' : 'Pedro Levorato',
+        'footer-credit-link-aria' : 'Pedro Levorato on Instagram',
     },
     es: {
         'nav-historia'       : 'Historia',
@@ -826,7 +828,8 @@ const i18n = {
         'footer-social-heading': 'Redes Sociales',
         'footer-copy'        : '© 2026 Claymoon.music. Todos los derechos reservados.',
         'footer-credit-text' : 'Sitio desarrollado por',
-        'footer-credit-name' : 'ClayMoon.music',
+        'footer-credit-name' : 'Pedro Levorato',
+        'footer-credit-link-aria' : 'Instagram de Pedro Levorato',
     },
     zh: {
         'nav-historia'       : '历程',
@@ -901,7 +904,8 @@ const i18n = {
         'footer-social-heading': '社交媒体',
         'footer-copy'        : '© 2026 Claymoon.music. 保留所有权利。',
         'footer-credit-text' : '网站开发者',
-        'footer-credit-name' : 'ClayMoon.music',
+        'footer-credit-name' : 'Pedro Levorato',
+        'footer-credit-link-aria' : '在 Instagram 上打开 Pedro Levorato',
     },
     de: {
         'nav-historia'       : 'Geschichte',
@@ -976,7 +980,8 @@ const i18n = {
         'footer-social-heading': 'Social Media',
         'footer-copy'        : '© 2026 Claymoon.music. Alle Rechte vorbehalten.',
         'footer-credit-text' : 'Website entwickelt von',
-        'footer-credit-name' : 'ClayMoon.music',
+        'footer-credit-name' : 'Pedro Levorato',
+        'footer-credit-link-aria' : 'Pedro Levorato auf Instagram',
     },
     ja: {
         'nav-historia'       : 'ヒストリー',
@@ -1051,7 +1056,8 @@ const i18n = {
         'footer-social-heading': 'ソーシャルメディア',
         'footer-copy'        : '© 2026 Claymoon.music. 無断複製禁止。',
         'footer-credit-text' : 'ウェブサイト制作',
-        'footer-credit-name' : 'ClayMoon.music',
+        'footer-credit-name' : 'Pedro Levorato',
+        'footer-credit-link-aria' : 'Pedro Levorato の Instagram を開く',
     },
 };
 
