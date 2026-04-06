@@ -1,12 +1,12 @@
 /* ============================================================
-   LEVORATO PRESS KIT — SCRIPT
+   LEVORATO PRESS KIT, SCRIPT
    Particle system, animations, navbar, counters
    ============================================================ */
 
 'use strict';
 
 // ============================================================
-// PARTICLE SYSTEM — canvas (hero only, pauses when off-screen)
+// PARTICLE SYSTEM, canvas (hero only, pauses when off-screen)
 // ============================================================
 
 const canvas = document.getElementById('particle-canvas');
@@ -63,7 +63,7 @@ class Particle {
 
 function buildParticles() {
     particles = [];
-    // Cap at 60 — enough for effect, light on GPU
+    // Cap at 60, enough for effect, light on GPU
     const count = Math.min(60, Math.floor((canvas.width * canvas.height) / 22000));
     for (let i = 0; i < count; i++) {
         particles.push(new Particle());
@@ -104,7 +104,7 @@ const navbar    = document.getElementById('navbar');
 const navToggle = document.getElementById('nav-toggle');
 const navMenu   = document.getElementById('nav-menu');
 
-// Hero parallax — moves ::before background at 25% scroll speed
+// Hero parallax, moves ::before background at 25% scroll speed
 const heroEl               = document.querySelector('.hero');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -182,7 +182,7 @@ function updateActiveNav() {
 }
 
 // ============================================================
-// INTERSECTION OBSERVER — REVEAL ANIMATIONS
+// INTERSECTION OBSERVER, REVEAL ANIMATIONS
 // ============================================================
 
 const revealObserver = new IntersectionObserver(
@@ -288,7 +288,7 @@ window.addEventListener('resize', () => {
 window.addEventListener('scroll', onScroll, { passive: true });
 
 // ============================================================
-// TIMELINE — DRAG-TO-SCROLL DJ GALLERY
+// TIMELINE, DRAG-TO-SCROLL DJ GALLERY
 // ============================================================
 
 function initDjGallery() {
@@ -325,7 +325,7 @@ function initDjGallery() {
 }
 
 // ============================================================
-// TIMELINE — MOBILE CAROUSEL DRAG
+// TIMELINE, MOBILE CAROUSEL DRAG
 // ============================================================
 
 function initTimelineMobileCarousels() {
@@ -362,7 +362,7 @@ function initTimelineMobileCarousels() {
 }
 
 // ============================================================
-// TIMELINE — TENSION BLOCK GLITCH
+// TIMELINE, TENSION BLOCK GLITCH
 // ============================================================
 
 function initTensionGlitch() {
@@ -383,7 +383,7 @@ function initTensionGlitch() {
 }
 
 // ============================================================
-// TIMELINE — SPINE LINE SCROLL ANIMATION
+// TIMELINE, SPINE LINE SCROLL ANIMATION
 // ============================================================
 
 function initSpineLine() {
@@ -421,7 +421,7 @@ function initSpineLine() {
 }
 
 // ============================================================
-// TIMELINE — SCROLL REVEAL WITH STAGGER
+// TIMELINE, SCROLL REVEAL WITH STAGGER
 // ============================================================
 
 function initTimelineReveal() {
@@ -468,7 +468,7 @@ function initTimelineReveal() {
 }
 
 // ============================================================
-// TIMELINE — TENSION SECTION: red flicker on entry
+// TIMELINE, TENSION SECTION: red flicker on entry
 // ============================================================
 
 function initTensionEntry() {
@@ -495,7 +495,7 @@ function initTensionEntry() {
 }
 
 // ============================================================
-// HERO — CSS PARTICLES (generated at runtime, reduced count)
+// HERO, CSS PARTICLES (generated at runtime, reduced count)
 // ============================================================
 
 function initHeroParticles() {
@@ -530,7 +530,7 @@ function initHeroParticles() {
 }
 
 // ============================================================
-// MUSIC — STREAM TABS
+// MUSIC, STREAM TABS
 // ============================================================
 
 function initStreamTabs() {
@@ -590,23 +590,23 @@ const i18n = {
         'tl-section-title'   : 'Uma trajetória de <span class="text-glow">2 anos</span>',
         'ch01-tag'           : 'CAPÍTULO 01',
         'ch01-title'         : 'Onde tudo<br><span class="tl-title-accent">começou.</span>',
-        'ch01-desc'          : 'Raízes no Brasil e formação em música: método e ouvido antes de cruzar o Atlântico. Na Europa, Dublin e a cena eletrônica viraram laboratório — e há dois anos a jornada ganhou nome: ClayMoon.music, com estudo de groove, referências de pista e um som entre Tech House e Minimal Deep Tech. A foto ao lado é desse começo, antes do projeto assumir o visual e o discurso de hoje.',
+        'ch01-desc'          : 'Raízes no Brasil e formação em música: método e ouvido antes de cruzar o Atlântico. Na Europa, Dublin e a cena eletrônica viraram laboratório, e há dois anos a jornada ganhou nome: ClayMoon.music, com estudo de groove, referências de pista e um som entre Tech House e Minimal Deep Tech. A foto ao lado é desse começo, antes do projeto assumir o visual e o discurso de hoje.',
         'ch02-tag'           : 'CAPÍTULO 02',
         'ch02-title'         : 'Onde eu<br><span class="tl-title-accent">cheguei.</span>',
         'ch02-crowd'         : 'Porto · press kit &amp; som pronto',
-        'ch02-desc'          : 'Hoje o projeto está redondo: identidade visual, fotos de imprensa, sets no SoundCloud e um discurso de pista claro — groove, energia e referência europeia. A proposta é club, open air e warm-ups com Tech House e Minimal Deep Tech; o próximo passo é levar isso para o line-up certo, com material e postura de quem constrói carreira com consistência.',
+        'ch02-desc'          : 'Hoje o projeto está redondo: identidade visual, fotos de imprensa, sets no SoundCloud e um discurso de pista claro, groove, energia e referência europeia. A proposta é club, open air e warm-ups com Tech House e Minimal Deep Tech; o próximo passo é levar isso para o line-up certo, com material e postura de quem constrói carreira com consistência.',
         'ch03-tag'           : 'CAPÍTULO 03',
         'tension-e'          : 'E',
         'tension-phrase'     : ' onde estou',
         'tension-now'        : 'AGORA??',
         'tension-sub'        : 'A resposta está abaixo.',
         'ch04-tag'           : 'CAPÍTULO 03',
-        'ch04-year'          : '2025 — HOJE',
+        'ch04-year'          : '2025, HOJE',
         'ch04-title'         : 'Novo<br><span class="tl-title-accent">Ciclo.</span>',
-        'ch04-quote'         : 'Dois anos focados em ClayMoon.music: referências europeias, estética arcade e sets que mostram onde quero chegar na pista — Minimal Bass no sangue, groove na cabeça e vontade de estrear o próximo capítulo com o time certo.',
+        'ch04-quote'         : 'Dois anos focados em ClayMoon.music: referências europeias, estética arcade e sets que mostram onde quero chegar na pista, Minimal Bass no sangue, groove na cabeça e vontade de estrear o próximo capítulo com o time certo.',
         'sobre-tag'          : 'SOBRE',
         'sobre-title'        : 'Da pista local para a<br><span class="text-glow">cena europeia</span>',
-        'sobre-p1'           : 'Claymoon.music é DJ há 2 anos e produtor musical, com início de trajetória em Dublin, Irlanda — onde teve contato direto com a cena eletrônica europeia e desenvolveu sua identidade sonora.',
+        'sobre-p1'           : 'Claymoon.music é DJ há 2 anos e produtor musical, com início de trajetória em Dublin, Irlanda, onde teve contato direto com a cena eletrônica europeia e desenvolveu sua identidade sonora.',
         'sobre-p2'           : 'Hoje, baseado em Porto, Portugal, busca expandir sua presença nas pistas locais levando uma proposta única: um tech house groovado, com influências de house e minimal deep tech, construindo sets dinâmicos que surpreendem e mantêm a pista em movimento constante.',
         'sobre-p3'           : 'Sua estética mistura o moderno com o nostálgico, criando uma experiência sonora e visual que conecta passado e futuro na pista.',
         'sobre-p4'           : 'Minha formação em música pela <strong>Universidade Estadual de Maringá</strong> trouxe uma base forte, mas é na vivência que meu som ganha verdade.',
@@ -628,11 +628,11 @@ const i18n = {
         'fs-new': 'NOVO SET',
         'fs-title1': 'GROOVE',
         'fs-subtitle': 'Tech House &middot; Mar 2026',
-        'fs-desc': 'Pure groove no dancefloor. Set de Tech House e Groove cheio de energia e textura — do início ao fim, pista em movimento.',
+        'fs-desc': 'Pure groove no dancefloor. Set de Tech House e Groove cheio de energia e textura, do início ao fim, pista em movimento.',
         'fs-listen': 'Ouvir no SoundCloud',
         'music-tag'          : 'OUÇA',
         'music-title'        : 'Sets no <span class="text-glow">SoundCloud</span>',
-        'music-desc'         : 'Todos os sets disponíveis — ouça direto no player.',
+        'music-desc'         : 'Todos os sets disponíveis, ouça direto no player.',
         'sc-cta'             : 'Ver todos no SoundCloud',
         'booking-tag'        : 'CONTATO',
         'booking-title'      : 'Pronto para<br><span class="text-glow">levar ao limite?</span>',
@@ -662,23 +662,23 @@ const i18n = {
         'tl-section-title'   : 'A journey of <span class="text-glow">2 years</span>',
         'ch01-tag'           : 'CHAPTER 01',
         'ch01-title'         : 'Where it all<br><span class="tl-title-accent">began.</span>',
-        'ch01-desc'          : 'Roots in Brazil and a formal music education: discipline and ear before crossing the Atlantic. In Europe, Dublin and the electronic scene became a lab — and for two years the journey has had a name: ClayMoon.music, studying groove, club references, and a sound between Tech House and Minimal Deep Tech. The photos are from that earlier chapter, before the project took on today’s look and voice.',
+        'ch01-desc'          : 'Roots in Brazil and a formal music education: discipline and ear before crossing the Atlantic. In Europe, Dublin and the electronic scene became a lab, and for two years the journey has had a name: ClayMoon.music, studying groove, club references, and a sound between Tech House and Minimal Deep Tech. The photos are from that earlier chapter, before the project took on today’s look and voice.',
         'ch02-tag'           : 'CHAPTER 02',
         'ch02-title'         : 'How far<br><span class="tl-title-accent">I came.</span>',
         'ch02-crowd'         : 'Porto · press kit &amp; sound locked in',
-        'ch02-desc'          : 'Today the project is rounded out: visual identity, press shots, SoundCloud sets, and a clear dance-floor story — groove, energy, and a European reference. The pitch is clubs, open air, and warm-ups with Tech House and Minimal Deep Tech; the next step is the right line-up, with assets and attitude built for the long run.',
+        'ch02-desc'          : 'Today the project is rounded out: visual identity, press shots, SoundCloud sets, and a clear dance-floor story, groove, energy, and a European reference. The pitch is clubs, open air, and warm-ups with Tech House and Minimal Deep Tech; the next step is the right line-up, with assets and attitude built for the long run.',
         'ch03-tag'           : 'CHAPTER 03',
         'tension-e'          : 'And',
         'tension-phrase'     : ' where am I',
         'tension-now'        : 'NOW??',
         'tension-sub'        : 'The answer is below.',
         'ch04-tag'           : 'CHAPTER 03',
-        'ch04-year'          : '2025 — TODAY',
+        'ch04-year'          : '2025, TODAY',
         'ch04-title'         : 'New<br><span class="tl-title-accent">Cycle.</span>',
-        'ch04-quote'         : 'Two years focused on ClayMoon.music: European references, arcade aesthetics, and sets that show where I want the night to go — Minimal Bass in the DNA, groove in the head, and ready to open the next chapter with the right crew.',
+        'ch04-quote'         : 'Two years focused on ClayMoon.music: European references, arcade aesthetics, and sets that show where I want the night to go, Minimal Bass in the DNA, groove in the head, and ready to open the next chapter with the right crew.',
         'sobre-tag'          : 'ABOUT',
         'sobre-title'        : 'From the local dance floor to the<br><span class="text-glow">European scene</span>',
-        'sobre-p1'           : 'Claymoon.music has been a DJ for 2 years and is also a music producer, having started his journey in Dublin, Ireland — where he had direct contact with the European electronic scene and shaped his sonic identity.',
+        'sobre-p1'           : 'Claymoon.music has been a DJ for 2 years and is also a music producer, having started his journey in Dublin, Ireland, where he had direct contact with the European electronic scene and shaped his sonic identity.',
         'sobre-p2'           : 'Now based in Porto, Portugal, he is looking to expand his presence on local dance floors with a unique proposal: groovy tech house with influences from house and minimal deep tech, building dynamic sets that surprise and keep the floor in constant motion.',
         'sobre-p3'           : 'His aesthetic blends the modern with the nostalgic, creating a sonic and visual experience that connects past and future on the dance floor.',
         'sobre-p4'           : 'My music training at <strong>Universidade Estadual de Maringá</strong> gave me a strong foundation, but it\'s lived experience that gives my sound its truth.',
@@ -700,11 +700,11 @@ const i18n = {
         'fs-new': 'NEW SET',
         'fs-title1': 'GROOVE',
         'fs-subtitle': 'Tech House &middot; Mar 2026',
-        'fs-desc': 'Pure groove on the dancefloor. A Tech House set full of energy and texture — from start to finish, floor in motion.',
+        'fs-desc': 'Pure groove on the dancefloor. A Tech House set full of energy and texture, from start to finish, floor in motion.',
         'fs-listen': 'Listen on SoundCloud',
         'music-tag'          : 'LISTEN',
         'music-title'        : 'Sets on <span class="text-glow">SoundCloud</span>',
-        'music-desc'         : 'All available sets — listen directly in the player.',
+        'music-desc'         : 'All available sets, listen directly in the player.',
         'sc-cta'             : 'See all on SoundCloud',
         'booking-tag'        : 'CONTACT',
         'booking-title'      : 'Ready to<br><span class="text-glow">push the limits?</span>',
@@ -734,7 +734,7 @@ const i18n = {
         'tl-section-title'   : 'Un viaje de <span class="text-glow">2 años</span>',
         'ch01-tag'           : 'CAPÍTULO 01',
         'ch01-title'         : 'Donde todo<br><span class="tl-title-accent">comenzó.</span>',
-        'ch01-desc'          : 'Raíces en Brasil y formación musical: método y oído antes de cruzar el Atlántico. En Europa, Dublín y la electrónica fueron laboratorio — y desde hace dos años el viaje tiene nombre: ClayMoon.music, con estudio de groove, referencias de pista y un sonido entre Tech House y Minimal Deep Tech. La imagen es de ese inicio, antes de la estética actual.',
+        'ch01-desc'          : 'Raíces en Brasil y formación musical: método y oído antes de cruzar el Atlántico. En Europa, Dublín y la electrónica fueron laboratorio, y desde hace dos años el viaje tiene nombre: ClayMoon.music, con estudio de groove, referencias de pista y un sonido entre Tech House y Minimal Deep Tech. La imagen es de ese inicio, antes de la estética actual.',
         'ch02-tag'           : 'CAPÍTULO 02',
         'ch02-title'         : 'Hasta donde<br><span class="tl-title-accent">llegué.</span>',
         'ch02-crowd'         : 'Oporto · press kit y sonido listo',
@@ -745,9 +745,9 @@ const i18n = {
         'tension-now'        : '¿AHORA??',
         'tension-sub'        : 'La respuesta está abajo.',
         'ch04-tag'           : 'CAPÍTULO 03',
-        'ch04-year'          : '2025 — HOY',
+        'ch04-year'          : '2025, HOY',
         'ch04-title'         : 'Nuevo<br><span class="tl-title-accent">Ciclo.</span>',
-        'ch04-quote'         : 'Dos años enfocados en ClayMoon.music: referencias europeas, estética arcade y sets que muestran hacia dónde quiero llevar la noche — Minimal Bass en la sangre, groove en la cabeza y ganas de abrir el próximo capítulo con el equipo adecuado.',
+        'ch04-quote'         : 'Dos años enfocados en ClayMoon.music: referencias europeas, estética arcade y sets que muestran hacia dónde quiero llevar la noche, Minimal Bass en la sangre, groove en la cabeza y ganas de abrir el próximo capítulo con el equipo adecuado.',
         'sobre-tag'          : 'SOBRE',
         'sobre-title'        : 'De la pista local a la<br><span class="text-glow">escena europea</span>',
         'sobre-p1'           : 'Claymoon.music es DJ desde hace 2 años y productor musical, con inicio de trayectoria en Dublín, Irlanda, donde tuvo contacto directo con la escena electrónica europea y desarrolló su identidad sonora.',
@@ -772,11 +772,11 @@ const i18n = {
         'fs-new': 'NUEVO SET',
         'fs-title1': 'GROOVE',
         'fs-subtitle': 'Tech House &middot; Mar 2026',
-        'fs-desc': 'Groove puro en la pista. Set de Tech House lleno de energía y textura — de principio a fin, la pista en movimiento.',
+        'fs-desc': 'Groove puro en la pista. Set de Tech House lleno de energía y textura, de principio a fin, la pista en movimiento.',
         'fs-listen': 'Escuchar en SoundCloud',
         'music-tag'          : 'ESCUCHA',
         'music-title'        : 'Sets en <span class="text-glow">SoundCloud</span>',
-        'music-desc'         : 'Todos los sets disponibles — escucha directamente en el reproductor.',
+        'music-desc'         : 'Todos los sets disponibles, escucha directamente en el reproductor.',
         'sc-cta'             : 'Ver todos en SoundCloud',
         'booking-tag'        : 'CONTACTO',
         'booking-title'      : 'Listo para<br><span class="text-glow">llevar al límite?</span>',
@@ -806,20 +806,20 @@ const i18n = {
         'tl-section-title'   : '2年的<span class="text-glow">旅程</span>',
         'ch01-tag'           : '第一章',
         'ch01-title'         : '一切<br><span class="tl-title-accent">开始的地方。</span>',
-        'ch01-desc'          : '根在巴西，受过系统的音乐训练：在跨洋之前有方法与耳朵。在欧洲，都柏林与电子场景成了实验室——两年来，这段路有了名字：ClayMoon.music，钻研律动、舞池审美，以及 Tech House 与 Minimal Deep Tech 之间的声音。照片来自更早的阶段，那时项目还没有今天的视觉与叙事。',
+        'ch01-desc'          : '根在巴西，受过系统的音乐训练：在跨洋之前有方法与耳朵。在欧洲，都柏林与电子场景成了实验室, 两年来，这段路有了名字：ClayMoon.music，钻研律动、舞池审美，以及 Tech House 与 Minimal Deep Tech 之间的声音。照片来自更早的阶段，那时项目还没有今天的视觉与叙事。',
         'ch02-tag'           : '第二章',
         'ch02-title'         : '我<br><span class="tl-title-accent">到达的地方。</span>',
         'ch02-crowd'         : '波尔图 · 宣传素材与声音已就绪',
-        'ch02-desc'          : '如今项目完整：视觉识别、宣传照、SoundCloud 上的 set，以及清晰的舞池叙事——律动、能量与欧洲参照。面向俱乐部、户外与暖场，风格为 Tech House 与 Minimal Deep Tech；下一步是进入合适的阵容，以专业素材与态度长期经营。',
+        'ch02-desc'          : '如今项目完整：视觉识别、宣传照、SoundCloud 上的 set，以及清晰的舞池叙事, 律动、能量与欧洲参照。面向俱乐部、户外与暖场，风格为 Tech House 与 Minimal Deep Tech；下一步是进入合适的阵容，以专业素材与态度长期经营。',
         'ch03-tag'           : '第三章',
         'tension-e'          : '而',
         'tension-phrase'     : ' 我现在在哪里',
         'tension-now'        : '现在？？',
         'tension-sub'        : '答案就在下面。',
         'ch04-tag'           : '第三章',
-        'ch04-year'          : '2025 — 至今',
+        'ch04-year'          : '2025, 至今',
         'ch04-title'         : '新<br><span class="tl-title-accent">篇章。</span>',
-        'ch04-quote'         : '两年专注于 ClayMoon.music：欧洲参照、街机美学与 sets，展现我想把夜晚带向何方——Minimal Bass 在血液里，律动感在脑中，并准备好与合适的团队开启下一章。',
+        'ch04-quote'         : '两年专注于 ClayMoon.music：欧洲参照、街机美学与 sets，展现我想把夜晚带向何方, Minimal Bass 在血液里，律动感在脑中，并准备好与合适的团队开启下一章。',
         'sobre-tag'          : '关于',
         'sobre-title'        : '从本地舞池到<br><span class="text-glow">欧洲场景</span>',
         'sobre-p1'           : 'Claymoon.music 做 DJ 已有 2 年，同时也是音乐制作人。他的旅程始于爱尔兰都柏林，在那里他直接接触了欧洲电子音乐场景，并逐步建立起自己的声音身份。',
@@ -844,11 +844,11 @@ const i18n = {
         'fs-new': '新曲集',
         'fs-title1': 'GROOVE',
         'fs-subtitle': 'Tech House &middot; 2026年3月',
-        'fs-desc': '舞池上的纯粹律动。充满能量与质感的 Tech House 曲目集——从头到尾，舞池持续沸腾。',
+        'fs-desc': '舞池上的纯粹律动。充满能量与质感的 Tech House 曲目集, 从头到尾，舞池持续沸腾。',
         'fs-listen': '在 SoundCloud 收听',
         'music-tag'          : '收听',
         'music-title'        : '<span class="text-glow">SoundCloud</span> 上的曲目集',
-        'music-desc'         : '所有可用曲目集——直接在播放器中收听。',
+        'music-desc'         : '所有可用曲目集, 直接在播放器中收听。',
         'sc-cta'             : '在 SoundCloud 查看全部',
         'booking-tag'        : '联系',
         'booking-title'      : '准备好<br><span class="text-glow">突破极限了吗？</span>',
@@ -878,26 +878,26 @@ const i18n = {
         'tl-section-title'   : 'Eine Reise von <span class="text-glow">2 Jahren</span>',
         'ch01-tag'           : 'KAPITEL 01',
         'ch01-title'         : 'Wo alles<br><span class="tl-title-accent">begann.</span>',
-        'ch01-desc'          : 'Wurzeln in Brasilien und eine musikalische Ausbildung: Methode und Gehör, bevor der Atlantik kam. In Europa wurden Dublin und die Elektronik zum Labor — seit zwei Jahren trägt diesen Weg ein Name: ClayMoon.music, mit Groove-Studium, Club-Referenzen und einem Sound zwischen Tech House und Minimal Deep Tech. Das Bild zeigt den frühen Abschnitt, bevor Look und Story von heute entstanden.',
+        'ch01-desc'          : 'Wurzeln in Brasilien und eine musikalische Ausbildung: Methode und Gehör, bevor der Atlantik kam. In Europa wurden Dublin und die Elektronik zum Labor, seit zwei Jahren trägt diesen Weg ein Name: ClayMoon.music, mit Groove-Studium, Club-Referenzen und einem Sound zwischen Tech House und Minimal Deep Tech. Das Bild zeigt den frühen Abschnitt, bevor Look und Story von heute entstanden.',
         'ch02-tag'           : 'KAPITEL 02',
         'ch02-title'         : 'Wie weit<br><span class="tl-title-accent">ich kam.</span>',
         'ch02-crowd'         : 'Porto · Press kit &amp; Sound steht',
-        'ch02-desc'          : 'Heute ist das Projekt rund: visuelle Identität, Pressefotos, SoundCloud-Sets und eine klare Dancefloor-Story — Groove, Energie und europäische Referenz. Das Angebot: Club, Open Air und Warm-ups mit Tech House und Minimal Deep Tech; der nächste Schritt ist das passende Line-up, mit Material und Haltung für die langfristige Karriere.',
+        'ch02-desc'          : 'Heute ist das Projekt rund: visuelle Identität, Pressefotos, SoundCloud-Sets und eine klare Dancefloor-Story, Groove, Energie und europäische Referenz. Das Angebot: Club, Open Air und Warm-ups mit Tech House und Minimal Deep Tech; der nächste Schritt ist das passende Line-up, mit Material und Haltung für die langfristige Karriere.',
         'ch03-tag'           : 'KAPITEL 03',
         'tension-e'          : 'Und',
         'tension-phrase'     : ' wo bin ich',
         'tension-now'        : 'JETZT??',
         'tension-sub'        : 'Die Antwort liegt unten.',
         'ch04-tag'           : 'KAPITEL 03',
-        'ch04-year'          : '2025 — HEUTE',
+        'ch04-year'          : '2025, HEUTE',
         'ch04-title'         : 'Neuer<br><span class="tl-title-accent">Zyklus.</span>',
-        'ch04-quote'         : 'Zwei Jahre Fokus auf ClayMoon.music: europäische Referenzen, Arcade-Ästhetik und Sets, die zeigen, wohin die Nacht soll — Minimal Bass im Blut, Groove im Kopf und bereit für das nächste Kapitel mit dem richtigen Team.',
+        'ch04-quote'         : 'Zwei Jahre Fokus auf ClayMoon.music: europäische Referenzen, Arcade-Ästhetik und Sets, die zeigen, wohin die Nacht soll, Minimal Bass im Blut, Groove im Kopf und bereit für das nächste Kapitel mit dem richtigen Team.',
         'sobre-tag'          : 'ÜBER',
         'sobre-title'        : 'Vom lokalen Dancefloor zur<br><span class="text-glow">europäischen Szene</span>',
         'sobre-p1'           : 'Claymoon.music ist seit 2 Jahren DJ und Musikproduzent. Seine Laufbahn begann in Dublin, Irland, wo er direkten Kontakt mit der europäischen elektronischen Szene hatte und seine klangliche Identität entwickelte.',
         'sobre-p2'           : 'Heute lebt er in Porto, Portugal, und will seine Präsenz auf lokalen Dancefloors mit einem einzigartigen Ansatz ausbauen: grooviger Tech House mit Einflüssen aus House und Minimal Deep Tech, in dynamischen Sets, die überraschen und den Floor konstant in Bewegung halten.',
         'sobre-p3'           : 'Seine Ästhetik verbindet das Moderne mit dem Nostalgischen und schafft ein klangliches und visuelles Erlebnis, das Vergangenheit und Zukunft auf dem Dancefloor zusammenführt.',
-        'sobre-p4'           : 'Meine musikalische Ausbildung an der <strong>Universidade Estadual de Maringá</strong> hat mir ein starkes Fundament gegeben — aber in der gelebten Erfahrung gewinnt mein Sound seine Wahrheit.',
+        'sobre-p4'           : 'Meine musikalische Ausbildung an der <strong>Universidade Estadual de Maringá</strong> hat mir ein starkes Fundament gegeben, aber in der gelebten Erfahrung gewinnt mein Sound seine Wahrheit.',
         'sobre-p5'           : 'Mein größter Traum ist nicht nur, das zu liefern, was das Publikum will, sondern alle an einen Ort zu bringen, wo noch niemand gewesen ist.',
         'lugares-tag'        : 'BÜHNENPRÄSENZ',
         'lugares-title'      : 'Orte, wo ich<br><span class="text-glow">gespielt habe</span>',
@@ -916,15 +916,15 @@ const i18n = {
         'fs-new': 'NEUES SET',
         'fs-title1': 'GROOVE',
         'fs-subtitle': 'Tech House &middot; März 2026',
-        'fs-desc': 'Purer Groove auf dem Dancefloor. Ein Tech House Set voller Energie und Textur — von Anfang bis Ende, der Floor in Bewegung.',
+        'fs-desc': 'Purer Groove auf dem Dancefloor. Ein Tech House Set voller Energie und Textur, von Anfang bis Ende, der Floor in Bewegung.',
         'fs-listen': 'Auf SoundCloud anhören',
         'music-tag'          : 'HÖREN',
         'music-title'        : 'Sets auf <span class="text-glow">SoundCloud</span>',
-        'music-desc'         : 'Alle verfügbaren Sets — direkt im Player anhören.',
+        'music-desc'         : 'Alle verfügbaren Sets, direkt im Player anhören.',
         'sc-cta'             : 'Alle auf SoundCloud ansehen',
         'booking-tag'        : 'KONTAKT',
         'booking-title'      : 'Bereit, ans<br><span class="text-glow">Limit zu gehen?</span>',
-        'booking-desc'       : 'Verfügbar für Clubs, Events und Festivals.<br>Melde dich — lass uns etwas Unvergessliches schaffen.',
+        'booking-desc'       : 'Verfügbar für Clubs, Events und Festivals.<br>Melde dich, lass uns etwas Unvergessliches schaffen.',
         'available-private'  : 'Private Events',
         'footer-tagline'     : 'Moderner Groove mit Retro-Seele',
         'footer-nav-heading' : 'Navigation',
@@ -950,20 +950,20 @@ const i18n = {
         'tl-section-title'   : '<span class="text-glow">2年間</span>の軌跡',
         'ch01-tag'           : 'チャプター 01',
         'ch01-title'         : 'すべてが<br><span class="tl-title-accent">始まった場所。</span>',
-        'ch01-desc'          : 'ブラジルで育ち、音楽の基礎を学ぶ：海を渡る前に技法と耳を鍛える。ヨーロッパではダブリンとエレクトロニックが実験場になり——ここ2年、その旅に名前がついた ClayMoon.music。グルーヴの研究、クラブのリファレンス、Tech House と Minimal Deep Tech のあいだのサウンド。写真は、いまのビジュアルと物語の前の章。',
+        'ch01-desc'          : 'ブラジルで育ち、音楽の基礎を学ぶ：海を渡る前に技法と耳を鍛える。ヨーロッパではダブリンとエレクトロニックが実験場になり, ここ2年、その旅に名前がついた ClayMoon.music。グルーヴの研究、クラブのリファレンス、Tech House と Minimal Deep Tech のあいだのサウンド。写真は、いまのビジュアルと物語の前の章。',
         'ch02-tag'           : 'チャプター 02',
         'ch02-title'         : '私が<br><span class="tl-title-accent">到達した場所。</span>',
         'ch02-crowd'         : 'ポルト · プレスキット＆サウンド完成',
-        'ch02-desc'          : 'いまプロジェクトは揃った：ビジュアル、アーティスト写真、SoundCloud のセット、そして明確なフロアのストーリー——グルーヴ、エネルギー、ヨーロッパの参照。クラブ、野外、ウォームアップまで、Tech House と Minimal Deep Tech で提案。次の一歩は適したラインナップへ、長く続く姿勢で。',
+        'ch02-desc'          : 'いまプロジェクトは揃った：ビジュアル、アーティスト写真、SoundCloud のセット、そして明確なフロアのストーリー, グルーヴ、エネルギー、ヨーロッパの参照。クラブ、野外、ウォームアップまで、Tech House と Minimal Deep Tech で提案。次の一歩は適したラインナップへ、長く続く姿勢で。',
         'ch03-tag'           : 'チャプター 03',
         'tension-e'          : 'そして',
         'tension-phrase'     : ' 今どこにいるのか',
         'tension-now'        : '今？？',
         'tension-sub'        : '答えは下にあります。',
         'ch04-tag'           : 'チャプター 03',
-        'ch04-year'          : '2025 — 現在',
+        'ch04-year'          : '2025, 現在',
         'ch04-title'         : '新しい<br><span class="tl-title-accent">サイクル。</span>',
-        'ch04-quote'         : '2年間、ClayMoon.music に集中：ヨーロッパの参照、アーケードの美学、夜をどこへ運びたいかが伝わるセット——Minimal Bass を骨格に、グルーヴを頭に、次の章を正しいチームで。',
+        'ch04-quote'         : '2年間、ClayMoon.music に集中：ヨーロッパの参照、アーケードの美学、夜をどこへ運びたいかが伝わるセット, Minimal Bass を骨格に、グルーヴを頭に、次の章を正しいチームで。',
         'sobre-tag'          : 'プロフィール',
         'sobre-title'        : 'ローカルフロアから<br><span class="text-glow">ヨーロッパのシーンへ</span>',
         'sobre-p1'           : 'Claymoon.music は DJ として 2 年の経験を持ち、音楽プロデューサーとしても活動しています。キャリアの始まりはアイルランドのダブリンで、そこでヨーロッパの電子音楽シーンに直接触れ、自身のサウンドアイデンティティを育てました。',
@@ -988,11 +988,11 @@ const i18n = {
         'fs-new': '新着セット',
         'fs-title1': 'GROOVE',
         'fs-subtitle': 'Tech House &middot; 2026年3月',
-        'fs-desc': 'フロアで純粋なグルーヴを。エネルギーとテクスチャに満ちた Tech House セット — 最初から最後まで、フロアが動き続ける。',
+        'fs-desc': 'フロアで純粋なグルーヴを。エネルギーとテクスチャに満ちた Tech House セット, 最初から最後まで、フロアが動き続ける。',
         'fs-listen': 'SoundCloudで聴く',
         'music-tag'          : '聴く',
         'music-title'        : '<span class="text-glow">SoundCloud</span>のセット',
-        'music-desc'         : '全セット — プレーヤーで直接再生。',
+        'music-desc'         : '全セット, プレーヤーで直接再生。',
         'sc-cta'             : 'SoundCloudですべて見る',
         'booking-tag'        : 'コンタクト',
         'booking-title'      : '限界を<br><span class="text-glow">超える準備はできていますか？</span>',

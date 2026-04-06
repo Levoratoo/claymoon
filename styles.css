@@ -1,5 +1,5 @@
 ﻿/* ============================================================
-   LEVORATO PRESS KIT — STYLES
+   LEVORATO PRESS KIT, STYLES
    Dark underground aesthetic | Techno / Rave / Electronic
    ============================================================ */
 
@@ -38,9 +38,9 @@
 
     --nav-h:          68px;
     --max-w:          1200px;
-    /* Mesma margem horizontal do hero — alinha header com o texto */
+    /* Mesma margem horizontal do hero, alinha header com o texto */
     --page-gutter:    clamp(2rem, 7vw, 7rem);
-    /* Safe area (notch / home indicator) — mobile */
+    /* Safe area (notch / home indicator), mobile */
     --safe-top:       env(safe-area-inset-top, 0px);
     --safe-left:      env(safe-area-inset-left, 0px);
     --safe-right:     env(safe-area-inset-right, 0px);
@@ -326,7 +326,7 @@ section {
     gap: 0.75rem;
 }
 
-/* ---- Language Switcher — dropdown ---- */
+/* ---- Language Switcher, dropdown ---- */
 /* Fixo na mesma coluna do hero (fora do bloco centralizado de 1200px) */
 .lang-switcher {
     position: fixed;
@@ -573,7 +573,7 @@ section {
 .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* -------------------------------------------------------
-   HERO  —  Inspired by modern split hero (circular visual right)
+   HERO, Inspired by modern split hero (circular visual right)
 ------------------------------------------------------- */
 .hero {
     position: relative;
@@ -595,9 +595,9 @@ section {
     content: "";
     position: absolute;
     inset: 0;
-    /* principal.png: dark arcade — balance legibility vs. mood (not crushed / not blown) */
+    /* principal.png: dark arcade, balance legibility vs. mood (not crushed / not blown) */
     background:
-        /* Light top veil only — keeps ceiling from blooming without dimming the whole scene */
+        /* Light top veil only, keeps ceiling from blooming without dimming the whole scene */
         linear-gradient(
             180deg,
             rgba(2, 4, 12, 0.36) 0%,
@@ -633,7 +633,7 @@ section {
     position: absolute;
     inset: 0;
     background:
-        /* CRT scanlines — very light so colours stay visible */
+        /* CRT scanlines, very light so colours stay visible */
         repeating-linear-gradient(
             180deg,
             rgba(0, 0, 0, 0.04) 0px,
@@ -663,7 +663,7 @@ section {
 
 /* Subtle red radial background */
 /* -------------------------------------------------------
-   HERO — 4 EFEITOS VISUAIS
+   HERO, 4 EFEITOS VISUAIS
 ------------------------------------------------------- */
 
 /* 1. Glow blob pulsante */
@@ -875,7 +875,7 @@ section {
     padding-bottom: clamp(2.5rem, 9vh, 6.5rem);
 }
 
-/* Pill tag — arcade style */
+/* Pill tag, arcade style */
 .hero-pill {
     display: inline-flex;
     align-items: center;
@@ -930,7 +930,7 @@ section {
     animation: pulseDot 2s ease-in-out infinite;
 }
 
-/* Title — huge, bold, two lines */
+/* Title, huge, bold, two lines */
 .hero-title {
     display: flex;
     flex-direction: column;
@@ -972,7 +972,7 @@ section {
     .hero-title::before { animation: none; opacity: 0; }
 }
 
-/* Wordmark shell — arcade marquee around Claymoon.music */
+/* Wordmark shell, arcade marquee around Claymoon.music */
 .hero-title-wordmark {
     position: relative;
     display: inline-block;
@@ -1086,7 +1086,7 @@ section {
     white-space: nowrap;
     width: fit-content;
     max-width: 100%;
-    /* Do not stretch to full column width — gradient + underline match text width */
+    /* Do not stretch to full column width, gradient + underline match text width */
     align-self: flex-start;
     background: linear-gradient(90deg, #ffe08a 0%, var(--primary) 36%, var(--accent-violet) 68%, var(--accent-blue) 100%);
     -webkit-background-clip: text;
@@ -1123,7 +1123,7 @@ section {
     margin-bottom: 0;
 }
 
-/* Pulso suave no CTA principal — só no hero, sem caixa */
+/* Pulso suave no CTA principal, só no hero, sem caixa */
 .hero-content .btn-primary {
     animation: heroCtaGlow 3.5s ease-in-out infinite;
 }
@@ -1370,7 +1370,7 @@ section {
     padding: 7rem 0;
     position: relative;
     overflow: hidden;
-    /* Mesmo preto da timeline (#historia) — evita tom azulado do #030810 */
+    /* Mesmo preto da timeline (#historia), evita tom azulado do #030810 */
     background: #020202;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
@@ -1393,7 +1393,7 @@ section {
 
 .about-image { position: relative; }
 
-/* Sem véu por cima da foto — evita sensação de “apagada” */
+/* Sem véu por cima da foto, evita sensação de “apagada” */
 .about-image::after {
     display: none;
 }
@@ -1424,7 +1424,7 @@ section {
         0 0 40px rgba(255, 123, 0, 0.12);
 }
 
-/* Linha de acento neon — esquerda da foto */
+/* Linha de acento neon, esquerda da foto */
 .about-accent-line {
     position: absolute;
     top: 12%;
@@ -1460,7 +1460,7 @@ section {
         0 0 18px rgba(255, 123, 0, 0.07);
 }
 
-/* Glow pulsante embaixo da foto — só ciano / laranja (sem magenta que vira “vermelho” no blur) */
+/* Glow pulsante embaixo da foto, só ciano / laranja (sem magenta que vira “vermelho” no blur) */
 .about-image-glow {
     position: absolute;
     bottom: -3.5rem;
@@ -1557,7 +1557,7 @@ section {
     overflow: hidden;
 }
 
-/* Accent line top — arcade palette */
+/* Accent line top, arcade palette */
 .downloads-section::before {
     content: '';
     position: absolute;
@@ -1769,7 +1769,7 @@ section {
     justify-content: center;
 }
 
-/* Fotos de imprensa: poucos cards — grid centralizado (evita colunas vazias à esquerda) */
+/* Fotos de imprensa: poucos cards, grid centralizado (evita colunas vazias à esquerda) */
 #dl-panel-photos .downloads-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: min(100%, 920px);
@@ -1844,7 +1844,7 @@ section {
     }
 }
 
-/* Touch devices — botão sempre visível, sem efeito hover */
+/* Touch devices, botão sempre visível, sem efeito hover */
 @media (hover: none) {
     .download-btn {
         opacity: 1;
@@ -1946,7 +1946,7 @@ section {
     }
 }
 
-/* Download button — hidden by default, slides up on hover */
+/* Download button, hidden by default, slides up on hover */
 .download-btn {
     position: absolute;
     left: 0.6rem;
@@ -2026,7 +2026,7 @@ section {
 }
 
 /* -------------------------------------------------------
-   LUGARES  (oculto temporariamente — apagar regra #lugares para reativar)
+   LUGARES  (oculto temporariamente, apagar regra #lugares para reativar)
 ------------------------------------------------------- */
 #lugares {
     display: none !important;
@@ -2126,7 +2126,7 @@ section {
 }
 
 /* -------------------------------------------------------
-   FEATURED SET — Sixx House DJ Contest
+   FEATURED SET, Sixx House DJ Contest
 ------------------------------------------------------- */
 .featured-set {
     position: relative;
@@ -2346,7 +2346,7 @@ section {
 }
 
 /* -------------------------------------------------------
-   MUSIC — fundo preto sólido (cobre grade/radiais do body)
+   MUSIC, fundo preto sólido (cobre grade/radiais do body)
 ------------------------------------------------------- */
 .music {
     padding: 7rem 0;
@@ -3077,7 +3077,7 @@ section {
 }
 
 @media (max-width: 960px) {
-    /* Hero: centered on tablet/mobile (single column — no visual to stack) */
+    /* Hero: centered on tablet/mobile (single column, no visual to stack) */
     .hero {
         justify-content: center;
         align-items: flex-start;
@@ -3196,7 +3196,7 @@ section {
 
     .music-grid { grid-template-columns: 1fr; }
 
-    /* Hero titles — mobile */
+    /* Hero titles, mobile */
     .title-line-white {
         font-size: clamp(1.65rem, 8.6vw, 2.7rem);
         letter-spacing: 0.03em;
@@ -3221,7 +3221,7 @@ section {
         align-items: center;
     }
 
-    /* Tension block — "AGORA??" não overflow */
+    /* Tension block, "AGORA??" não overflow */
     .tl-tension-now-text { font-size: clamp(3.5rem, 14vw, 8rem); }
     .tl-tension-phrase   { font-size: clamp(1.8rem, 7vw, 3rem); }
 
@@ -3233,7 +3233,7 @@ section {
     /* Node year menor */
     .tl-node-year { font-size: 2.2rem; }
 
-    /* Booking — menos espaço vazio */
+    /* Booking, menos espaço vazio */
     .booking { padding: 3.5rem 0; }
     .booking-available { gap: 1rem; }
     .booking-title { font-size: clamp(2rem, 10vw, 3rem); }
@@ -3242,10 +3242,10 @@ section {
     .stream-tab { padding: 0.5rem 0.9rem; font-size: 0.7rem; }
     .tab-count  { display: none; }
 
-    /* SoundCloud CTA — centralizado */
+    /* SoundCloud CTA, centralizado */
     .stream-cta { align-self: center; width: 100%; justify-content: center; }
 
-    /* Footer — menos padding */
+    /* Footer, menos padding */
     .footer {
         padding: 2.2rem 0 1.25rem;
     }
@@ -3289,7 +3289,7 @@ section {
 }
 
 /* ============================================================
-   TIMELINE — A HISTÓRIA  (vertical spine layout)
+   TIMELINE, A HISTÓRIA  (vertical spine layout)
    ============================================================ */
 
 .timeline-section {
@@ -3859,7 +3859,7 @@ section {
 }
 
 /* ============================================================
-   VERTICAL PHOTO CAROUSEL — inside each timeline node
+   VERTICAL PHOTO CAROUSEL, inside each timeline node
    ============================================================ */
 
 /* The carousel occupies the 3rd column (right) or 1st (left) */
@@ -3875,7 +3875,7 @@ section {
     grid-column: 1;
 }
 
-/* Uma foto estática por nó — proporção natural do arquivo (sem crop forçado) */
+/* Uma foto estática por nó, proporção natural do arquivo (sem crop forçado) */
 .tl-node-photo {
     width: 100%;
     max-width: min(520px, 100%);
@@ -3918,7 +3918,7 @@ section {
     transform: scaleX(1);
 }
 
-/* Clipping window — fixed height, hides overflow */
+/* Clipping window, fixed height, hides overflow */
 .tl-vc-mask {
     width: 100%;
     height: 520px;
@@ -4101,7 +4101,7 @@ section {
 }
 
 /* ============================================================
-   ARCADE IDENTITY — navbar brand, ticker, about artwork,
+   ARCADE IDENTITY, navbar brand, ticker, about artwork,
    footer logo image
    ============================================================ */
 
@@ -4157,7 +4157,7 @@ section {
 }
 
 /* -------------------------------------------------------
-   ARCADE TICKER — scrolling marquee strip
+   ARCADE TICKER, scrolling marquee strip
 ------------------------------------------------------- */
 .arcade-ticker {
     position: relative;
@@ -4224,7 +4224,7 @@ section {
     z-index: 1;
 }
 
-/* Artwork — retrato 3/4 */
+/* Artwork, retrato 3/4 */
 .about-image--artwork {
     border-radius: 20px;
     overflow: visible;
