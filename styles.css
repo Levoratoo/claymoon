@@ -293,19 +293,6 @@ section {
     transform: translateY(-2px);
 }
 
-.btn-email.btn--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-    user-select: none;
-}
-.btn-email.btn--disabled:hover {
-    border-color: rgba(150, 167, 255, 0.2);
-    color: var(--text);
-    box-shadow: none;
-    transform: none;
-}
-
 /* -------------------------------------------------------
    NAVIGATION
 ------------------------------------------------------- */
