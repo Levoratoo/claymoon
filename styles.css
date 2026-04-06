@@ -3183,16 +3183,18 @@ section {
     .hero {
         justify-content: center;
         align-items: flex-start;
-        padding-top: calc(var(--nav-total) + 3rem);
-        padding-bottom: 5rem;
+        padding-top: calc(var(--nav-total) + 1.5rem);
+        padding-bottom: 2.5rem;
     }
     .hero::before {
         background-position: center, center, center, center, 68% center;
     }
     .hero-content {
         max-width: calc(100vw - var(--page-gutter) * 2 - 1.5rem);
+        gap: 1.0rem;
+        padding-bottom: 0;
     }
-    .hero-pill { margin: 0 0 1.5rem; }
+    .hero-pill { margin: 0; }
 }
 
 /* Hero mobile / telemóvel: tudo centrado e hierarquia clara */
@@ -3227,31 +3229,31 @@ section {
         position: relative;
         align-items: center;
         justify-content: center;
-        width: 160px;
-        height: 160px;
-        margin: 0 auto 1.0rem;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 0;
         flex-shrink: 0;
     }
 
     /* Halo pulsante laranja/ciano ao redor */
     .hero-mobile-circle__halo {
         position: absolute;
-        inset: -18px;
+        inset: -14px;
         border-radius: 50%;
         background: radial-gradient(
             circle,
-            rgba(255, 123, 0, 0.30) 0%,
-            rgba(0, 229, 255, 0.12) 50%,
+            rgba(255, 123, 0, 0.50) 0%,
+            rgba(0, 229, 255, 0.20) 52%,
             transparent 72%
         );
         animation: heroCirclePulse 3.2s ease-in-out infinite;
         pointer-events: none;
     }
 
-    /* Anel giratório fino (inspirado no outro projeto) */
+    /* Anel giratório fino */
     .hero-mobile-circle__ring {
         position: absolute;
-        inset: -6px;
+        inset: -5px;
         border-radius: 50%;
         border: 1.5px solid transparent;
         background:
@@ -3268,39 +3270,28 @@ section {
 
     /* Imagem circular, brilho vivo */
     .hero-mobile-circle__img {
-        width: 160px;
-        height: 160px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         object-fit: cover;
         object-position: center top;
-        border: 2.5px solid rgba(255, 123, 0, 0.65);
+        border: 2px solid rgba(255, 123, 0, 0.65);
         box-shadow:
-            0 0 22px rgba(255, 123, 0, 0.70),
-            0 0 50px rgba(255, 123, 0, 0.35),
-            0 0 80px rgba(255, 123, 0, 0.18),
-            0 0 16px rgba(0, 229, 255, 0.35),
-            inset 0 0 20px rgba(0, 0, 0, 0.35);
+            0 0 18px rgba(255, 123, 0, 0.70),
+            0 0 40px rgba(255, 123, 0, 0.30),
+            0 0 14px rgba(0, 229, 255, 0.35),
+            inset 0 0 16px rgba(0, 0, 0, 0.30);
         filter: saturate(1.05) brightness(1.0) contrast(1.06);
         display: block;
         position: relative;
         z-index: 1;
     }
 
-    /* Halo mais intenso para combinar com o brilho da foto */
-    .hero-mobile-circle__halo {
-        background: radial-gradient(
-            circle,
-            rgba(255, 123, 0, 0.50) 0%,
-            rgba(0, 229, 255, 0.20) 52%,
-            transparent 72%
-        );
-    }
-
     .hero-title {
         align-items: center;
         width: 100%;
     }
-    /* Sobrescreve align-self do subtítulo (antes ficava colado à esquerda) */
+    /* Sobrescreve align-self do subtítulo */
     .title-line-red {
         align-self: center;
         text-align: center;
@@ -3311,25 +3302,36 @@ section {
         max-width: 22rem;
         margin-left: auto;
         margin-right: auto;
+        font-size: 0.85rem;
+        line-height: 1.6;
     }
     .hero-buttons {
         justify-content: center;
         width: 100%;
     }
-    /* Pill mais fino e compacto no mobile */
+    /* Pill mais fino no mobile */
     .hero-pill {
         justify-content: center;
-        flex-wrap: wrap;
-        row-gap: 0.3rem;
-        column-gap: 0.4rem;
+        flex-wrap: nowrap;
         max-width: 100%;
-        padding: 0.32rem 0.85rem;
-        font-size: 0.68rem;
+        padding: 0.28rem 0.75rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
         text-align: center;
+        gap: 0.35rem;
     }
     .pill-coin {
-        letter-spacing: 0.10em;
-        font-size: 0.55rem;
+        letter-spacing: 0.08em;
+        font-size: 0.52rem;
+    }
+    .pill-dot {
+        width: 5px;
+        height: 5px;
+    }
+    /* Botões do hero menores no mobile */
+    .hero-buttons .btn {
+        padding: 0.68rem 1.4rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -3502,31 +3504,37 @@ section {
 
     /* Hero titles, mobile */
     .title-line-white {
-        font-size: clamp(1.65rem, 8.6vw, 2.7rem);
+        font-size: clamp(1.5rem, 7.8vw, 2.4rem);
         letter-spacing: 0.03em;
     }
     .title-line-red {
-        font-size: clamp(0.88rem, 3.7vw, 1.25rem);
+        font-size: clamp(0.82rem, 3.4vw, 1.1rem);
         letter-spacing: 0.04em;
         white-space: normal;
     }
     /* Hide fire-line underline when text wraps on mobile */
     .hero-fire-line::after { display: none; }
     .hero-desc {
-        font-size: 0.94rem;
+        font-size: 0.84rem;
         max-width: min(100%, 20rem);
         white-space: normal;
+        line-height: 1.55;
     }
 
     .hero-buttons,
     .booking-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 0.75rem;
+        justify-content: center;
+        gap: 0.6rem;
     }
     .hero-buttons .btn {
-        width: min(100%, 300px);
+        width: auto;
+        min-width: 130px;
         justify-content: center;
+        padding: 0.65rem 1.2rem;
+        font-size: 0.72rem;
     }
 
     /* Tension block, "AGORA??" não overflow */
