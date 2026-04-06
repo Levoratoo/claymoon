@@ -327,11 +327,11 @@ section {
 }
 
 /* ---- Language Switcher, dropdown ---- */
-/* Fixo na mesma coluna do hero (fora do bloco centralizado de 1200px) */
+/* Em fluxo após o logo (fixed cobria o brand em mobile / tablet) */
 .lang-switcher {
-    position: fixed;
-    left: calc(var(--page-gutter) + var(--safe-left));
-    top: var(--safe-top);
+    position: relative;
+    left: auto;
+    top: auto;
     z-index: 1001;
     height: var(--nav-h);
     display: flex;
@@ -3199,6 +3199,55 @@ section {
 
     .music-grid { grid-template-columns: 1fr; }
 
+    /* Títulos longos / glitch: sem scroll horizontal */
+    .section-title,
+    .tl-chapter-title,
+    .booking-title,
+    .title-glitch {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        max-width: 100%;
+    }
+
+    /* Bloco tensão: respiro lateral em ecrãs estreitos */
+    .tl-tension-content {
+        padding: 4rem 1rem;
+    }
+
+    /* Badge cap. 02: texto longo em várias linhas */
+    .tl-crowd-badge {
+        max-width: 100%;
+        width: auto;
+        min-width: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .tl-crowd-text {
+        text-align: center;
+        line-height: 1.35;
+        letter-spacing: 0.06em;
+        white-space: normal;
+    }
+
+    /* Botões booking: não forçar uma linha só */
+    .booking-buttons .btn {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        max-width: min(100%, 360px);
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Hero: coluna alinhada (descrição já era centrada) */
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+    .hero-title {
+        width: 100%;
+    }
+
     /* Hero titles, mobile */
     .title-line-white {
         font-size: clamp(1.65rem, 8.6vw, 2.7rem);
@@ -3247,6 +3296,13 @@ section {
 
     /* SoundCloud CTA, centralizado */
     .stream-cta { align-self: center; width: 100%; justify-content: center; }
+
+    /* Featured set: título longo sem overflow */
+    .fs-title-line1,
+    .fs-title-line2 {
+        overflow-wrap: anywhere;
+        max-width: 100%;
+    }
 
     /* Footer, menos padding */
     .footer {
