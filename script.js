@@ -675,7 +675,7 @@ const i18n = {
         'footer-musicas'     : 'Músicas',
         'footer-social-heading': 'Redes Sociais',
         'footer-copy'        : '© 2026 Claymoon.music. Todos os direitos reservados.',
-        'footer-credit-text' : 'Site desenvolvido por mim',
+        'footer-credit-text' : 'Site desenvolvido por',
         'footer-credit-name' : 'Pedro Levorato',
         'footer-credit-link-aria' : 'Instagram de Pedro Levorato',
     },
