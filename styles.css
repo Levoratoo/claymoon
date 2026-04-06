@@ -3894,6 +3894,8 @@ section {
     display: block;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+    /* Retrato em caixa larga: sem isso o cover centralizado corta a testa */
+    object-position: center top;
     filter: grayscale(45%) brightness(0.72) contrast(1.1);
     transition: filter 0.5s ease, transform 0.5s ease;
     transform: scale(1.02);
