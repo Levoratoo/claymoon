@@ -3183,16 +3183,19 @@ section {
     .hero {
         justify-content: center;
         align-items: flex-start;
-        padding-top: calc(var(--nav-total) + 1.5rem);
-        padding-bottom: 2.5rem;
+        padding-top: calc(var(--nav-total) + 1.25rem);
+        padding-bottom: 1.5rem;
     }
     .hero::before {
         background-position: center, center, center, center, 68% center;
     }
     .hero-content {
         max-width: calc(100vw - var(--page-gutter) * 2 - 1.5rem);
-        gap: 1.0rem;
+        gap: 1rem;
         padding-bottom: 0;
+        /* Usa a altura útil do ecrã para distribuir o bloco (menos “vazio” em baixo) */
+        min-height: calc(100dvh - var(--nav-total) - 2.75rem);
+        justify-content: space-between;
     }
     .hero-pill { margin: 0; }
 }
@@ -3290,12 +3293,34 @@ section {
     .hero-title {
         align-items: center;
         width: 100%;
+        flex: 1 1 auto;
+        justify-content: center;
+        gap: 0.42em;
+        min-height: min(28vh, 12rem);
+        padding-block: 0.35rem;
     }
-    /* Sobrescreve align-self do subtítulo */
+    /* Nome principal com mais presença no mobile */
+    .hero-title-wordmark .title-line-white {
+        font-size: clamp(1.85rem, 9.5vw, 2.85rem);
+        letter-spacing: 0.04em;
+        line-height: 1.02;
+        text-shadow:
+            0 0 24px rgba(255, 255, 255, 0.14),
+            0 0 48px rgba(0, 229, 255, 0.18),
+            0 0 80px rgba(0, 229, 255, 0.08);
+    }
+    /* Subtítulo com mais ênfase */
     .title-line-red {
         align-self: center;
         text-align: center;
         white-space: normal;
+        font-size: clamp(0.95rem, 4.2vw, 1.28rem);
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        line-height: 1.25;
+        max-width: 22ch;
+        filter: drop-shadow(0 0 14px rgba(255, 123, 0, 0.35))
+            drop-shadow(0 0 22px rgba(0, 229, 255, 0.2));
     }
     .hero-desc {
         text-align: center;
@@ -3502,15 +3527,17 @@ section {
 
     /* Hero: tipografia mais compacta (layout centrado em max-width: 900px) */
 
-    /* Hero titles, mobile */
-    .title-line-white {
-        font-size: clamp(1.5rem, 7.8vw, 2.4rem);
-        letter-spacing: 0.03em;
+    /* Hero titles, mobile estreito: nome + tagline dominam o ecrã */
+    .hero-title-wordmark .title-line-white {
+        font-size: clamp(2rem, 11vw, 3.15rem);
+        letter-spacing: 0.035em;
+        line-height: 1.02;
     }
     .title-line-red {
-        font-size: clamp(0.82rem, 3.4vw, 1.1rem);
-        letter-spacing: 0.04em;
+        font-size: clamp(1.05rem, 5vw, 1.45rem);
+        letter-spacing: 0.07em;
         white-space: normal;
+        max-width: 24ch;
     }
     /* Hide fire-line underline when text wraps on mobile */
     .hero-fire-line::after { display: none; }
