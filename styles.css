@@ -4776,6 +4776,13 @@ section {
         inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
+/* start: center snap desloca o overlay do play no slide do meio (Safari / WebKit) */
+@media (max-width: 900px) {
+    .vd-carousel-viewport {
+        padding: 0;
+    }
+}
+
 .vd-carousel-viewport:focus-visible {
     outline: 2px solid var(--accent-blue);
     outline-offset: 4px;
@@ -4793,9 +4800,9 @@ section {
 .vd-slide {
     flex: 0 0 100%;
     min-width: 0;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    padding: 0 2px;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -4864,7 +4871,7 @@ section {
     border-radius: 0;
 }
 
-/* Wrapper extra: line-height 0 + flex evita baseline WebKit a deslocar o overlay do play */
+/* Wrapper extra: isolamento evita compositor WebKit a deslocar o botão play */
 .vd-video-inner {
     position: relative;
     z-index: 1;
@@ -4875,6 +4882,7 @@ section {
     min-height: 0;
     line-height: 0;
     font-size: 0;
+    isolation: isolate;
 }
 
 .vd-video {
@@ -4890,8 +4898,8 @@ section {
     margin: 0 auto;
     flex-shrink: 0;
     align-self: center;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 /* Carrossel (mobile): reforço centro do play (Safari / WebKit) */
@@ -4904,7 +4912,6 @@ section {
     .vd-video-inner {
         width: 100%;
         box-sizing: border-box;
-        padding: 0 1px;
     }
 
     .vd-video {

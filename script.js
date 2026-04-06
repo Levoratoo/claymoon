@@ -1265,13 +1265,18 @@ function initVideoCarousel() {
         }
     }
 
-    function slideWidth() {
-        return viewport.clientWidth || 1;
-    }
-
     function currentIndex() {
-        const w = slideWidth();
-        return Math.min(n - 1, Math.max(0, Math.round(viewport.scrollLeft / w)));
+        const left = viewport.scrollLeft;
+        let best = 0;
+        let bestD = Infinity;
+        slides.forEach((slide, i) => {
+            const d = Math.abs(slide.offsetLeft - left);
+            if (d < bestD) {
+                bestD = d;
+                best = i;
+            }
+        });
+        return best;
     }
 
     function pauseAll() {
@@ -1280,9 +1285,9 @@ function initVideoCarousel() {
 
     function goTo(i) {
         if (!isCarouselMode()) return;
-        const w = slideWidth();
         i = Math.max(0, Math.min(n - 1, i));
-        viewport.scrollTo({ left: i * w, behavior: 'smooth' });
+        const el = slides[i];
+        viewport.scrollTo({ left: el.offsetLeft, behavior: 'smooth' });
     }
 
     function goNext() {
@@ -1354,7 +1359,8 @@ function initVideoCarousel() {
             syncCarouselModeUi();
             if (isCarouselMode()) {
                 const idx = currentIndex();
-                viewport.scrollLeft = idx * slideWidth();
+                const el = slides[idx];
+                if (el) viewport.scrollLeft = el.offsetLeft;
                 updateArrowsAndDots();
             }
         }, 120);
