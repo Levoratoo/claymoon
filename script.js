@@ -1,5 +1,5 @@
 /* ============================================================
-   LEVORATO PRESS KIT, SCRIPT
+   CLAYMOON.MUSIC PRESS KIT, SCRIPT
    Particle system, animations, navbar, counters
    ============================================================ */
 
@@ -647,6 +647,7 @@ const i18n = {
         'footer-social-heading': 'Redes Sociais',
         'footer-copy'        : '© 2026 Claymoon.music. Todos os direitos reservados.',
         'footer-credit-text' : 'Site desenvolvido por',
+        'footer-credit-name' : 'ClayMoon.music',
     },
     en: {
         'nav-historia'       : 'History',
@@ -721,6 +722,7 @@ const i18n = {
         'footer-social-heading': 'Social Media',
         'footer-copy'        : '© 2026 Claymoon.music. All rights reserved.',
         'footer-credit-text' : 'Website developed by',
+        'footer-credit-name' : 'ClayMoon.music',
     },
     es: {
         'nav-historia'       : 'Historia',
@@ -795,6 +797,7 @@ const i18n = {
         'footer-social-heading': 'Redes Sociales',
         'footer-copy'        : '© 2026 Claymoon.music. Todos los derechos reservados.',
         'footer-credit-text' : 'Sitio desarrollado por',
+        'footer-credit-name' : 'ClayMoon.music',
     },
     zh: {
         'nav-historia'       : '历程',
@@ -869,6 +872,7 @@ const i18n = {
         'footer-social-heading': '社交媒体',
         'footer-copy'        : '© 2026 Claymoon.music. 保留所有权利。',
         'footer-credit-text' : '网站开发者',
+        'footer-credit-name' : 'ClayMoon.music',
     },
     de: {
         'nav-historia'       : 'Geschichte',
@@ -943,6 +947,7 @@ const i18n = {
         'footer-social-heading': 'Social Media',
         'footer-copy'        : '© 2026 Claymoon.music. Alle Rechte vorbehalten.',
         'footer-credit-text' : 'Website entwickelt von',
+        'footer-credit-name' : 'ClayMoon.music',
     },
     ja: {
         'nav-historia'       : 'ヒストリー',
@@ -1017,6 +1022,7 @@ const i18n = {
         'footer-social-heading': 'ソーシャルメディア',
         'footer-copy'        : '© 2026 Claymoon.music. 無断複製禁止。',
         'footer-credit-text' : 'ウェブサイト制作',
+        'footer-credit-name' : 'ClayMoon.music',
     },
 };
 
@@ -1071,7 +1077,10 @@ function applyLang(lang) {
 
     const langMap = { pt: 'pt-BR', en: 'en', es: 'es', zh: 'zh-CN', de: 'de', ja: 'ja' };
     document.documentElement.lang = langMap[lang] || lang;
-    localStorage.setItem('levorato-lang', lang);
+    localStorage.setItem('claymoon-lang', lang);
+    try {
+        localStorage.removeItem('levorato-lang');
+    } catch (e) { /* ignore */ }
 }
 
 function initI18n() {
@@ -1112,8 +1121,11 @@ function initI18n() {
         }
     });
 
-    // Apply saved language
-    const saved = localStorage.getItem('levorato-lang') || 'pt';
+    // Apply saved language (migrate legacy key from older builds)
+    const saved =
+        localStorage.getItem('claymoon-lang') ||
+        localStorage.getItem('levorato-lang') ||
+        'pt';
     if (saved !== 'pt') applyLang(saved);
 }
 

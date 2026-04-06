@@ -1,6 +1,6 @@
 ﻿/* ============================================================
-   LEVORATO PRESS KIT, STYLES
-   Dark underground aesthetic | Techno / Rave / Electronic
+   CLAYMOON.MUSIC PRESS KIT, STYLES
+   Dark underground aesthetic | Tech House / arcade neon
    ============================================================ */
 
 /* -------------------------------------------------------
@@ -725,7 +725,7 @@ section {
     100% { transform: translateY(0)   scale(1);    opacity: var(--hp-op); }
 }
 
-/* 3. Shimmer em "LEVORATO" */
+/* 3. Shimmer no wordmark do hero */
 .hero-shimmer {
     position: relative;
     overflow: hidden;
