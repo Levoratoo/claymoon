@@ -940,8 +940,10 @@ section {
     position: relative;
 }
 
-/* Light beam sweeping across the title */
-.hero-title::before {
+/* Beam agora fica só no wordmark (nome), não vaza para o subtítulo */
+.hero-title::before { display: none; }
+
+.hero-title-wordmark::after {
     content: '';
     position: absolute;
     top: -10%;
@@ -951,9 +953,9 @@ section {
     background: linear-gradient(
         105deg,
         transparent 20%,
-        rgba(0, 229, 255, 0.08) 40%,
-        rgba(255, 255, 255, 0.11) 50%,
-        rgba(0, 229, 255, 0.08) 60%,
+        rgba(0, 229, 255, 0.10) 40%,
+        rgba(255, 255, 255, 0.14) 50%,
+        rgba(0, 229, 255, 0.10) 60%,
         transparent 80%
     );
     animation: titleBeam 7s ease-in-out infinite;
@@ -969,7 +971,8 @@ section {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-title::before { animation: none; opacity: 0; }
+    .hero-title::before { display: none; }
+    .hero-title-wordmark::after { animation: none; opacity: 0; }
 }
 
 /* Wordmark shell, arcade marquee around Claymoon.music */
@@ -1086,13 +1089,32 @@ section {
     white-space: nowrap;
     width: fit-content;
     max-width: 100%;
-    /* Do not stretch to full column width, gradient + underline match text width */
     align-self: flex-start;
-    background: linear-gradient(90deg, #ffe08a 0%, var(--primary) 36%, var(--accent-violet) 68%, var(--accent-blue) 100%);
+    /* Gradiente 200% de largura para animar background-position (onda de cor) */
+    background: linear-gradient(90deg,
+        #ffe08a 0%,
+        var(--primary) 18%,
+        var(--accent-violet) 36%,
+        var(--accent-blue) 50%,
+        var(--accent-blue) 54%,
+        var(--accent-violet) 68%,
+        var(--primary) 82%,
+        #ffe08a 100%
+    );
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 30px rgba(255, 123, 0, 0.22);
+    animation: taglineWave 5s linear infinite;
+}
+
+@keyframes taglineWave {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title-line-red { animation: none; background-position: 0% 50%; }
 }
 
 .hero-desc {
