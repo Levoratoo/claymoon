@@ -3373,6 +3373,28 @@ section {
         max-width: 360px;
         margin: 0 auto;
     }
+    .about-content {
+        max-width: 100%;
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+        align-items: center;
+    }
+    .about .section-title {
+        text-align: center;
+        font-size: clamp(1.65rem, 5.8vw, 2.45rem);
+        line-height: 1.2;
+        letter-spacing: 0.05em;
+    }
+    .about-text {
+        text-align: center;
+        max-width: 36rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-tags {
+        justify-content: center;
+    }
 
     /* Videos */
     .videos-grid {
@@ -3435,14 +3457,15 @@ section {
 
     .music-grid { grid-template-columns: 1fr; }
 
-    /* Títulos longos / glitch: sem scroll horizontal */
+    /* Títulos: não usar overflow-wrap-anywhere, quebra palavras letra a letra. */
     .section-title,
     .tl-chapter-title,
     .booking-title,
     .title-glitch {
-        overflow-wrap: anywhere;
-        word-break: break-word;
+        overflow-wrap: normal;
+        word-break: normal;
         max-width: 100%;
+        min-width: 0;
     }
 
     /* Bloco tensão: respiro lateral em ecrãs estreitos */
@@ -3530,10 +3553,11 @@ section {
     /* SoundCloud CTA, centralizado */
     .stream-cta { align-self: center; width: 100%; justify-content: center; }
 
-    /* Featured set: título longo sem overflow */
+    /* Featured set: título longo sem quebra agressiva no meio das palavras */
     .fs-title-line1,
     .fs-title-line2 {
-        overflow-wrap: anywhere;
+        overflow-wrap: normal;
+        word-break: normal;
         max-width: 100%;
     }
 
