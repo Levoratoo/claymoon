@@ -2132,10 +2132,10 @@ section {
     position: relative;
     padding: 7rem 0 6rem;
     background:
-        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,26,26,0.09) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 50%, rgba(180,0,0,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255, 123, 0, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 82% 48%, rgba(0, 229, 255, 0.05) 0%, transparent 60%),
         #040404;
-    border-bottom: 1px solid rgba(255,26,26,0.12);
+    border-bottom: 1px solid rgba(255, 123, 0, 0.14);
     overflow: hidden;
 }
 
@@ -2143,7 +2143,7 @@ section {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse 60% 80% at 15% 50%, rgba(255,26,26,0.07) 0%, transparent 55%);
+    background: radial-gradient(ellipse 60% 80% at 15% 50%, rgba(255, 123, 0, 0.08) 0%, transparent 55%);
     z-index: 0;
 }
 
@@ -2167,7 +2167,7 @@ section {
     position: absolute;
     inset: -18px;
     border-radius: 20px;
-    background: radial-gradient(ellipse at center, rgba(255,26,26,0.28) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(255, 123, 0, 0.26) 0%, transparent 70%);
     filter: blur(28px);
     z-index: 0;
     animation: fsPosterPulse 3.5s ease-in-out infinite;
@@ -2186,7 +2186,7 @@ section {
     position: relative;
     z-index: 1;
     box-shadow:
-        0 0 0 1px rgba(255,26,26,0.2),
+        0 0 0 1px rgba(255, 123, 0, 0.22),
         0 20px 60px rgba(0,0,0,0.7);
     object-fit: cover;
 }
@@ -2200,7 +2200,7 @@ section {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(255,26,26,0.92);
+    background: rgba(255, 123, 0, 0.95);
     backdrop-filter: blur(8px);
     color: #fff;
     font-family: var(--font);
@@ -2210,7 +2210,7 @@ section {
     text-transform: uppercase;
     padding: 5px 11px;
     border-radius: 999px;
-    box-shadow: 0 0 18px rgba(255,26,26,0.55);
+    box-shadow: 0 0 18px rgba(255, 123, 0, 0.45);
 }
 
 .fs-badge-dot {
@@ -2250,7 +2250,7 @@ section {
     color: var(--text);
     letter-spacing: 0.04em;
     line-height: 0.9;
-    text-shadow: 0 0 40px rgba(255,26,26,0.25);
+    text-shadow: 0 0 40px rgba(255, 123, 0, 0.22);
 }
 
 .fs-subtitle {
@@ -2277,7 +2277,7 @@ section {
     overflow: hidden;
     margin-bottom: 1.6rem;
     box-shadow:
-        0 0 0 1px rgba(255,26,26,0.1),
+        0 0 0 1px rgba(255, 123, 0, 0.12),
         0 8px 28px rgba(0,0,0,0.5);
 }
 
@@ -2402,7 +2402,7 @@ section {
     background: var(--primary);
     border-color: var(--primary);
     color: #fff;
-    box-shadow: 0 0 20px rgba(255,26,26,0.4);
+    box-shadow: 0 0 20px rgba(255, 123, 0, 0.4);
 }
 
 .stream-tab.active .tab-count {
