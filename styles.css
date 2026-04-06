@@ -4662,21 +4662,48 @@ section {
 ------------------------------------------------------- */
 .videos-section {
     padding: 7rem 0;
-    background: #020202;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background:
+        linear-gradient(180deg, #010101 0%, #050608 45%, #020202 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
+/* Malha suave + glow (sem blur) */
 .videos-section::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 55% 45% at 50% 0%, rgba(0, 229, 255, 0.07) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 40% at 15% 90%, rgba(255, 123, 0, 0.05) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 35% at 85% 75%, rgba(139, 92, 246, 0.04) 0%, transparent 45%);
+        linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+        radial-gradient(ellipse 55% 45% at 50% 0%, rgba(0, 229, 255, 0.09) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 15% 90%, rgba(255, 123, 0, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 35% at 85% 75%, rgba(139, 92, 246, 0.06) 0%, transparent 45%);
+    background-size:
+        48px 48px,
+        48px 48px,
+        auto,
+        auto,
+        auto;
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Orbes de cor com blur (profundidade) */
+.videos-section::after {
+    content: '';
+    position: absolute;
+    inset: -15% -8% -20% -8%;
+    background:
+        radial-gradient(ellipse 65% 50% at 18% 35%, rgba(0, 229, 255, 0.35) 0%, transparent 58%),
+        radial-gradient(ellipse 60% 48% at 88% 70%, rgba(255, 123, 0, 0.28) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 42% at 50% 95%, rgba(0, 180, 220, 0.12) 0%, transparent 50%);
+    filter: blur(72px);
+    opacity: 0.75;
     pointer-events: none;
     z-index: 0;
 }
@@ -4689,6 +4716,23 @@ section {
 .vd-header {
     text-align: center;
     margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Halo suave atrás do título */
+.vd-header::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(22rem, 90vw);
+    height: 5rem;
+    background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.18) 0%, transparent 70%);
+    filter: blur(28px);
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .vd-media-title {
@@ -4697,11 +4741,22 @@ section {
     letter-spacing: 0.02em;
 }
 
-/* Outer frame with neon edge */
+/* Painel vidro fosco + blur do fundo da página */
 .vd-carousel-outer {
+    position: relative;
     max-width: min(26rem, 100%);
     margin: 0 auto;
-    padding: 0 0.25rem;
+    padding: clamp(1.15rem, 4vw, 1.85rem) clamp(0.5rem, 2.5vw, 1rem) clamp(1.35rem, 4vw, 1.9rem);
+    border-radius: 22px;
+    background: rgba(4, 8, 16, 0.52);
+    backdrop-filter: blur(22px) saturate(155%);
+    -webkit-backdrop-filter: blur(22px) saturate(155%);
+    border: 1px solid rgba(0, 229, 255, 0.16);
+    box-shadow:
+        0 8px 48px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 0 72px rgba(0, 229, 255, 0.08),
+        0 0 100px rgba(255, 123, 0, 0.04);
 }
 
 .vd-carousel-shell {
@@ -4723,12 +4778,12 @@ section {
     border-radius: calc(var(--radius) + 4px);
     padding: 3px;
     background:
-        linear-gradient(145deg, rgba(0, 229, 255, 0.35) 0%, rgba(255, 123, 0, 0.12) 45%, rgba(0, 229, 255, 0.2) 100%);
+        linear-gradient(145deg, rgba(0, 229, 255, 0.28) 0%, rgba(255, 123, 0, 0.1) 45%, rgba(0, 229, 255, 0.16) 100%);
     box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.06),
-        0 0 48px rgba(0, 229, 255, 0.12),
-        0 0 80px rgba(255, 123, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        0 0 0 1px rgba(255, 255, 255, 0.07),
+        0 0 40px rgba(0, 229, 255, 0.14),
+        0 0 64px rgba(255, 123, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .vd-carousel-viewport:focus-visible {
@@ -4923,11 +4978,28 @@ section {
     transform: scale(1.2);
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .videos-section::after {
+        filter: blur(40px);
+        opacity: 0.45;
+    }
+
+    .vd-header::after {
+        opacity: 0.4;
+    }
+
+    .vd-carousel-outer {
+        backdrop-filter: blur(12px) saturate(120%);
+        -webkit-backdrop-filter: blur(12px) saturate(120%);
+    }
+}
+
 /* Desktop: 3 vídeos lado a lado; carrossel só em ≤900px */
 @media (min-width: 901px) {
     .vd-carousel-outer {
         max-width: min(1180px, 100%);
-        padding: 0 1rem;
+        padding: clamp(1.35rem, 2.5vw, 2rem) clamp(1rem, 2.5vw, 1.5rem) clamp(1.5rem, 2.8vw, 2.15rem);
+        border-radius: 24px;
     }
 
     .vd-carousel-shell {
